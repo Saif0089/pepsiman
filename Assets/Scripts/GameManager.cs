@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
     
         // Countdown Timer
         timer -= Time.deltaTime;
-        TimerText.text = Mathf.Ceil(timer).ToString(); // Display as integer
+        TimerText.text = FormatTime( (int)timer); // Display as integer
     
         // ⏳ Spawn Finish Line at a Specific Time
         if (!finishSpawned && timer <= (gameDuration - timeToSpawnFinish))
@@ -56,7 +56,12 @@ public class GameManager : MonoBehaviour
             GameOver(false);
         }
     }
-
+    public static string FormatTime(int totalSeconds)
+    {
+        int minutes = totalSeconds / 60;
+        int seconds = totalSeconds % 60;
+        return $"{minutes:D2}:{seconds:D2}";
+    }
     public void Collected(int amount)
     {
         _totalScore += amount;

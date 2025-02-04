@@ -5,7 +5,7 @@ public class Collectable : MonoBehaviour
 {
     public float moveSpeed = 5f; // Speed at which the obstacle moves towards the player
     private bool isMoving = true;
-
+    public int myid;
     private void OnEnable()
     {
         // Start floating animation when the collectable is activated
@@ -35,6 +35,7 @@ public class Collectable : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            CollectableSpawner.Instance.AddUiEffectCollected(gameObject.transform.position,myid);
             gameObject.SetActive(false);
         }
     }

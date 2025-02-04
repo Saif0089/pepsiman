@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 
 public class CollectableSpawner : MonoBehaviour
@@ -19,6 +20,11 @@ public class CollectableSpawner : MonoBehaviour
     public float distanceBetweenObstacles = 5f; // Distance between obstacles
     private bool canSpawn = true; // Flag to control spawning
 
+    public Transform tokenholder;
+    public RectTransform tokenTarget;
+    public GameObject[] prefTokens;
+    public int collectablelock=1;
+    public float lastXpos;
     private void Start()
     {
         // Initial spawn of obstacles
@@ -27,7 +33,18 @@ public class CollectableSpawner : MonoBehaviour
             SpawnCollectable(z);
         }
     }
+    public void AddUiEffectCollected(Vector3 pos,int id)
+    {
+       
 
+        var eff = Instantiate(prefTokens[id], tokenholder);
+       RectTransform trans= eff.GetComponent<RectTransform>();
+       trans.position=Camera.main.WorldToScreenPoint(pos);
+        trans.DOMove(tokenTarget.position, 1);
+        Destroy(eff,1);
+
+
+    }
     private void FixedUpdate()
     {
         if (!canSpawn) return;
@@ -40,6 +57,7 @@ public class CollectableSpawner : MonoBehaviour
         }
     }
 
+    int spawned = 0;
     private void SpawnCollectable(float zPosition)
     {
         float randomX;
@@ -50,9 +68,25 @@ public class CollectableSpawner : MonoBehaviour
         {
             randomX = Random.Range(minX, maxX);
             attempts++;
+
+            if (spawned > 1 && spawned <= collectablelock)
+            {
+                randomX = lastXpos;
+            }
+            else
+            {
+                lastXpos = randomX;
+            }
         } 
         while (SpawnManager.Instance.IsPositionOccupied(randomX, zPosition) && attempts < maxAttempts);
-
+   
+        spawned++;
+        if (spawned > collectablelock)
+        {
+            collectablelock=Random.Range(3, 4);
+            spawned = 0;
+        }
+   
         Vector3 spawnPosition = new Vector3(randomX, 1, zPosition);
         SpawnManager.Instance.MarkPositionOccupied(randomX, zPosition);
 
