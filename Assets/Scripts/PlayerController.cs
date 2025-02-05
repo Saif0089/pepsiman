@@ -2,13 +2,20 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController instance;
     [Header("Movement Settings")]
     public float moveSpeed = 10f; // Speed of left/right movement
+    public float moveForwardSpeed = 10f; // Speed of left/right movement
+
+    public float boost_moveSpeed = 20f; // Speed of left/right movement
     public float jumpForce = 8f; // Jump strength
     public float gravity = 20f; // Gravity applied when airborne
     public float rotationSpeed = 5f; // Speed of rotation when moving left/right
     public float maxRotation = 15f; // Maximum rotation angle when moving left/right
     public float GroundCheckRayCastLenght = 1f;
+
+
+    
 
     [Header("Slide Settings")]
     public float slideDuration = 0.5f; // Duration of the slide
@@ -24,15 +31,32 @@ public class PlayerController : MonoBehaviour
     private bool isJumping = false;
     private bool isSliding = false;
     private bool isHurt = false;
-
     [Header("Animation Settings")]
     private Animator animator;
+
+    [Header("Boost Management")]
+    public bool BoostEnabled = false;
+    float currSpeed;
+
+    public float getCurrSpeed()
+    {
+        return currSpeed;
+    }
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
 
     private void Start()
     {
         controller = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
         animator.SetTrigger("Run"); // Start with running animation
+        currSpeed = moveForwardSpeed;
     }
 
     private void Update()
