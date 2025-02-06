@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     [Header("UI")]
-    public TMP_Text ScoreText;
+    public TMP_Text[] ScoreText;
     public TMP_Text TimerText;
     
     public GameObject PauseMenu;
@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     public float gameDuration = 30f; // Total time in seconds
     private float timer;
     private bool gameEnded = false;
-    private int _totalScore = 0;
+    private int[] _totalScore = new int[4];
 
     [Header("Finish Line")]
     public GameObject finishLinePrefab;
@@ -62,15 +62,15 @@ public class GameManager : MonoBehaviour
         int seconds = totalSeconds % 60;
         return $"{minutes:D2}:{seconds:D2}";
     }
-    public void Collected(int amount)
+    public void Collected(int amount,int id)
     {
-        _totalScore += amount;
-        ScoreText.text = _totalScore.ToString(); // Update UI Score
+        _totalScore[id] += amount;
+        ScoreText[id].text = _totalScore[id].ToString(); // Update UI Score
 
         // Play Score Pop Animation
-        ScoreText.transform.DOKill();
-        ScoreText.transform.localScale = Vector3.one;
-        ScoreText.transform.DOScale(1.3f, 0.2f).SetLoops(2, LoopType.Yoyo);
+        ScoreText[id].transform.parent.transform.DOKill();
+        ScoreText[id].transform.parent.transform.localScale = Vector3.one;
+        ScoreText[id].transform.parent.transform.DOScale(1.3f, 0.2f).SetLoops(2, LoopType.Yoyo);
     }
 
     private void SpawnFinishLine()

@@ -21,7 +21,7 @@ public class CollectableSpawner : MonoBehaviour
     private bool canSpawn = true; // Flag to control spawning
 
     public Transform tokenholder;
-    public RectTransform tokenTarget;
+    public RectTransform[] tokenTarget;
     public GameObject[] prefTokens;
     public int collectablelock=1;
     public float lastXpos;
@@ -40,7 +40,7 @@ public class CollectableSpawner : MonoBehaviour
         var eff = Instantiate(prefTokens[id], tokenholder);
        RectTransform trans= eff.GetComponent<RectTransform>();
        trans.position=Camera.main.WorldToScreenPoint(pos);
-        trans.DOMove(tokenTarget.position, 1);
+        trans.DOMove(tokenTarget[id].position, 1);
         Destroy(eff,1);
 
 

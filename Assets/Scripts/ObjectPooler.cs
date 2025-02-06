@@ -100,5 +100,6 @@ public class ObjectPooler : MonoBehaviour
     {
         environmentPool.Enqueue(patch);
         patch.SetActive(false);
+        EnvironmentManager.Instance.checkSpawn();
     }
 }

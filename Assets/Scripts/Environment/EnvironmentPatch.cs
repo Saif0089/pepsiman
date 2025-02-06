@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class EnvironmentPatch : MonoBehaviour
@@ -5,6 +6,22 @@ public class EnvironmentPatch : MonoBehaviour
     public float moveSpeed = 5f; // Speed at which the patch moves
     private bool isMoving = true;
 
+    public List<GameObject> gameObjects = new List<GameObject>();
+    private void Start()
+    {
+      
+       for (int i = 0; i < 2; i++)
+        {
+
+            int rand = Random.Range(0,gameObjects.Count);
+
+               gameObjects.Remove( gameObjects[rand]);
+            
+        }
+        
+       foreach (GameObject obj in gameObjects) { Destroy(obj.gameObject); }
+
+    }
     private void Update()
     {
         if (isMoving)

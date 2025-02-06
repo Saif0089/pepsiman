@@ -176,7 +176,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (other.CompareTag("Collectable"))
         {
-            Collect();
+            Collect(other.gameObject.GetComponent<Collectable>().myid);
         }
     }
 
@@ -194,9 +194,9 @@ public class PlayerController : MonoBehaviour
         StopAllEnvironment(false);
     }
 
-    private void Collect()
+    private void Collect(int id)
     {
-        GameManager.Instance.Collected(1);
+        GameManager.Instance.Collected(1,id);
     }
 
     private void StopAllObstacles(bool state)

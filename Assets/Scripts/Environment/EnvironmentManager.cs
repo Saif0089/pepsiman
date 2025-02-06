@@ -9,7 +9,7 @@ public class EnvironmentManager : MonoBehaviour
     private float lastSpawnZ = 0f;
     public Camera mainCamera;
     private bool canSpawn = true;
-
+    int spawned;
     private void Awake()
     {
         Instance = this;
@@ -35,12 +35,28 @@ public class EnvironmentManager : MonoBehaviour
             SpawnEnvironmentPatch();
         }
     }
-
+    public void checkSpawn()
+    {
+       // if (spawned > initialPatchCount)
+        {
+       
+            GameObject patch = ObjectPooler.Instance.GetEnvironmentPatch();
+            patch.GetComponent<EnvironmentPatch>().SetPosition(new Vector3(0, 0, lastSpawnZ));
+          //  lastSpawnZ+=patchLength  ; // Move next patch forward
+        }
+    }
     private void SpawnEnvironmentPatch()
     {
-        GameObject patch = ObjectPooler.Instance.GetEnvironmentPatch();
-        patch.GetComponent<EnvironmentPatch>().SetPosition(new Vector3(0, 0, lastSpawnZ));
-        lastSpawnZ += patchLength; // Move next patch forward
+        spawned++;
+
+        if (spawned <= initialPatchCount)
+        {
+            GameObject patch = ObjectPooler.Instance.GetEnvironmentPatch();
+            patch.GetComponent<EnvironmentPatch>().SetPosition(new Vector3(0, 0, lastSpawnZ));
+           
+            if(spawned<initialPatchCount)
+            lastSpawnZ += patchLength; // Move next patch forward
+        }
     }
     
     public void StopSpawning(bool state)

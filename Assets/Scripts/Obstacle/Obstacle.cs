@@ -4,10 +4,10 @@ public class Obstacle : MonoBehaviour
 {
     public float moveSpeed = 5f; // Speed at which the obstacle moves towards the player
     private bool isMoving = true;
-
+    public bool canmove = true;
     private void Update()
     {
-        if (isMoving)
+        if (isMoving && canmove)
         {
             transform.Translate(Vector3.back * (moveSpeed * Time.deltaTime));
 
