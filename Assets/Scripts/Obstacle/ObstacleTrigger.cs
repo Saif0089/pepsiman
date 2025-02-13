@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ObstacleTrigger : MonoBehaviour
 {
+    public Obstacle obs;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +14,13 @@ public class ObstacleTrigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            obs.OnTrgiggered();
+        }
     }
 }

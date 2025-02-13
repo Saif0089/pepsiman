@@ -1719,11 +1719,8 @@ MonoBehaviour:
     type: 3}
   EnvironmentPoolSize: 5
   ObstaclePrefabs:
-  - {fileID: 1088873877613029580, guid: f6b1d23c59402e84ba4e4197be5e3b94, type: 3}
-  - {fileID: 2843465663395666354, guid: 55335d17f9825574dbf615c20890a7d9, type: 3}
-  - {fileID: 7221996932659070699, guid: 3494d0a176bbdb044a7d5cdb33886815, type: 3}
-  - {fileID: 9151269562381314873, guid: 0ef7b8c39618a514ba28b2d4d0747193, type: 3}
-  - {fileID: 6040859087266059793, guid: 0cdbe5f058adf8041b6b13811418402e, type: 3}
+  - {fileID: 3274246928899409491, guid: 0e30b80b760c0704e9bbf9f52add4079, type: 3}
+  - {fileID: 3274246928899409491, guid: 0e30b80b760c0704e9bbf9f52add4079, type: 3}
   CollectablePrefabs:
   - {fileID: 8334144298968335122, guid: 172281d52b1963a4286f12b060d5d8f9, type: 3}
   - {fileID: 3950432410633613785, guid: ea1fcdbb1e7fb704393c11c09cab50f8, type: 3}
@@ -1901,74 +1898,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   BoostEnabled: 0
---- !u!1001 &1231186291
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 192536286879348615, guid: 5c0bdf1e1c805df4cb0add7f929cc230,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 192536286879348615, guid: 5c0bdf1e1c805df4cb0add7f929cc230,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 192536286879348615, guid: 5c0bdf1e1c805df4cb0add7f929cc230,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 7.58
-      objectReference: {fileID: 0}
-    - target: {fileID: 192536286879348615, guid: 5c0bdf1e1c805df4cb0add7f929cc230,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 192536286879348615, guid: 5c0bdf1e1c805df4cb0add7f929cc230,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 192536286879348615, guid: 5c0bdf1e1c805df4cb0add7f929cc230,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 192536286879348615, guid: 5c0bdf1e1c805df4cb0add7f929cc230,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 192536286879348615, guid: 5c0bdf1e1c805df4cb0add7f929cc230,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 192536286879348615, guid: 5c0bdf1e1c805df4cb0add7f929cc230,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 192536286879348615, guid: 5c0bdf1e1c805df4cb0add7f929cc230,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5716001432388390561, guid: 5c0bdf1e1c805df4cb0add7f929cc230,
-        type: 3}
-      propertyPath: m_Name
-      value: Barriers 1 (1)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 5c0bdf1e1c805df4cb0add7f929cc230, type: 3}
 --- !u!1 &1247756948
 GameObject:
   m_ObjectHideFlags: 0
@@ -2840,14 +2769,14 @@ MonoBehaviour:
   moveSpeed: 5
   moveForwardSpeed: 14
   boost_moveSpeed: 20
-  jumpForce: 8
+  jumpForce: 7.2
   gravity: 20
   rotationSpeed: 6.5
   maxRotation: 28
   GroundCheckRayCastLenght: 0.2
   slideDuration: 0.5
-  minX: -4
-  maxX: 4
+  minX: -6
+  maxX: 6
   GroundLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -3383,20 +3312,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3249947329673908555, guid: 7680255096da24945b4f8dd2ce160d64,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -181.84
-      objectReference: {fileID: 0}
     - target: {fileID: 8440969738092426177, guid: 7680255096da24945b4f8dd2ce160d64,
         type: 3}
       propertyPath: m_Name
       value: EnvPatch
-      objectReference: {fileID: 0}
-    - target: {fileID: 8440969738092426177, guid: 7680255096da24945b4f8dd2ce160d64,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5218,4 +5137,3 @@ SceneRoots:
   - {fileID: 850981363}
   - {fileID: 1538068319419987947}
   - {fileID: 625466809222599124}
-  - {fileID: 1231186291}

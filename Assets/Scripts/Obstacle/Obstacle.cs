@@ -40,12 +40,9 @@ public class Obstacle : MonoBehaviour
         isMoving = state;
     }
     
-    private void OnTriggerEnter(Collider other)
+    public void OnTrgiggered()
     {
-        if (other.CompareTag("Player"))
-        {
-            Invoke(nameof(DelayDisable), 0.4f);
-        }
+        Invoke(nameof(DelayDisable), 0.4f);
     }
 
     private void DelayDisable()
