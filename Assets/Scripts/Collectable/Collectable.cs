@@ -6,15 +6,20 @@ public class Collectable : MonoBehaviour
     public float moveSpeed = 5f; // Speed at which the obstacle moves towards the player
     private bool isMoving = true;
     public int myid;
+    public bool canMove = true;
+    public bool canAnimate = true;
     private void OnEnable()
     {
-        // Start floating animation when the collectable is activated
-        AnimateFloating();
+        if (canAnimate)
+        {
+            // Start floating animation when the collectable is activated
+            AnimateFloating();
+        }
     }
     
     private void Update()
     {
-        if (isMoving)
+        if (isMoving &&canMove)
         {
             transform.Translate(Vector3.back * (moveSpeed * Time.deltaTime));
 

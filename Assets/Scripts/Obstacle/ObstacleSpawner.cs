@@ -18,6 +18,9 @@ public class ObstacleSpawner : MonoBehaviour
     public float spawnZ = 10f; // Z position for regular spawning
     public float distanceBetweenObstacles = 5f; // Distance between obstacles
     private bool canSpawn = true; // Flag to control spawning
+    public float sphereRadius = 1.0f;
+    public float maxDistance = 5.0f;
+    public LayerMask layerMask; // Optional: Set a layer mask to limit the sphere cast
 
     private void Start()
     {
@@ -27,7 +30,20 @@ public class ObstacleSpawner : MonoBehaviour
             SpawnObstacle(z);
         }
     }
+    public bool IsPositionClear(Vector3 position)
+    {
+        // Perform a sphere cast at the given position
+        RaycastHit hit;
+        bool isHit = Physics.SphereCast(position, sphereRadius, Vector3.forward, out hit, maxDistance, layerMask);
 
+        // Check if the hit object has the tag "Obstacle"
+        if (isHit && hit.collider.CompareTag("Obstacle"))
+        {
+            return false; // Obstacle found
+        }
+
+        return true; // No obstacle found
+    }
     private void Update()
     {
         if (!canSpawn) return;
@@ -46,17 +62,21 @@ public class ObstacleSpawner : MonoBehaviour
         int maxAttempts = 5;
         int attempts = 0;
 
-        do
+        //do
+        //{
+        //    // randomX = Random.Range(minX, maxX);
+        //    randomX = 0;
+        //    attempts++;
+        //}
+        //while (SpawnManager.Instance.IsPositionOccupied(randomX, zPosition) && attempts < maxAttempts);
+
+        Vector3 spawnPosition = new Vector3(0, 0, zPosition);
+        if (IsPositionClear(spawnPosition))
         {
-            randomX = Random.Range(minX, maxX);
-            attempts++;
-        } 
-        while (SpawnManager.Instance.IsPositionOccupied(randomX, zPosition) && attempts < maxAttempts);
+            SpawnManager.Instance.MarkPositionOccupied(0, zPosition);
 
-        Vector3 spawnPosition = new Vector3(randomX, 0, zPosition);
-        SpawnManager.Instance.MarkPositionOccupied(randomX, zPosition);
-
-        ObjectPooler.Instance.SpawnObstacleFromPool(spawnPosition, Quaternion.identity);
+            ObjectPooler.Instance.SpawnObstacleFromPool(spawnPosition, Quaternion.identity);
+        }
     }
 
 

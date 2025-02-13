@@ -19,6 +19,7 @@ public class CollectableSpawner : MonoBehaviour
     public float spawnZ = 10f; // Z position for regular spawning
     public float distanceBetweenObstacles = 5f; // Distance between obstacles
     private bool canSpawn = true; // Flag to control spawning
+    public bool SpawnEnabled = true; // Flag to control spawning
 
     public Transform tokenholder;
     public RectTransform[] tokenTarget;
@@ -27,10 +28,13 @@ public class CollectableSpawner : MonoBehaviour
     public float lastXpos;
     private void Start()
     {
-        // Initial spawn of obstacles
-        for (float z = initialSpawnZ; z > 0; z -= distanceBetweenObstacles)
+        if (SpawnEnabled)
         {
-            SpawnCollectable(z);
+            // Initial spawn of obstacles
+            for (float z = initialSpawnZ; z > 0; z -= distanceBetweenObstacles)
+            {
+                SpawnCollectable(z);
+            }
         }
     }
     public void AddUiEffectCollected(Vector3 pos,int id)
@@ -47,6 +51,8 @@ public class CollectableSpawner : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        if (!SpawnEnabled) return;
+
         if (!canSpawn) return;
 
         spawnTimer -= Time.deltaTime;

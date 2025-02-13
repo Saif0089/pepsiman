@@ -62,7 +62,7 @@ public class ObjectPooler : MonoBehaviour
         GameObject objectToSpawn = ObstacleObjectPool.Dequeue();
 
         objectToSpawn.SetActive(true);
-        objectToSpawn.transform.position = position;
+        objectToSpawn.transform.position = new Vector3(0, position.y, position.z);
         objectToSpawn.transform.rotation = rotation;
 
         ObstacleObjectPool.Enqueue(objectToSpawn);

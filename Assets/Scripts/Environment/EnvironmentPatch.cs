@@ -7,10 +7,29 @@ public class EnvironmentPatch : MonoBehaviour
     private bool isMoving = true;
 
     public List<GameObject> gameObjects = new List<GameObject>();
+
+    public GameObject crossroadpatch;
+    public GameObject crossroadreplacementpatch;
+
     private void Start()
     {
-      
-       for (int i = 0; i < 2; i++)
+
+
+        int rand1 = Random.Range(0, 100);
+        if (rand1 <= 50)
+        {
+
+            crossroadreplacementpatch.SetActive(true);
+            crossroadpatch.SetActive(false);
+        }
+        else
+        {
+            crossroadpatch.SetActive(true);
+            crossroadreplacementpatch.SetActive(false);
+        }
+
+
+        for (int i = 0; i < 2; i++)
         {
 
             int rand = Random.Range(0,gameObjects.Count);
@@ -21,6 +40,25 @@ public class EnvironmentPatch : MonoBehaviour
         
        foreach (GameObject obj in gameObjects) { Destroy(obj.gameObject); }
 
+
+
+
+    }
+    private void OnEnable()
+    {
+
+        int rand1 = Random.Range(0, 100);
+        if (rand1 <= 50)
+        {
+
+            crossroadreplacementpatch.SetActive(true);
+            crossroadpatch.SetActive(false);
+        }
+        else
+        {
+            crossroadpatch.SetActive(true);
+            crossroadreplacementpatch.SetActive(false);
+        }
     }
     private void Update()
     {

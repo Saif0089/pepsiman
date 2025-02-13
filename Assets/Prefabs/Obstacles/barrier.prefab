@@ -176,6 +176,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 14
+  canmove: 1
+  cashtemplates:
+  - {fileID: 364487237290593656, guid: 8d40747063640c241a7f85437168f916, type: 3}
+  - {fileID: 9052868781096929909, guid: a3e08b6cc7ccf8b46849971e13063471, type: 3}
+  - {fileID: 4900888604876636290, guid: 14d2b76ab48e15440a4bfd3e2808ca82, type: 3}
+  - {fileID: 8963635686497285507, guid: 402f8e6a967c9d447a259038b642ac62, type: 3}
+  - {fileID: 8963635686497285507, guid: 402f8e6a967c9d447a259038b642ac62, type: 3}
 --- !u!65 &8390577913257265415
 BoxCollider:
   m_ObjectHideFlags: 0
