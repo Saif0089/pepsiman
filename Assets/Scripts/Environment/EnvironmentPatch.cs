@@ -16,7 +16,7 @@ public class EnvironmentPatch : MonoBehaviour
 
 
         int rand1 = Random.Range(0, 100);
-        if (rand1 <= 50)
+        if (rand1 <= 0)
         {
 
             crossroadreplacementpatch.SetActive(true);

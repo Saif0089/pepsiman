@@ -34,15 +34,26 @@ public class ObstacleSpawner : MonoBehaviour
     {
         // Perform a sphere cast at the given position
         RaycastHit hit;
-        bool isHit = Physics.SphereCast(position, sphereRadius, Vector3.forward, out hit, maxDistance, layerMask);
+        var cols= Physics.OverlapSphere(position, sphereRadius,layerMask ,QueryTriggerInteraction.UseGlobal);
 
+        pos = position;
         // Check if the hit object has the tag "Obstacle"
-        if (isHit && hit.collider.CompareTag("Obstacle"))
+        if (cols.Length>0 )
         {
             return false; // Obstacle found
         }
 
         return true; // No obstacle found
+    }
+   
+    Vector3 pos;
+    private void OnDrawGizmos()
+    {
+      
+        // Draw the sphere.
+     //   Gizmos.DrawSphere(pos,sphereRadius);
+
+      
     }
     private void Update()
     {

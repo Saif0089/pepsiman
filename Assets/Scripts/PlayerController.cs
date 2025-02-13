@@ -192,11 +192,14 @@ public class PlayerController : MonoBehaviour
         
         EnvironmentManager.Instance.StopSpawning(false);
         StopAllEnvironment(false);
+
+        Audiomanager.instance.PlaySfx_Collision();
     }
 
     private void Collect(int id)
     {
         GameManager.Instance.Collected(1,id);
+        Audiomanager.instance.PlaySfx_Coins();
     }
 
     private void StopAllObstacles(bool state)
