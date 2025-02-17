@@ -25,7 +25,7 @@ public class Obstacle : MonoBehaviour
     {
         if (isMoving && canmove)
         {
-            transform.Translate(Vector3.back * (moveSpeed * Time.deltaTime));
+            transform.Translate(Vector3.back * (PlayerController.instance.moveForwardSpeed * Time.deltaTime));
 
             // Deactivate obstacle if it goes off-screen
             if (transform.position.z < -15f) // Adjust based on your game's needs

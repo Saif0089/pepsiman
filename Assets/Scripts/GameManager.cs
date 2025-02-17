@@ -25,11 +25,20 @@ public class GameManager : MonoBehaviour
     private bool finishSpawned = false;
     private GameObject finishLineInstance;
 
+    public GameObject mainMenu;
+    bool gameStarted;
     private void Awake()
     {
         Instance = this;
-    }
 
+        Time.timeScale = 0;
+    }
+    public void StartGame()
+    {
+       mainMenu.SetActive(false);
+        Time.timeScale = 1;
+        gameStarted = true;
+    }
     private void Start()
     {
         timer = gameDuration;
@@ -37,6 +46,8 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        if(!gameStarted) { return; }
+
         if (gameEnded) return;
     
         // Countdown Timer

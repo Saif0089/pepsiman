@@ -159,6 +159,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   canmove: 0
+  spawnCollectables: 1
+  cashtemplates: []
+  positions: []
 --- !u!64 &2084115472797027592
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3600,7 +3603,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7632576423452434436}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -3676,6 +3679,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   canmove: 0
+  spawnCollectables: 1
+  cashtemplates: []
+  positions: []
 --- !u!64 &4993298529387849365
 MeshCollider:
   m_ObjectHideFlags: 0

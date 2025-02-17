@@ -10,7 +10,7 @@ public class EnvironmentPatch : MonoBehaviour
 
     public GameObject crossroadpatch;
     public GameObject crossroadreplacementpatch;
-
+    public GameObject[] NPCinMid;
     private void Start()
     {
 
@@ -26,6 +26,16 @@ public class EnvironmentPatch : MonoBehaviour
         {
             crossroadpatch.SetActive(true);
             crossroadreplacementpatch.SetActive(false);
+            int NPCRandom = Random.Range(0, NPCinMid.Length);
+
+            for (int i = 0; i < NPCinMid.Length; i++)
+            {
+
+                NPCinMid[i].SetActive(i == NPCRandom);
+
+
+
+            }
         }
 
 
@@ -41,7 +51,7 @@ public class EnvironmentPatch : MonoBehaviour
        foreach (GameObject obj in gameObjects) { Destroy(obj.gameObject); }
 
 
-
+        
 
     }
     private void OnEnable()
@@ -58,7 +68,18 @@ public class EnvironmentPatch : MonoBehaviour
         {
             crossroadpatch.SetActive(true);
             crossroadreplacementpatch.SetActive(false);
+            int NPCRandom = Random.Range(0, NPCinMid.Length);
+
+            for (int i = 0; i < NPCinMid.Length; i++)
+            {
+
+                NPCinMid[i].SetActive(i == NPCRandom);
+
+
+
+            }
         }
+
     }
     private void Update()
     {

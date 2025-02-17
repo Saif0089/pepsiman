@@ -10,6 +10,7 @@ public class EnvironmentManager : MonoBehaviour
     public Camera mainCamera;
     private bool canSpawn = true;
     int spawned;
+    public float correction;
     private void Awake()
     {
         Instance = this;
@@ -39,10 +40,10 @@ public class EnvironmentManager : MonoBehaviour
     {
        // if (spawned > initialPatchCount)
         {
-       
+            lastSpawnZ += correction; // Move next patch forward
+
             GameObject patch = ObjectPooler.Instance.GetEnvironmentPatch();
             patch.GetComponent<EnvironmentPatch>().SetPosition(new Vector3(0, 0, lastSpawnZ));
-          //  lastSpawnZ+=patchLength  ; // Move next patch forward
         }
     }
     private void SpawnEnvironmentPatch()
