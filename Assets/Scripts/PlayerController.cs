@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
     [Header("Movement Settings")]
     public float moveSpeed = 10f; // Speed of left/right movement
     public float moveForwardSpeed = 10f; // Speed of left/right movement
+    public float moveForwardBoostSpeed = 10f; // Speed of left/right movement
 
     public float boost_moveSpeed = 20f; // Speed of left/right movement
     public float jumpForce = 8f; // Jump strength
@@ -36,6 +37,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Boost Management")]
     public bool BoostEnabled = false;
+    public float BoostTimer = 5f;
     float currSpeed;
 
     public float getCurrSpeed()
@@ -76,7 +78,10 @@ public class PlayerController : MonoBehaviour
         // Manually clamp the X position after movement
         float clampedX = Mathf.Clamp(transform.position.x, minX, maxX);
         transform.position = new Vector3(clampedX, transform.position.y, transform.position.z);
-        
+
+        if (Input.GetKeyDown(KeyCode.B))
+            BoostEnabled = !BoostEnabled;
+
         Debug.Log(IsGrounded());
     }
 

@@ -85,7 +85,12 @@ public class EnvironmentPatch : MonoBehaviour
     {
         if (isMoving)
         {
-            transform.Translate(Vector3.back * (PlayerController.instance.getCurrSpeed() * Time.deltaTime));
+            float movementSpeed = PlayerController.instance.getCurrSpeed();
+
+            if (PlayerController.instance.BoostEnabled)
+                movementSpeed += PlayerController.instance.moveForwardBoostSpeed;
+
+            transform.Translate(Vector3.back * (movementSpeed * Time.deltaTime));
 
             // Recycle patch if it goes out of view
             if (transform.position.z < -190f) // Adjust based on game needs

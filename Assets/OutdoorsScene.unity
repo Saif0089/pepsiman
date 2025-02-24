@@ -2469,6 +2469,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   moveForwardSpeed: 10
+  moveForwardBoostSpeed: 10
   boost_moveSpeed: 20
   jumpForce: 8
   gravity: 20
@@ -2482,6 +2483,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   BoostEnabled: 0
+  BoostTimer: 5
 --- !u!1 &1247756948
 GameObject:
   m_ObjectHideFlags: 0
@@ -2691,6 +2693,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   moveForwardSpeed: 10
+  moveForwardBoostSpeed: 10
   boost_moveSpeed: 20
   jumpForce: 8
   gravity: 20
@@ -2704,6 +2707,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   BoostEnabled: 0
+  BoostTimer: 5
 --- !u!143 &1485826097
 CharacterController:
   m_ObjectHideFlags: 0
@@ -3717,6 +3721,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   moveForwardSpeed: 25
+  moveForwardBoostSpeed: 20
   boost_moveSpeed: 20
   jumpForce: 7.2
   gravity: 20
@@ -3730,6 +3735,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   BoostEnabled: 0
+  BoostTimer: 5
 --- !u!143 &1851075673
 CharacterController:
   m_ObjectHideFlags: 0
