@@ -71,6 +71,7 @@ public class PlayerController : MonoBehaviour
         HandleLaneMovement();
         HandleJumpAndSlide();
         ApplyGravity();
+        StopBooster();
 
         // Move the player using CharacterController
         controller.Move(moveDirection * Time.deltaTime);
@@ -191,6 +192,7 @@ public class PlayerController : MonoBehaviour
         animator.SetTrigger("Hurt");
         ObstacleSpawner.Instance.StopSpawning(false);
         StopAllObstacles(false);
+        StopBag(false);
         
         CollectableSpawner.Instance.StopSpawning(false);
         StopAllCollectables(false);
@@ -215,7 +217,15 @@ public class PlayerController : MonoBehaviour
             obstacle.StopMovement(state);
         }
     }
-    
+
+    void StopBag(bool state)
+    {
+        BoostBag[] bags = FindObjectsOfType<BoostBag>(); // Get all BoostBag instances
+        foreach (BoostBag bag in bags)
+        {
+            bag.StopBag(state);
+        }
+    }
     private void StopAllCollectables(bool state)
     {
         Collectable[] collectables = FindObjectsOfType<Collectable>();
@@ -234,6 +244,19 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void StopBooster()
+    {
+        if (BoostEnabled)
+        {
+            BoostTimer-=Time.deltaTime;
+            if (BoostTimer <= 0)
+            {
+                BoostEnabled = false;
+                BoostTimer = 5;
+            }
+        }
+    }
+
     public void RestHurt() // Called in animation Event
     {
         isHurt = false;
@@ -241,6 +264,7 @@ public class PlayerController : MonoBehaviour
         ObstacleSpawner.Instance.StopSpawning(true);
         StopAllObstacles(true);
         StopAllCollectables(true);
+        StopBag(true);
         
         EnvironmentManager.Instance.StopSpawning(true);
         StopAllEnvironment(true);

@@ -16,11 +16,14 @@ public class ObjectPooler : MonoBehaviour
 
     public List<GameObject> ObstaclePrefabs;
     public List<GameObject> CollectablePrefabs;
+    public GameObject BoosterBagPool;
+    
     public int ObstaclePoolSize = 10;
     public int CollectablePoolSize = 10;
 
     private Queue<GameObject> ObstacleObjectPool;
     private Queue<GameObject> CollectableObjectPool;
+    
     private Queue<GameObject> environmentPool = new Queue<GameObject>();
 
     private void Start()
@@ -69,7 +72,6 @@ public class ObjectPooler : MonoBehaviour
 
         return objectToSpawn;
     }
-    
     public GameObject SpawnCollectableFromPool(Vector3 position, Quaternion rotation)
     {
         if (CollectableObjectPool.Count == 0)
@@ -88,7 +90,10 @@ public class ObjectPooler : MonoBehaviour
 
         return objectToSpawn;
     }
-    
+    public void SpawnBoosterBag(Vector3 position, Quaternion rotation)
+    {
+        Instantiate(BoosterBagPool, position+new Vector3(0,0.5f,0), rotation);
+    }
     public GameObject GetEnvironmentPatch()
     {
         GameObject patch = environmentPool.Dequeue();

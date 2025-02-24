@@ -22,6 +22,9 @@ public class ObstacleSpawner : MonoBehaviour
     public float maxDistance = 5.0f;
     public LayerMask layerMask; // Optional: Set a layer mask to limit the sphere cast
 
+    public float boosterBagSpawnInterval = 10f; // Time interval for spawning booster bags
+    private float boosterBagTimer;
+
     private void Start()
     {
         // Initial spawn of obstacles
@@ -29,41 +32,29 @@ public class ObstacleSpawner : MonoBehaviour
         {
             SpawnObstacle(z);
         }
-    }
-    public bool IsPositionClear(Vector3 position)
-    {
-        // Perform a sphere cast at the given position
-        RaycastHit hit;
-        var cols= Physics.OverlapSphere(position, sphereRadius,layerMask ,QueryTriggerInteraction.UseGlobal);
 
-        pos = position;
-        // Check if the hit object has the tag "Obstacle"
-        if (cols.Length>0 )
-        {
-            return false; // Obstacle found
-        }
-
-        return true; // No obstacle found
+        // Initialize booster bag timer
+        boosterBagTimer = boosterBagSpawnInterval;
     }
-   
-    Vector3 pos;
-    private void OnDrawGizmos()
-    {
-      
-        // Draw the sphere.
-     //   Gizmos.DrawSphere(pos,sphereRadius);
 
-      
-    }
     private void Update()
     {
         if (!canSpawn) return;
 
+        // Handle obstacle spawning
         spawnTimer -= Time.deltaTime;
         if (spawnTimer <= 0f)
         {
             SpawnObstacle(spawnZ);
             spawnTimer = spawnInterval;
+        }
+
+        // Handle booster bag spawning
+        boosterBagTimer -= Time.deltaTime;
+        if (boosterBagTimer <= 0f && !PlayerController.instance.BoostEnabled)
+        {
+            SpawnBoosterBag();
+            boosterBagTimer = boosterBagSpawnInterval;
         }
     }
 
@@ -73,26 +64,33 @@ public class ObstacleSpawner : MonoBehaviour
         int maxAttempts = 5;
         int attempts = 0;
 
-        //do
-        //{
-        //    // randomX = Random.Range(minX, maxX);
-        //    randomX = 0;
-        //    attempts++;
-        //}
-        //while (SpawnManager.Instance.IsPositionOccupied(randomX, zPosition) && attempts < maxAttempts);
-
         Vector3 spawnPosition = new Vector3(0, 0, zPosition);
         if (IsPositionClear(spawnPosition))
         {
             SpawnManager.Instance.MarkPositionOccupied(0, zPosition);
-
             ObjectPooler.Instance.SpawnObstacleFromPool(spawnPosition, Quaternion.identity);
         }
     }
+    public void SpawnBoosterBag()
+    {
+        float randomX = Random.Range(minX, maxX);
+        float boosterZPosition = spawnZ;
 
+        Vector3 spawnPosition = new Vector3(randomX, 0, boosterZPosition);
 
+        if (IsPositionClear(spawnPosition))
+        {
+            ObjectPooler.Instance.SpawnBoosterBag(spawnPosition, Quaternion.identity);
+        }
+    }
     public void StopSpawning(bool state)
     {
         canSpawn = state;
+    }
+
+    public bool IsPositionClear(Vector3 position)
+    {
+        var cols = Physics.OverlapSphere(position, sphereRadius, layerMask, QueryTriggerInteraction.UseGlobal);
+        return cols.Length == 0; // If no obstacles, return true (position is clear)
     }
 }
