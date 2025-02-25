@@ -42,7 +42,7 @@ public class EnvironmentManager : MonoBehaviour
         {
             lastSpawnZ += correction; // Move next patch forward
 
-            GameObject patch = ObjectPooler.Instance.GetEnvironmentPatch();
+            GameObject patch = ObjectPooler.Instance.GetActiveEnvironmentPatch();
             patch.GetComponent<EnvironmentPatch>().SetPosition(new Vector3(0, 0, lastSpawnZ));
         }
     }
@@ -52,7 +52,7 @@ public class EnvironmentManager : MonoBehaviour
 
         if (spawned <= initialPatchCount)
         {
-            GameObject patch = ObjectPooler.Instance.GetEnvironmentPatch();
+            GameObject patch = ObjectPooler.Instance.GetActiveEnvironmentPatch();
             patch.GetComponent<EnvironmentPatch>().SetPosition(new Vector3(0, 0, lastSpawnZ));
            
             if(spawned<initialPatchCount)

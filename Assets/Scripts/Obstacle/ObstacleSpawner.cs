@@ -80,7 +80,7 @@ public class ObstacleSpawner : MonoBehaviour
 
         if (IsPositionClear(spawnPosition))
         {
-            ObjectPooler.Instance.SpawnBoosterBag(spawnPosition, Quaternion.identity);
+            ObjectPooler.Instance.SpawnBoosterBag();
         }
     }
     public void StopSpawning(bool state)

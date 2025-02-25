@@ -1,46 +1,55 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class BoostBag : MonoBehaviour
 {
-    private bool isMoving = true;
-    public bool canmove = true;
+    public float rotationSpeed = 100f;
+    public float moveSpeed = 1f; // Speed of up-and-down movement
+    public float moveHeight = 0.5f; // Height of the movement
+
+    private Vector3 startPos;
+    public ParticleSystem PickUpParticles;
+    
+    private void Start()
+    {
+        startPos = transform.position; // Store the initial position
+    }
 
     private void OnDisable()
     {
+        FindObjectOfType<ObjectPooler>().bag.Clear();
         Destroy(gameObject);
     }
-    private void Update()
+
+    private void LateUpdate()
     {
-        if (isMoving && canmove)
-        {
-            float movementSpeed = PlayerController.instance.moveForwardSpeed;
+        RotateBag();
+        MoveUpDown();
+    }
 
-            if (PlayerController.instance.BoostEnabled)
-                movementSpeed += PlayerController.instance.moveForwardBoostSpeed;
-
-            transform.Translate(Vector3.back * (movementSpeed * Time.deltaTime));
-
-            if (transform.position.z < -15f) 
-            {
-                gameObject.SetActive(false);
-            }
-        }
+    private void RotateBag()
+    {
+        transform.rotation *= Quaternion.Euler(0f, rotationSpeed * Time.deltaTime, 0f);
+    }
+    private void MoveUpDown()
+    {
+        float newY = startPos.y + Mathf.PingPong(Time.time * moveSpeed, moveHeight) - (moveHeight / 2);
+        transform.position = new Vector3(transform.position.x, newY, transform.position.z);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.CompareTag("Player"))
         {
-            PlayerController.instance.BoostEnabled = true;
-            Destroy(gameObject);
+            Audiomanager.instance.PlaySfx_bag();
+            PickUpParticles.Play();
+            Invoke(nameof(GiveBoost), 0.1f);
         }
     }
-    
-    public void StopBag(bool state)
+    void GiveBoost()
     {
-        isMoving = state;
+        PlayerController.instance.BoostEnabled = true;
+        Destroy(gameObject);
     }
 }

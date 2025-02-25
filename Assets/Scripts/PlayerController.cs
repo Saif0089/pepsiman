@@ -192,7 +192,6 @@ public class PlayerController : MonoBehaviour
         animator.SetTrigger("Hurt");
         ObstacleSpawner.Instance.StopSpawning(false);
         StopAllObstacles(false);
-        StopBag(false);
         
         CollectableSpawner.Instance.StopSpawning(false);
         StopAllCollectables(false);
@@ -215,15 +214,6 @@ public class PlayerController : MonoBehaviour
         foreach (Obstacle obstacle in obstacles)
         {
             obstacle.StopMovement(state);
-        }
-    }
-
-    void StopBag(bool state)
-    {
-        BoostBag[] bags = FindObjectsOfType<BoostBag>(); // Get all BoostBag instances
-        foreach (BoostBag bag in bags)
-        {
-            bag.StopBag(state);
         }
     }
     private void StopAllCollectables(bool state)
@@ -264,7 +254,6 @@ public class PlayerController : MonoBehaviour
         ObstacleSpawner.Instance.StopSpawning(true);
         StopAllObstacles(true);
         StopAllCollectables(true);
-        StopBag(true);
         
         EnvironmentManager.Instance.StopSpawning(true);
         StopAllEnvironment(true);

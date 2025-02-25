@@ -95,7 +95,7 @@ public class EnvironmentPatch : MonoBehaviour
             // Recycle patch if it goes out of view
             if (transform.position.z < -190f) // Adjust based on game needs
             {
-                ObjectPooler.Instance.ReturnEnvironmentPatch(gameObject);
+                ObjectPooler.Instance.ReturnActiveEnvironmentPatch(gameObject);
             }
         }
     }
