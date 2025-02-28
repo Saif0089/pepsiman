@@ -14,7 +14,7 @@ public class ObstacleSpawner : MonoBehaviour
         Instance = this;
     }
 
-    public float spawnInterval = 2f; // Time interval between spawns
+    public float spawnInterval = 0.5f; // Time interval between spawns
     private float spawnTimer;
 
     public float minX = -5f;
@@ -33,15 +33,22 @@ public class ObstacleSpawner : MonoBehaviour
     private float cashTemplateTimer;
     private void Start()
     {
-        // Initial spawn of obstacles
+        // Spawn the first obstacle early
+        SpawnObstacle(spawnZ);
+    
+        // Set a shorter initial spawn timer for the first obstacle
+        spawnTimer = spawnInterval * 0.1f; // Adjust this multiplier as needed
+
+        // Continue regular spawning as per distanceBetweenObstacles
         for (float z = initialSpawnZ; z > 0; z -= distanceBetweenObstacles)
         {
             SpawnObstacle(z);
         }
 
-        // Initialize timers
+        // Initialize booster bag timer
         boosterBagTimer = boosterBagSpawnInterval;
     }
+
 
     private void Update()
     {
