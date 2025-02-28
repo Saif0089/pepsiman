@@ -6,6 +6,11 @@ public class ObstacleSpawner : MonoBehaviour
 
     private void Awake()
     {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject); // Ensures only one instance exists
+            return;
+        }
         Instance = this;
     }
 
@@ -22,8 +27,11 @@ public class ObstacleSpawner : MonoBehaviour
     public float maxDistance = 5.0f;
     public LayerMask layerMask; // Optional: Set a layer mask to limit the sphere cast
 
-    public float boosterBagSpawnInterval = 10f; // Time interval for spawning booster bags
+    public float boosterBagSpawnInterval = 5f; // Time interval for spawning booster bags
     private float boosterBagTimer;
+
+    public float cashTemplateSpawnInterval = 7f; // Time interval for spawning cash templates
+    private float cashTemplateTimer;
 
     private void Start()
     {
@@ -33,8 +41,9 @@ public class ObstacleSpawner : MonoBehaviour
             SpawnObstacle(z);
         }
 
-        // Initialize booster bag timer
+        // Initialize timers
         boosterBagTimer = boosterBagSpawnInterval;
+        cashTemplateTimer = cashTemplateSpawnInterval;
     }
 
     private void Update()
@@ -56,33 +65,51 @@ public class ObstacleSpawner : MonoBehaviour
             SpawnBoosterBag();
             boosterBagTimer = boosterBagSpawnInterval;
         }
+
+        // Handle cash template spawning
+        cashTemplateTimer -= Time.deltaTime;
+        if (cashTemplateTimer <= 0f)
+        {
+            SpawnCashTemplates(spawnZ);
+            cashTemplateTimer = cashTemplateSpawnInterval;
+        }
     }
 
     private void SpawnObstacle(float zPosition)
     {
-        float randomX;
-        int maxAttempts = 5;
-        int attempts = 0;
+        float randomX = Random.Range(minX, maxX); // Vary X position
+        Vector3 spawnPosition = new Vector3(randomX, 0, zPosition);
 
-        Vector3 spawnPosition = new Vector3(0, 0, zPosition);
-        if (IsPositionClear(spawnPosition))
+        if (IsPositionClear(spawnPosition) && ObjectPooler.Instance != null)
         {
-            SpawnManager.Instance.MarkPositionOccupied(0, zPosition);
+            SpawnManager.Instance.MarkPositionOccupied(randomX, zPosition);
             ObjectPooler.Instance.SpawnObstacleFromPool(spawnPosition, Quaternion.identity);
         }
     }
+
     public void SpawnBoosterBag()
     {
         float randomX = Random.Range(minX, maxX);
         float boosterZPosition = spawnZ;
-
         Vector3 spawnPosition = new Vector3(randomX, 0, boosterZPosition);
 
-        if (IsPositionClear(spawnPosition))
+        if (IsPositionClear(spawnPosition) && ObjectPooler.Instance != null)
         {
             ObjectPooler.Instance.SpawnBoosterBag();
         }
     }
+
+    private void SpawnCashTemplates(float zPosition)
+    {
+        float randomX = Random.Range(minX, maxX); // Vary X position for better distribution
+        Vector3 spawnPosition = new Vector3(randomX, 0, zPosition);
+
+        if (ObjectPooler.Instance != null)
+        {
+            ObjectPooler.Instance.SpawnCashTemplatesInEnvironment();
+        }
+    }
+
     public void StopSpawning(bool state)
     {
         canSpawn = state;
@@ -90,7 +117,6 @@ public class ObstacleSpawner : MonoBehaviour
 
     public bool IsPositionClear(Vector3 position)
     {
-        var cols = Physics.OverlapSphere(position, sphereRadius, layerMask, QueryTriggerInteraction.UseGlobal);
-        return cols.Length == 0; // If no obstacles, return true (position is clear)
+        return !Physics.CheckSphere(position, sphereRadius, layerMask);
     }
 }

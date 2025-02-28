@@ -7,6 +7,7 @@ public class EnvironmentPatch : MonoBehaviour
     private bool isMoving = true;
 
     public List<GameObject> gameObjects = new List<GameObject>();
+    public List<Transform> CashTemplatesSpawnPos;
 
     public GameObject crossroadpatch;
     public GameObject crossroadreplacementpatch;

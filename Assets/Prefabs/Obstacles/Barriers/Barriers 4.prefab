@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6424759695299510092}
   - component: {fileID: 618184447497265542}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Barriers 4
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -73,6 +73,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6424759695299510092}
     m_Modifications:
+    - target: {fileID: 171427085989541617, guid: 8f9f48bf7d8124d4894ae9f0bdc6a4e1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 312900845784265334, guid: 8f9f48bf7d8124d4894ae9f0bdc6a4e1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -128,15 +133,35 @@ PrefabInstance:
       propertyPath: obs
       value: 
       objectReference: {fileID: 618184447497265542}
+    - target: {fileID: 690340577793780942, guid: 8f9f48bf7d8124d4894ae9f0bdc6a4e1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1088873877613029580, guid: 8f9f48bf7d8124d4894ae9f0bdc6a4e1,
         type: 3}
       propertyPath: m_Name
       value: MultiBarriers
       objectReference: {fileID: 0}
+    - target: {fileID: 1088873877613029580, guid: 8f9f48bf7d8124d4894ae9f0bdc6a4e1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2292291886527889808, guid: 8f9f48bf7d8124d4894ae9f0bdc6a4e1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4498372733536321256, guid: 8f9f48bf7d8124d4894ae9f0bdc6a4e1,
         type: 3}
       propertyPath: m_Constraints
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8578902073744884278, guid: 8f9f48bf7d8124d4894ae9f0bdc6a4e1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -157,6 +182,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6424759695299510092}
     m_Modifications:
+    - target: {fileID: 171427085989541617, guid: 8f9f48bf7d8124d4894ae9f0bdc6a4e1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 312900845784265334, guid: 8f9f48bf7d8124d4894ae9f0bdc6a4e1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -212,15 +242,35 @@ PrefabInstance:
       propertyPath: obs
       value: 
       objectReference: {fileID: 618184447497265542}
+    - target: {fileID: 690340577793780942, guid: 8f9f48bf7d8124d4894ae9f0bdc6a4e1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1088873877613029580, guid: 8f9f48bf7d8124d4894ae9f0bdc6a4e1,
         type: 3}
       propertyPath: m_Name
       value: MultiBarriers (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1088873877613029580, guid: 8f9f48bf7d8124d4894ae9f0bdc6a4e1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2292291886527889808, guid: 8f9f48bf7d8124d4894ae9f0bdc6a4e1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4498372733536321256, guid: 8f9f48bf7d8124d4894ae9f0bdc6a4e1,
         type: 3}
       propertyPath: m_Constraints
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8578902073744884278, guid: 8f9f48bf7d8124d4894ae9f0bdc6a4e1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -246,6 +296,11 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1747499211693301817, guid: 4813cef93efc05e4b95c87870c35296f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5815722237581487913, guid: 4813cef93efc05e4b95c87870c35296f,
         type: 3}
       propertyPath: obs
@@ -255,6 +310,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: yellow-black barriers
+      objectReference: {fileID: 0}
+    - target: {fileID: 6939394307239369869, guid: 4813cef93efc05e4b95c87870c35296f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7422112535858500536, guid: 4813cef93efc05e4b95c87870c35296f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7711991013487576631, guid: 4813cef93efc05e4b95c87870c35296f,
         type: 3}
@@ -325,6 +390,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6424759695299510092}
     m_Modifications:
+    - target: {fileID: 171427085989541617, guid: 8f9f48bf7d8124d4894ae9f0bdc6a4e1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 312900845784265334, guid: 8f9f48bf7d8124d4894ae9f0bdc6a4e1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -380,15 +450,35 @@ PrefabInstance:
       propertyPath: obs
       value: 
       objectReference: {fileID: 618184447497265542}
+    - target: {fileID: 690340577793780942, guid: 8f9f48bf7d8124d4894ae9f0bdc6a4e1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1088873877613029580, guid: 8f9f48bf7d8124d4894ae9f0bdc6a4e1,
         type: 3}
       propertyPath: m_Name
       value: MultiBarriers (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1088873877613029580, guid: 8f9f48bf7d8124d4894ae9f0bdc6a4e1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2292291886527889808, guid: 8f9f48bf7d8124d4894ae9f0bdc6a4e1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4498372733536321256, guid: 8f9f48bf7d8124d4894ae9f0bdc6a4e1,
         type: 3}
       propertyPath: m_Constraints
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8578902073744884278, guid: 8f9f48bf7d8124d4894ae9f0bdc6a4e1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -409,6 +499,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6424759695299510092}
     m_Modifications:
+    - target: {fileID: 997872738563442728, guid: 31c94bace0ce68145a3376e6d93b4084,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1252611623915053250, guid: 31c94bace0ce68145a3376e6d93b4084,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1282945132481714060, guid: 31c94bace0ce68145a3376e6d93b4084,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -484,6 +584,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: posistions
       objectReference: {fileID: 0}
+    - target: {fileID: 7108160171010988115, guid: 31c94bace0ce68145a3376e6d93b4084,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7285948995740028981, guid: 31c94bace0ce68145a3376e6d93b4084,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7980373393477964800, guid: 31c94bace0ce68145a3376e6d93b4084,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8715992323400649082, guid: 31c94bace0ce68145a3376e6d93b4084,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -533,6 +653,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6424759695299510092}
     m_Modifications:
+    - target: {fileID: 171427085989541617, guid: 8f9f48bf7d8124d4894ae9f0bdc6a4e1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 312900845784265334, guid: 8f9f48bf7d8124d4894ae9f0bdc6a4e1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -588,15 +713,35 @@ PrefabInstance:
       propertyPath: obs
       value: 
       objectReference: {fileID: 618184447497265542}
+    - target: {fileID: 690340577793780942, guid: 8f9f48bf7d8124d4894ae9f0bdc6a4e1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1088873877613029580, guid: 8f9f48bf7d8124d4894ae9f0bdc6a4e1,
         type: 3}
       propertyPath: m_Name
       value: MultiBarriers (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1088873877613029580, guid: 8f9f48bf7d8124d4894ae9f0bdc6a4e1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2292291886527889808, guid: 8f9f48bf7d8124d4894ae9f0bdc6a4e1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4498372733536321256, guid: 8f9f48bf7d8124d4894ae9f0bdc6a4e1,
         type: 3}
       propertyPath: m_Constraints
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8578902073744884278, guid: 8f9f48bf7d8124d4894ae9f0bdc6a4e1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

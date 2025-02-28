@@ -82,8 +82,6 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.B))
             BoostEnabled = !BoostEnabled;
-
-        Debug.Log(IsGrounded());
     }
 
     private void HandleLaneMovement()
@@ -159,7 +157,6 @@ public class PlayerController : MonoBehaviour
 
     public void EndSlide() // called in animation event
     {
-        Debug.Log("EndRun");
         isSliding = false;
         controller.height = 1.9f; // Reset height after sliding
         controller.center = new Vector3(controller.center.x, controller.height / 2, controller.center.z);
