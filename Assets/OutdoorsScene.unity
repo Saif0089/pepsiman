@@ -2252,7 +2252,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   boosterBagSpawnInterval: 4
-  cashTemplateSpawnInterval: 7
 --- !u!4 &1219378447
 Transform:
   m_ObjectHideFlags: 0
@@ -2312,16 +2311,10 @@ MonoBehaviour:
   - {fileID: 3950432410633613785, guid: ea1fcdbb1e7fb704393c11c09cab50f8, type: 3}
   - {fileID: 8851134546317839600, guid: 6bb878fbb68a186478f699879c86f28d, type: 3}
   - {fileID: 3929686508967843625, guid: 525792279767d03438b0d510af324e56, type: 3}
-  EnviornmentCashTemplates:
-  - {fileID: 7631182610558144788, guid: 0c1e221d16c4268409f2cf4a77526580, type: 3}
-  - {fileID: 3687477260213206040, guid: c5d28e7c8faa720468097894392f135e, type: 3}
-  - {fileID: 8604091262579230387, guid: 52f66daa6cd1b0748a9c85914689f0df, type: 3}
-  - {fileID: 6986359493787769036, guid: 54820ab989ed9714a9b343a7c015c90e, type: 3}
   BoosterBag: {fileID: 3931391787129581432, guid: 07a8a0bdf5d12cd4d8fcff2d205eeaab,
     type: 3}
   ObstaclePoolSize: 25
   CollectablePoolSize: 10
-  CashTemplatePoolSize: 5
   bag: []
 --- !u!4 &1226323111
 Transform:
@@ -3740,9 +3733,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85a73808116f0ab429ddd476663394ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  moveForwardSpeed: 25
-  moveForwardBoostSpeed: 20
+  moveSpeed: 7
+  moveForwardSpeed: 35
+  moveForwardBoostSpeed: 40
   boost_moveSpeed: 20
   jumpForce: 7.2
   gravity: 20

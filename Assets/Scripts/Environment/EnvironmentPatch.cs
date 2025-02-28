@@ -7,7 +7,6 @@ public class EnvironmentPatch : MonoBehaviour
     private bool isMoving = true;
 
     public List<GameObject> gameObjects = new List<GameObject>();
-    public List<Transform> CashTemplatesSpawnPos;
     public List<GameObject> AllCashTemplates;
 
     public GameObject crossroadpatch;
@@ -16,12 +15,9 @@ public class EnvironmentPatch : MonoBehaviour
     
     private void Start()
     {
-
-
         int rand1 = Random.Range(0, 100);
         if (rand1 <= 0)
         {
-
             crossroadreplacementpatch.SetActive(true);
             crossroadpatch.SetActive(false);
         }
@@ -33,38 +29,24 @@ public class EnvironmentPatch : MonoBehaviour
 
             for (int i = 0; i < NPCinMid.Length; i++)
             {
-
                 NPCinMid[i].SetActive(i == NPCRandom);
-
-
-
             }
         }
 
-
-        for (int i = 0; i < 2; i++)
+        // Randomly remove 2 objects from the gameObjects list
+        for (int i = 0; i < 2 && gameObjects.Count > 0; i++)
         {
-
-            int rand = Random.Range(0,gameObjects.Count);
-
-               gameObjects.Remove( gameObjects[rand]);
-            
+            int rand = Random.Range(0, gameObjects.Count);
+            Destroy(gameObjects[rand]);
+            gameObjects.RemoveAt(rand); // Corrected: Use RemoveAt to avoid index errors
         }
-        
-       foreach (GameObject obj in gameObjects) { Destroy(obj.gameObject); }
-
-       foreach (GameObject VARIABLE in AllCashTemplates)
-       {
-           ObjectPooler.Instance.activeCashtemplates.Add(VARIABLE);
-       }
     }
+
     private void OnEnable()
     {
-
         int rand1 = Random.Range(0, 100);
         if (rand1 <= 50)
         {
-
             crossroadreplacementpatch.SetActive(true);
             crossroadpatch.SetActive(false);
         }
@@ -76,14 +58,44 @@ public class EnvironmentPatch : MonoBehaviour
 
             for (int i = 0; i < NPCinMid.Length; i++)
             {
-
                 NPCinMid[i].SetActive(i == NPCRandom);
-
-
-
             }
         }
+        // ShufflePositions(); // Shuffle when re-enabled
+    }
+    public void ShufflePositions()
+    {
+        if (AllCashTemplates.Count <= 1) return;
 
+        // Get all current positions
+        List<Vector3> positions = new List<Vector3>();
+        foreach (GameObject cashTemplate in AllCashTemplates)
+        {
+            positions.Add(cashTemplate.transform.position);
+        }
+
+        // Shuffle the positions to avoid duplicates
+        for (int i = positions.Count - 1; i > 0; i--)
+        {
+            int randomIndex = Random.Range(0, i + 1);
+            (positions[i], positions[randomIndex]) = (positions[randomIndex], positions[i]);
+        }
+
+        // Select a random subset (2-3 items) to actually move
+        int swaps = Random.Range(2, 4);
+        HashSet<int> selectedIndexes = new HashSet<int>();
+
+        while (selectedIndexes.Count < swaps)
+        {
+            selectedIndexes.Add(Random.Range(0, AllCashTemplates.Count));
+        }
+
+        int posIndex = 0;
+        foreach (int index in selectedIndexes)
+        {
+            AllCashTemplates[index].transform.position = positions[posIndex];
+            posIndex++;
+        }
     }
     private void Update()
     {

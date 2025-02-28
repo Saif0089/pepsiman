@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Linq;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class ObjectPooler : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class ObjectPooler : MonoBehaviour
     {
         Instance = this;
     }
-    private GameObject firstPatch;  // Stores the first patch added to the active list
+    
     [Header("Environment Pool Settings")]
     public GameObject environmentPatchPrefab;
     public int EnvironmentPoolSize = 5;
@@ -27,7 +28,6 @@ public class ObjectPooler : MonoBehaviour
     private Queue<GameObject> environmentPool = new Queue<GameObject>();
 
     List<GameObject> activeEnvironmentPatches = new List<GameObject>();
-    public List<GameObject> activeCashtemplates = new List<GameObject>();
     [HideInInspector] public List<GameObject> bag;
 
     private void Start()
@@ -133,54 +133,35 @@ public class ObjectPooler : MonoBehaviour
     
         activeEnvironmentPatches.Add(patch);
 
-        // Store the first patch when the list is initialized
-        if (activeEnvironmentPatches.Count == 1)
-        {
-            firstPatch = patch;
-        }
-
         return patch;
     }
     public void ReturnActiveEnvironmentPatch(GameObject patch)
     {
         if (activeEnvironmentPatches.Contains(patch))
         {
+            bool isFirstPatch = activeEnvironmentPatches[0] == patch;
+
             activeEnvironmentPatches.Remove(patch);
             environmentPool.Enqueue(patch);
             patch.SetActive(false);
 
-            // Check if the first patch has come back to index 0
-            if (activeEnvironmentPatches.Count > 0 && activeEnvironmentPatches[0] == firstPatch)
+            if (isFirstPatch) 
             {
-                Debug.Log("Cycle completed! The first patch is back in place.");
-                ShuffleCashTemplates(); // Call shuffle method
+                EnvironmentPatch patchToReturn = patch.GetComponent<EnvironmentPatch>();
+                foreach (GameObject cash in patchToReturn.AllCashTemplates)
+                {
+                    cash.SetActive(true);
+                }
             }
 
             EnvironmentManager.Instance.checkSpawn();
         }
     }
-    private void ShuffleCashTemplates()
+
+    [ContextMenu("ResetGame")]
+    
+    public void RestartScene()
     {
-        if (activeCashtemplates.Count < 2) return; // No need to shuffle if 1 or 0 objects
-
-        System.Random rng = new System.Random(); // Random number generator
-
-        // Fisher-Yates shuffle algorithm
-        for (int i = activeCashtemplates.Count - 1; i > 0; i--)
-        {
-            int randomIndex = rng.Next(i + 1);
-            Vector3 tempPos = activeCashtemplates[i].transform.position;
-            activeCashtemplates[i].transform.position = activeCashtemplates[randomIndex].transform.position;
-            activeCashtemplates[randomIndex].transform.position = tempPos;
-        }
-
-        foreach (GameObject cashParent in activeCashtemplates)
-        {
-            cashParent.SetActive(true);
-        }
-
-        Debug.Log("Shuffled all cash templates!");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
-
-
 }
