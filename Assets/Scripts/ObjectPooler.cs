@@ -10,25 +10,24 @@ public class ObjectPooler : MonoBehaviour
     {
         Instance = this;
     }
-
+    private GameObject firstPatch;  // Stores the first patch added to the active list
     [Header("Environment Pool Settings")]
     public GameObject environmentPatchPrefab;
     public int EnvironmentPoolSize = 5;
 
     public List<GameObject> ObstaclePrefabs;
     public List<GameObject> CollectablePrefabs;
-    public List<GameObject> EnviornmentCashTemplates;
     public GameObject BoosterBag;
 
     public int ObstaclePoolSize = 10;
     public int CollectablePoolSize = 10;
-    public int CashTemplatePoolSize = 5;
 
     private Queue<GameObject> ObstacleObjectPool = new Queue<GameObject>();
     private Queue<GameObject> CollectableObjectPool = new Queue<GameObject>();
     private Queue<GameObject> environmentPool = new Queue<GameObject>();
 
     List<GameObject> activeEnvironmentPatches = new List<GameObject>();
+    public List<GameObject> activeCashtemplates = new List<GameObject>();
     [HideInInspector] public List<GameObject> bag;
 
     private void Start()
@@ -55,6 +54,7 @@ public class ObjectPooler : MonoBehaviour
         for (int i = 0; i < EnvironmentPoolSize; i++)
         {
             GameObject obj = Instantiate(environmentPatchPrefab);
+            obj.name = "EnvironmentPatch_" + (i + 1);
             obj.SetActive(false);
             environmentPool.Enqueue(obj);
         }
@@ -93,7 +93,6 @@ public class ObjectPooler : MonoBehaviour
         CollectableObjectPool.Enqueue(objectToSpawn); // Re-add to pool
         return objectToSpawn;
     }
-
     public void SpawnBoosterBag()
     {
         if (activeEnvironmentPatches.Count < 3 || PlayerController.instance.BoostEnabled || bag.Count != 0) 
@@ -121,53 +120,6 @@ public class ObjectPooler : MonoBehaviour
         spawnedBag.transform.SetParent(selectedPatch.transform);
         bag.Add(spawnedBag);
     }
-    
-  public void SpawnCashTemplatesInEnvironment()
-{
-    if (activeEnvironmentPatches == null || activeEnvironmentPatches.Count == 0)
-    {
-        Debug.LogWarning("No active environment patches available for spawning cash templates.");
-        return;
-    }
-
-    if (EnviornmentCashTemplates == null || EnviornmentCashTemplates.Count == 0)
-    {
-        Debug.LogWarning("No cash templates assigned in EnvironmentCashTemplates.");
-        return;
-    }
-
-    foreach (GameObject patch in activeEnvironmentPatches)
-    {
-        if (patch == null)
-        {
-            Debug.LogWarning("Found a null patch in activeEnvironmentPatches. Skipping.");
-            continue;
-        }
-
-        EnvironmentPatch patchComponent = patch.GetComponent<EnvironmentPatch>();
-        if (patchComponent == null || patchComponent.CashTemplatesSpawnPos == null || patchComponent.CashTemplatesSpawnPos.Count == 0)
-        {
-            Debug.LogWarning($"Patch {patch.name} has no defined spawn positions. Skipping.");
-            continue;
-        }
-
-        // Filter out null spawn points
-        var validSpawnPoints = patchComponent.CashTemplatesSpawnPos.Where(pos => pos != null).ToList();
-        if (validSpawnPoints.Count == 0)
-        {
-            Debug.LogWarning($"Patch {patch.name} has only null spawn positions. Skipping.");
-            continue;
-        }
-
-        // Select a random spawn point from the valid list
-        int randomPointIndex = Random.Range(0, validSpawnPoints.Count);
-        Vector3 spawnPosition = validSpawnPoints[randomPointIndex].position;
-
-        // Select a random cash template and instantiate it
-        int randomIndex = Random.Range(0, EnviornmentCashTemplates.Count);
-        var cashTemplate = Instantiate(EnviornmentCashTemplates[randomIndex], spawnPosition, Quaternion.identity, patch.transform);
-    }
-}
     public GameObject GetActiveEnvironmentPatch()
     {
         if (environmentPool.Count == 0)
@@ -178,10 +130,17 @@ public class ObjectPooler : MonoBehaviour
 
         GameObject patch = environmentPool.Dequeue();
         patch.SetActive(true);
+    
         activeEnvironmentPatches.Add(patch);
+
+        // Store the first patch when the list is initialized
+        if (activeEnvironmentPatches.Count == 1)
+        {
+            firstPatch = patch;
+        }
+
         return patch;
     }
-
     public void ReturnActiveEnvironmentPatch(GameObject patch)
     {
         if (activeEnvironmentPatches.Contains(patch))
@@ -189,7 +148,39 @@ public class ObjectPooler : MonoBehaviour
             activeEnvironmentPatches.Remove(patch);
             environmentPool.Enqueue(patch);
             patch.SetActive(false);
+
+            // Check if the first patch has come back to index 0
+            if (activeEnvironmentPatches.Count > 0 && activeEnvironmentPatches[0] == firstPatch)
+            {
+                Debug.Log("Cycle completed! The first patch is back in place.");
+                ShuffleCashTemplates(); // Call shuffle method
+            }
+
             EnvironmentManager.Instance.checkSpawn();
         }
     }
+    private void ShuffleCashTemplates()
+    {
+        if (activeCashtemplates.Count < 2) return; // No need to shuffle if 1 or 0 objects
+
+        System.Random rng = new System.Random(); // Random number generator
+
+        // Fisher-Yates shuffle algorithm
+        for (int i = activeCashtemplates.Count - 1; i > 0; i--)
+        {
+            int randomIndex = rng.Next(i + 1);
+            Vector3 tempPos = activeCashtemplates[i].transform.position;
+            activeCashtemplates[i].transform.position = activeCashtemplates[randomIndex].transform.position;
+            activeCashtemplates[randomIndex].transform.position = tempPos;
+        }
+
+        foreach (GameObject cashParent in activeCashtemplates)
+        {
+            cashParent.SetActive(true);
+        }
+
+        Debug.Log("Shuffled all cash templates!");
+    }
+
+
 }

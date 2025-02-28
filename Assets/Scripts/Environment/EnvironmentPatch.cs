@@ -8,10 +8,12 @@ public class EnvironmentPatch : MonoBehaviour
 
     public List<GameObject> gameObjects = new List<GameObject>();
     public List<Transform> CashTemplatesSpawnPos;
+    public List<GameObject> AllCashTemplates;
 
     public GameObject crossroadpatch;
     public GameObject crossroadreplacementpatch;
     public GameObject[] NPCinMid;
+    
     private void Start()
     {
 
@@ -51,9 +53,10 @@ public class EnvironmentPatch : MonoBehaviour
         
        foreach (GameObject obj in gameObjects) { Destroy(obj.gameObject); }
 
-
-        
-
+       foreach (GameObject VARIABLE in AllCashTemplates)
+       {
+           ObjectPooler.Instance.activeCashtemplates.Add(VARIABLE);
+       }
     }
     private void OnEnable()
     {

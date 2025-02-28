@@ -30,9 +30,7 @@ public class ObstacleSpawner : MonoBehaviour
     public float boosterBagSpawnInterval = 5f; // Time interval for spawning booster bags
     private float boosterBagTimer;
 
-    public float cashTemplateSpawnInterval = 7f; // Time interval for spawning cash templates
     private float cashTemplateTimer;
-
     private void Start()
     {
         // Initial spawn of obstacles
@@ -43,7 +41,6 @@ public class ObstacleSpawner : MonoBehaviour
 
         // Initialize timers
         boosterBagTimer = boosterBagSpawnInterval;
-        cashTemplateTimer = cashTemplateSpawnInterval;
     }
 
     private void Update()
@@ -64,14 +61,6 @@ public class ObstacleSpawner : MonoBehaviour
         {
             SpawnBoosterBag();
             boosterBagTimer = boosterBagSpawnInterval;
-        }
-
-        // Handle cash template spawning
-        cashTemplateTimer -= Time.deltaTime;
-        if (cashTemplateTimer <= 0f)
-        {
-            SpawnCashTemplates(spawnZ);
-            cashTemplateTimer = cashTemplateSpawnInterval;
         }
     }
 
@@ -96,17 +85,6 @@ public class ObstacleSpawner : MonoBehaviour
         if (IsPositionClear(spawnPosition) && ObjectPooler.Instance != null)
         {
             ObjectPooler.Instance.SpawnBoosterBag();
-        }
-    }
-
-    private void SpawnCashTemplates(float zPosition)
-    {
-        float randomX = Random.Range(minX, maxX); // Vary X position for better distribution
-        Vector3 spawnPosition = new Vector3(randomX, 0, zPosition);
-
-        if (ObjectPooler.Instance != null)
-        {
-            ObjectPooler.Instance.SpawnCashTemplatesInEnvironment();
         }
     }
 
