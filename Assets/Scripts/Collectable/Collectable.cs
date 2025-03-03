@@ -1,56 +1,53 @@
-using DG.Tweening;
+using System;
 using UnityEngine;
 
 public class Collectable : MonoBehaviour
 {
-    public float moveSpeed = 5f; // Speed at which the obstacle moves towards the player
+    public float moveSpeed = 5f;
     private bool isMoving = true;
     public int myid;
     public bool canMove = true;
     public bool canAnimate = true;
+
+    public LayerMask targetLayer;
+    
+    private float initialY;
+    public float floatAmount = 0.5f;
+    private float floatSpeed = 2f;
+    private bool floatingUp = true;
+
+    private void Awake()
+    {
+        targetLayer = LayerMask.GetMask("Runner");
+    }
+
     private void OnEnable()
     {
-        if (canAnimate)
-        {
-            // Start floating animation when the collectable is activated
-            AnimateFloating();
-        }
+        initialY = transform.position.y; // Store the initial Y position
     }
-    
+
     private void Update()
     {
-        if (isMoving &&canMove)
+        if (isMoving && canMove)
         {
             transform.Translate(Vector3.back * (moveSpeed * Time.deltaTime));
 
-            // Deactivate obstacle if it goes off-screen
-            if (transform.position.z < -15f) // Adjust based on your game's needs
+            if (transform.position.z < -15f)
             {
-                gameObject.SetActive(false);
+                gameObject.SetActive(false); 
             }
         }
     }
-    
     public void StopMovement(bool state)
     {
         isMoving = state;
     }
-    
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (((1 << other.gameObject.layer) & targetLayer) != 0)
         {
-            CollectableSpawner.Instance.AddUiEffectCollected(gameObject.transform.position,myid);
+            CollectableSpawner.Instance.AddUiEffectCollected(transform.position, myid);
             gameObject.SetActive(false);
         }
-    }
-    
-    private void AnimateFloating()
-    {
-        // Make the collectable float up and down smoothly
-        transform.DOKill(); // Stop any previous animations to prevent stacking
-        transform.DOMoveY(transform.position.y + 0.5f, 1f)
-            .SetEase(Ease.InOutSine)
-            .SetLoops(-1, LoopType.Yoyo); // Infinite up/down animation
     }
 }

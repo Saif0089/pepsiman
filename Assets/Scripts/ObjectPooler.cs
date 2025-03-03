@@ -101,11 +101,9 @@ public class ObjectPooler : MonoBehaviour
             return;
         }
 
-        // Sort the patches based on the z position in ascending order
         activeEnvironmentPatches.Sort((a, b) => a.transform.position.z.CompareTo(b.transform.position.z));
 
-        // Choose the 2nd or 3rd patch (adjust based on preference)
-        int patchIndex = Mathf.Min(2, activeEnvironmentPatches.Count - 1); // Ensure we don't go out of bounds
+        int patchIndex = Mathf.Min(2, activeEnvironmentPatches.Count - 1);
         GameObject selectedPatch = activeEnvironmentPatches[patchIndex];
 
         if (selectedPatch == null)
@@ -153,7 +151,6 @@ public class ObjectPooler : MonoBehaviour
                     cash.SetActive(true);
                 }
             }
-
             EnvironmentManager.Instance.checkSpawn();
         }
     }

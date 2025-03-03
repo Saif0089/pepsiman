@@ -120,6 +120,11 @@ PrefabInstance:
       propertyPath: canAnimate
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8891856326961660458, guid: ea1fcdbb1e7fb704393c11c09cab50f8,
+        type: 3}
+      propertyPath: targetLayer.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

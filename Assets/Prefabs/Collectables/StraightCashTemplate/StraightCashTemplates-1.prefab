@@ -91,6 +91,16 @@ PrefabInstance:
       propertyPath: canMove
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 182499041783120761, guid: 172281d52b1963a4286f12b060d5d8f9,
+        type: 3}
+      propertyPath: targetLayer.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 314711212335742047, guid: 172281d52b1963a4286f12b060d5d8f9,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 314711212335742047, guid: 172281d52b1963a4286f12b060d5d8f9,
         type: 3}
       propertyPath: m_IsTrigger
@@ -104,7 +114,7 @@ PrefabInstance:
     - target: {fileID: 2953728468794259759, guid: 172281d52b1963a4286f12b060d5d8f9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 2953728468794259759, guid: 172281d52b1963a4286f12b060d5d8f9,
         type: 3}
@@ -191,6 +201,16 @@ PrefabInstance:
       propertyPath: canMove
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 182499041783120761, guid: 172281d52b1963a4286f12b060d5d8f9,
+        type: 3}
+      propertyPath: targetLayer.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 314711212335742047, guid: 172281d52b1963a4286f12b060d5d8f9,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 314711212335742047, guid: 172281d52b1963a4286f12b060d5d8f9,
         type: 3}
       propertyPath: m_IsTrigger
@@ -204,7 +224,7 @@ PrefabInstance:
     - target: {fileID: 2953728468794259759, guid: 172281d52b1963a4286f12b060d5d8f9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 2953728468794259759, guid: 172281d52b1963a4286f12b060d5d8f9,
         type: 3}
@@ -291,6 +311,16 @@ PrefabInstance:
       propertyPath: canMove
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 182499041783120761, guid: 172281d52b1963a4286f12b060d5d8f9,
+        type: 3}
+      propertyPath: targetLayer.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 314711212335742047, guid: 172281d52b1963a4286f12b060d5d8f9,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 314711212335742047, guid: 172281d52b1963a4286f12b060d5d8f9,
         type: 3}
       propertyPath: m_IsTrigger
@@ -304,7 +334,7 @@ PrefabInstance:
     - target: {fileID: 2953728468794259759, guid: 172281d52b1963a4286f12b060d5d8f9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 2953728468794259759, guid: 172281d52b1963a4286f12b060d5d8f9,
         type: 3}
@@ -391,6 +421,16 @@ PrefabInstance:
       propertyPath: canMove
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 182499041783120761, guid: 172281d52b1963a4286f12b060d5d8f9,
+        type: 3}
+      propertyPath: targetLayer.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 314711212335742047, guid: 172281d52b1963a4286f12b060d5d8f9,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 314711212335742047, guid: 172281d52b1963a4286f12b060d5d8f9,
         type: 3}
       propertyPath: m_IsTrigger
@@ -404,7 +444,7 @@ PrefabInstance:
     - target: {fileID: 2953728468794259759, guid: 172281d52b1963a4286f12b060d5d8f9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 2953728468794259759, guid: 172281d52b1963a4286f12b060d5d8f9,
         type: 3}

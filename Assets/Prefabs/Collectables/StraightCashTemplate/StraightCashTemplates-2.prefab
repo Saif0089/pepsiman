@@ -91,6 +91,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1185747706901538555, guid: ea1fcdbb1e7fb704393c11c09cab50f8,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3950432410633613785, guid: ea1fcdbb1e7fb704393c11c09cab50f8,
         type: 3}
       propertyPath: m_Name
@@ -109,7 +114,7 @@ PrefabInstance:
     - target: {fileID: 5604726290761403099, guid: ea1fcdbb1e7fb704393c11c09cab50f8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 5604726290761403099, guid: ea1fcdbb1e7fb704393c11c09cab50f8,
         type: 3}
@@ -161,6 +166,11 @@ PrefabInstance:
       propertyPath: canAnimate
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8891856326961660458, guid: ea1fcdbb1e7fb704393c11c09cab50f8,
+        type: 3}
+      propertyPath: targetLayer.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -191,6 +201,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1185747706901538555, guid: ea1fcdbb1e7fb704393c11c09cab50f8,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3950432410633613785, guid: ea1fcdbb1e7fb704393c11c09cab50f8,
         type: 3}
       propertyPath: m_Name
@@ -209,7 +224,7 @@ PrefabInstance:
     - target: {fileID: 5604726290761403099, guid: ea1fcdbb1e7fb704393c11c09cab50f8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 5604726290761403099, guid: ea1fcdbb1e7fb704393c11c09cab50f8,
         type: 3}
@@ -261,6 +276,11 @@ PrefabInstance:
       propertyPath: canAnimate
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8891856326961660458, guid: ea1fcdbb1e7fb704393c11c09cab50f8,
+        type: 3}
+      propertyPath: targetLayer.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -291,6 +311,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1185747706901538555, guid: ea1fcdbb1e7fb704393c11c09cab50f8,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3950432410633613785, guid: ea1fcdbb1e7fb704393c11c09cab50f8,
         type: 3}
       propertyPath: m_Name
@@ -309,7 +334,7 @@ PrefabInstance:
     - target: {fileID: 5604726290761403099, guid: ea1fcdbb1e7fb704393c11c09cab50f8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 5604726290761403099, guid: ea1fcdbb1e7fb704393c11c09cab50f8,
         type: 3}
@@ -361,6 +386,11 @@ PrefabInstance:
       propertyPath: canAnimate
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8891856326961660458, guid: ea1fcdbb1e7fb704393c11c09cab50f8,
+        type: 3}
+      propertyPath: targetLayer.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -391,6 +421,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1185747706901538555, guid: ea1fcdbb1e7fb704393c11c09cab50f8,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3950432410633613785, guid: ea1fcdbb1e7fb704393c11c09cab50f8,
         type: 3}
       propertyPath: m_Name
@@ -409,7 +444,7 @@ PrefabInstance:
     - target: {fileID: 5604726290761403099, guid: ea1fcdbb1e7fb704393c11c09cab50f8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 5604726290761403099, guid: ea1fcdbb1e7fb704393c11c09cab50f8,
         type: 3}
@@ -460,6 +495,11 @@ PrefabInstance:
         type: 3}
       propertyPath: canAnimate
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8891856326961660458, guid: ea1fcdbb1e7fb704393c11c09cab50f8,
+        type: 3}
+      propertyPath: targetLayer.m_Bits
+      value: 128
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

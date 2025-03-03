@@ -99,7 +99,7 @@ PrefabInstance:
     - target: {fileID: 6445445799037263488, guid: 6bb878fbb68a186478f699879c86f28d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6445445799037263488, guid: 6bb878fbb68a186478f699879c86f28d,
         type: 3}
@@ -141,10 +141,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7435299218870778414, guid: 6bb878fbb68a186478f699879c86f28d,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8267052865967296985, guid: 6bb878fbb68a186478f699879c86f28d,
         type: 3}
       propertyPath: canMove
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8267052865967296985, guid: 6bb878fbb68a186478f699879c86f28d,
+        type: 3}
+      propertyPath: targetLayer.m_Bits
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 8851134546317839600, guid: 6bb878fbb68a186478f699879c86f28d,
         type: 3}
@@ -194,7 +204,7 @@ PrefabInstance:
     - target: {fileID: 6445445799037263488, guid: 6bb878fbb68a186478f699879c86f28d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6445445799037263488, guid: 6bb878fbb68a186478f699879c86f28d,
         type: 3}
@@ -236,10 +246,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7435299218870778414, guid: 6bb878fbb68a186478f699879c86f28d,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8267052865967296985, guid: 6bb878fbb68a186478f699879c86f28d,
         type: 3}
       propertyPath: canMove
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8267052865967296985, guid: 6bb878fbb68a186478f699879c86f28d,
+        type: 3}
+      propertyPath: targetLayer.m_Bits
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 8851134546317839600, guid: 6bb878fbb68a186478f699879c86f28d,
         type: 3}
@@ -289,7 +309,7 @@ PrefabInstance:
     - target: {fileID: 6445445799037263488, guid: 6bb878fbb68a186478f699879c86f28d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6445445799037263488, guid: 6bb878fbb68a186478f699879c86f28d,
         type: 3}
@@ -331,10 +351,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7435299218870778414, guid: 6bb878fbb68a186478f699879c86f28d,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8267052865967296985, guid: 6bb878fbb68a186478f699879c86f28d,
         type: 3}
       propertyPath: canMove
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8267052865967296985, guid: 6bb878fbb68a186478f699879c86f28d,
+        type: 3}
+      propertyPath: targetLayer.m_Bits
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 8851134546317839600, guid: 6bb878fbb68a186478f699879c86f28d,
         type: 3}
@@ -384,7 +414,7 @@ PrefabInstance:
     - target: {fileID: 6445445799037263488, guid: 6bb878fbb68a186478f699879c86f28d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6445445799037263488, guid: 6bb878fbb68a186478f699879c86f28d,
         type: 3}
@@ -426,10 +456,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7435299218870778414, guid: 6bb878fbb68a186478f699879c86f28d,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8267052865967296985, guid: 6bb878fbb68a186478f699879c86f28d,
         type: 3}
       propertyPath: canMove
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8267052865967296985, guid: 6bb878fbb68a186478f699879c86f28d,
+        type: 3}
+      propertyPath: targetLayer.m_Bits
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 8851134546317839600, guid: 6bb878fbb68a186478f699879c86f28d,
         type: 3}
