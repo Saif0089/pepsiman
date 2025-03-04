@@ -15,9 +15,6 @@ public class PlayerController : MonoBehaviour
     public float maxRotation = 15f; // Maximum rotation angle when moving left/right
     public float GroundCheckRayCastLenght = 1f;
 
-
-    
-
     [Header("Slide Settings")]
     public float slideDuration = 0.5f; // Duration of the slide
     private float slideTimer = 0f;
@@ -128,22 +125,6 @@ public class PlayerController : MonoBehaviour
                 StartSlide();
             }
         }
-        // else
-        // {
-        //     if (isSliding)
-        //     {
-        //         EndSlide();
-        //     }
-        // }
-
-        // if (isSliding)
-        // {
-        //     slideTimer -= Time.deltaTime;
-        //     if (slideTimer <= 0f)
-        //     {
-        //         EndSlide();
-        //     }
-        // }
     }
 
     private void StartSlide()
@@ -154,7 +135,6 @@ public class PlayerController : MonoBehaviour
         controller.center = new Vector3(controller.center.x, controller.height / 2, controller.center.z);
         animator.SetTrigger("Slide");
     }
-
     public void EndSlide() // called in animation event
     {
         isSliding = false;
@@ -170,7 +150,6 @@ public class PlayerController : MonoBehaviour
             moveDirection.y -= gravity * Time.deltaTime;
         }
     }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Obstacle"))
@@ -221,7 +200,6 @@ public class PlayerController : MonoBehaviour
             collectable.StopMovement(state);
         }
     }
-    
     private void StopAllEnvironment(bool state)
     {
         EnvironmentPatch[] environmentPatches = FindObjectsOfType<EnvironmentPatch>();
@@ -230,7 +208,6 @@ public class PlayerController : MonoBehaviour
             environment.StopMovement(state);
         }
     }
-
     public void StopBooster()
     {
         if (BoostEnabled)
@@ -243,7 +220,6 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-
     public void RestHurt() // Called in animation Event
     {
         isHurt = false;
@@ -255,7 +231,6 @@ public class PlayerController : MonoBehaviour
         EnvironmentManager.Instance.StopSpawning(true);
         StopAllEnvironment(true);
     }
-
     private bool IsGrounded()
     {
         float rayLength = GroundCheckRayCastLenght + 0.1f; // Slightly increase length

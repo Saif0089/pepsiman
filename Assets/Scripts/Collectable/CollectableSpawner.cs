@@ -69,12 +69,12 @@ public class CollectableSpawner : MonoBehaviour
         float randomX;
         int maxAttempts = 5; // Prevent infinite loops
         int attempts = 0;
-
+        
         do
         {
             randomX = Random.Range(minX, maxX);
             attempts++;
-
+        
             if (spawned > 1 && spawned <= collectablelock)
             {
                 randomX = lastXpos;
@@ -85,17 +85,17 @@ public class CollectableSpawner : MonoBehaviour
             }
         } 
         while (SpawnManager.Instance.IsPositionOccupied(randomX, zPosition) && attempts < maxAttempts);
-   
+        
         spawned++;
         if (spawned > collectablelock)
         {
             collectablelock=Random.Range(3, 4);
             spawned = 0;
         }
-   
+        
         Vector3 spawnPosition = new Vector3(randomX, 1, zPosition);
         SpawnManager.Instance.MarkPositionOccupied(randomX, zPosition);
-
+        
         ObjectPooler.Instance.SpawnCollectableFromPool(spawnPosition, Quaternion.identity);
     }
 

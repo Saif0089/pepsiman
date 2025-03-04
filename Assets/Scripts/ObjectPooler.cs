@@ -22,10 +22,8 @@ public class ObjectPooler : MonoBehaviour
     [Space]
     
     public int EnvironmentPoolSize = 5;
-    public List<GameObject> CollectablePrefabs;
     public GameObject BoosterBag;
 
-    public int ObstaclePoolSize = 10;
     public int CollectablePoolSize = 10;
 
     private Queue<GameObject> CollectableObjectPool = new Queue<GameObject>();
@@ -36,15 +34,6 @@ public class ObjectPooler : MonoBehaviour
 
     private void Start()
     {
-        // Initialize Collectable Pool
-        for (int i = 0; i < CollectablePoolSize; i++)
-        {
-            int randomIndex = Random.Range(0, CollectablePrefabs.Count);
-            GameObject obj = Instantiate(CollectablePrefabs[randomIndex]);
-            obj.SetActive(false);
-            CollectableObjectPool.Enqueue(obj);
-        }
-
         // Initialize Environment Pool
         for (int i = 0; i < EnvironmentPoolSize; i++)
         {
