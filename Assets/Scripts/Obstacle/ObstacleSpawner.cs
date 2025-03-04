@@ -22,7 +22,7 @@ public class ObstacleSpawner : MonoBehaviour
     public float initialSpawnZ = 20f; // Initial Z position where obstacles are spawned
     public float spawnZ = 10f; // Z position for regular spawning
     public float distanceBetweenObstacles = 5f; // Distance between obstacles
-    private bool canSpawn = true; // Flag to control spawning
+    public bool canSpawn = true; // Flag to control spawning
     public float sphereRadius = 1.0f;
     public float maxDistance = 5.0f;
     public LayerMask layerMask; // Optional: Set a layer mask to limit the sphere cast
@@ -33,36 +33,12 @@ public class ObstacleSpawner : MonoBehaviour
     private float cashTemplateTimer;
     private void Start()
     {
-        // Spawn the first obstacle early
-        SpawnObstacle(spawnZ);
-    
-        // Set a shorter initial spawn timer for the first obstacle
-        spawnTimer = spawnInterval * 0.1f; // Adjust this multiplier as needed
-
-        // Continue regular spawning as per distanceBetweenObstacles
-        for (float z = initialSpawnZ; z > 0; z -= distanceBetweenObstacles)
-        {
-            SpawnObstacle(z);
-        }
-
-        // Initialize booster bag timer
         boosterBagTimer = boosterBagSpawnInterval;
     }
 
 
     private void Update()
     {
-        if (!canSpawn) return;
-
-        // Handle obstacle spawning
-        spawnTimer -= Time.deltaTime;
-        if (spawnTimer <= 0f)
-        {
-            SpawnObstacle(spawnZ);
-            spawnTimer = spawnInterval;
-        }
-
-        // Handle booster bag spawning
         boosterBagTimer -= Time.deltaTime;
         if (boosterBagTimer <= 0f && !PlayerController.instance.BoostEnabled)
         {
@@ -70,19 +46,6 @@ public class ObstacleSpawner : MonoBehaviour
             boosterBagTimer = boosterBagSpawnInterval;
         }
     }
-
-    private void SpawnObstacle(float zPosition)
-    {
-        float randomX = Random.Range(minX, maxX); // Vary X position
-        Vector3 spawnPosition = new Vector3(randomX, 0, zPosition);
-
-        if (IsPositionClear(spawnPosition) && ObjectPooler.Instance != null)
-        {
-            SpawnManager.Instance.MarkPositionOccupied(randomX, zPosition);
-            ObjectPooler.Instance.SpawnObstacleFromPool(spawnPosition, Quaternion.identity);
-        }
-    }
-
     public void SpawnBoosterBag()
     {
         float randomX = Random.Range(minX, maxX);

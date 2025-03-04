@@ -13,17 +13,21 @@ public class ObjectPooler : MonoBehaviour
     }
     
     [Header("Environment Pool Settings")]
+    [Space]
+    
     public GameObject environmentPatchPrefab;
+    [Space]
+    
+    public GameObject TurnedEnvironmentPatchPrefab;
+    [Space]
+    
     public int EnvironmentPoolSize = 5;
-
-    public List<GameObject> ObstaclePrefabs;
     public List<GameObject> CollectablePrefabs;
     public GameObject BoosterBag;
 
     public int ObstaclePoolSize = 10;
     public int CollectablePoolSize = 10;
 
-    private Queue<GameObject> ObstacleObjectPool = new Queue<GameObject>();
     private Queue<GameObject> CollectableObjectPool = new Queue<GameObject>();
     private Queue<GameObject> environmentPool = new Queue<GameObject>();
 
@@ -32,15 +36,6 @@ public class ObjectPooler : MonoBehaviour
 
     private void Start()
     {
-        // Initialize Obstacle Pool
-        for (int i = 0; i < ObstaclePoolSize; i++)
-        {
-            int randomIndex = Random.Range(0, ObstaclePrefabs.Count);
-            GameObject obj = Instantiate(ObstaclePrefabs[randomIndex]);
-            obj.SetActive(false);
-            ObstacleObjectPool.Enqueue(obj);
-        }
-
         // Initialize Collectable Pool
         for (int i = 0; i < CollectablePoolSize; i++)
         {
@@ -59,24 +54,6 @@ public class ObjectPooler : MonoBehaviour
             environmentPool.Enqueue(obj);
         }
     }
-
-    public GameObject SpawnObstacleFromPool(Vector3 position, Quaternion rotation)
-    {
-        if (ObstacleObjectPool.Count == 0)
-        {
-            Debug.LogWarning("No obstacles left in the pool.");
-            return null;
-        }
-
-        GameObject objectToSpawn = ObstacleObjectPool.Dequeue();
-        objectToSpawn.SetActive(true);
-        objectToSpawn.transform.position = new Vector3(0, position.y, position.z);
-        objectToSpawn.transform.rotation = rotation;
-
-        ObstacleObjectPool.Enqueue(objectToSpawn); // Re-add to pool
-        return objectToSpawn;
-    }
-
     public GameObject SpawnCollectableFromPool(Vector3 position, Quaternion rotation)
     {
         if (CollectableObjectPool.Count == 0)

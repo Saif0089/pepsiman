@@ -2246,6 +2246,7 @@ MonoBehaviour:
   initialSpawnZ: 20
   spawnZ: 140
   distanceBetweenObstacles: 2
+  canSpawn: 0
   sphereRadius: 5
   maxDistance: 5
   layerMask:
@@ -2298,14 +2299,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   environmentPatchPrefab: {fileID: 8440969738092426177, guid: 7680255096da24945b4f8dd2ce160d64,
     type: 3}
+  TurnedEnvironmentPatchPrefab: {fileID: 4806309066538775740, guid: ef29d4ee3bda04b4d8d3f24519e4affe,
+    type: 3}
   EnvironmentPoolSize: 5
-  ObstaclePrefabs:
-  - {fileID: 3274246928899409491, guid: 0e30b80b760c0704e9bbf9f52add4079, type: 3}
-  - {fileID: 7423486014915009477, guid: 28fb5200255c7b3468dda9198f387bf9, type: 3}
-  - {fileID: 6178396158244067442, guid: 84cf7cd9cb8d98a4c8903c72f06f2097, type: 3}
-  - {fileID: 519131008895217481, guid: 7d2c1e91420e36a46a0e08d7a6226bf1, type: 3}
-  - {fileID: 3523897377089808910, guid: a6270dd3d8834344da6fa2c0fb464d45, type: 3}
-  - {fileID: 3274246928899409491, guid: 0e30b80b760c0704e9bbf9f52add4079, type: 3}
   CollectablePrefabs:
   - {fileID: 8334144298968335122, guid: 172281d52b1963a4286f12b060d5d8f9, type: 3}
   - {fileID: 3950432410633613785, guid: ea1fcdbb1e7fb704393c11c09cab50f8, type: 3}
@@ -2313,7 +2309,7 @@ MonoBehaviour:
   - {fileID: 3929686508967843625, guid: 525792279767d03438b0d510af324e56, type: 3}
   BoosterBag: {fileID: 3931391787129581432, guid: 07a8a0bdf5d12cd4d8fcff2d205eeaab,
     type: 3}
-  ObstaclePoolSize: 25
+  ObstaclePoolSize: 0
   CollectablePoolSize: 10
   bag: []
 --- !u!4 &1226323111
@@ -5762,6 +5758,14 @@ PrefabInstance:
     - {fileID: 1794954596304527495, guid: 7680255096da24945b4f8dd2ce160d64, type: 3}
     - {fileID: 3928275476755846690, guid: 7680255096da24945b4f8dd2ce160d64, type: 3}
     - {fileID: 8097273299735329, guid: 7680255096da24945b4f8dd2ce160d64, type: 3}
+    - {fileID: 8983779777050301917, guid: 7680255096da24945b4f8dd2ce160d64, type: 3}
+    - {fileID: 3386976473782342929, guid: 7680255096da24945b4f8dd2ce160d64, type: 3}
+    - {fileID: 871741755911547102, guid: 7680255096da24945b4f8dd2ce160d64, type: 3}
+    - {fileID: 8057813830235711676, guid: 7680255096da24945b4f8dd2ce160d64, type: 3}
+    - {fileID: 3264837585781073039, guid: 7680255096da24945b4f8dd2ce160d64, type: 3}
+    - {fileID: 8943712863932574027, guid: 7680255096da24945b4f8dd2ce160d64, type: 3}
+    - {fileID: 6470057388307374914, guid: 7680255096da24945b4f8dd2ce160d64, type: 3}
+    - {fileID: 2785094343645876197, guid: 7680255096da24945b4f8dd2ce160d64, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7680255096da24945b4f8dd2ce160d64, type: 3}

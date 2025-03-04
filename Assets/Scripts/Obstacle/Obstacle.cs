@@ -21,24 +21,24 @@ public class Obstacle : MonoBehaviour
             temp.transform.localPosition = Vector3.zero;
         }
     }
-    private void Update()
-    {
-        if (isMoving && canmove)
-        {
-            float movementSpeed = PlayerController.instance.moveForwardSpeed;
-
-            if (PlayerController.instance.BoostEnabled)
-                movementSpeed += PlayerController.instance.moveForwardBoostSpeed;
-
-            transform.Translate(Vector3.back * (movementSpeed * Time.deltaTime));
-
-            // Deactivate obstacle if it goes off-screen
-            if (transform.position.z < -15f) // Adjust based on your game's needs
-            {
-                gameObject.SetActive(false);
-            }
-        }
-    }
+    // private void Update()
+    // {
+    //     if (isMoving && canmove)
+    //     {
+    //         float movementSpeed = PlayerController.instance.moveForwardSpeed;
+    //
+    //         if (PlayerController.instance.BoostEnabled)
+    //             movementSpeed += PlayerController.instance.moveForwardBoostSpeed;
+    //
+    //         transform.Translate(Vector3.back * (movementSpeed * Time.deltaTime));
+    //
+    //         // Deactivate obstacle if it goes off-screen
+    //         if (transform.position.z < -15f) // Adjust based on your game's needs
+    //         {
+    //             gameObject.SetActive(false);
+    //         }
+    //     }
+    // }
     
     public void StopMovement(bool state)
     {
