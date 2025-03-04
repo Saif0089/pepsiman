@@ -158,7 +158,7 @@ public class PlayerController : MonoBehaviour
     public void EndSlide() // called in animation event
     {
         isSliding = false;
-        controller.height = 1.9f; // Reset height after sliding
+        controller.height = 2.22f; // Reset height after sliding
         controller.center = new Vector3(controller.center.x, controller.height / 2, controller.center.z);
         animator.SetTrigger("Run");
     }

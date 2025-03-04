@@ -25,4 +25,8 @@ public class BarrierTemplateHandler : MonoBehaviour
             barrier.SetActive(false);
         }
     }
+    private void OnDisable()
+    {
+        OffAllBarriers();
+    }
 }
