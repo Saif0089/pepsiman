@@ -1,18 +1,20 @@
 using UnityEngine;
-using System.Linq;
+using DG.Tweening;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 
 public class ObjectPooler : MonoBehaviour
 {
     public static ObjectPooler Instance;
-
     private void Awake()
     {
         Instance = this;
     }
     
     [Header("Environment Pool Settings")]
+    [Space]
+    
+    public GameObject EnvironmentHolder;
     [Space]
     
     public GameObject environmentPatchPrefab;
@@ -32,6 +34,18 @@ public class ObjectPooler : MonoBehaviour
     List<GameObject> activeEnvironmentPatches = new List<GameObject>();
     [HideInInspector] public List<GameObject> bag;
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Keypad1))
+        {
+            EnvironmentHolder.transform.DORotate(new Vector3(0, -45,0 ), 1f, RotateMode.Fast);
+        } 
+        if (Input.GetKeyDown(KeyCode.Keypad2))
+        {
+            EnvironmentHolder.transform.DORotate(new Vector3(0, -90,0 ), 1f, RotateMode.Fast);
+        }
+    }
+
     private void Start()
     {
         // Initialize Environment Pool
@@ -40,6 +54,7 @@ public class ObjectPooler : MonoBehaviour
             GameObject obj = Instantiate(environmentPatchPrefab);
             obj.name = "EnvironmentPatch_" + (i + 1);
             obj.SetActive(false);
+            obj.transform.SetParent(EnvironmentHolder.transform);
             environmentPool.Enqueue(obj);
         }
     }

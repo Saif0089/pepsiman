@@ -97,7 +97,7 @@ public class EnvironmentPatch : MonoBehaviour
             posIndex++;
         }
     }
-    private void Update()
+    void Update()
     {
         if (isMoving)
         {
@@ -106,16 +106,14 @@ public class EnvironmentPatch : MonoBehaviour
             if (PlayerController.instance.BoostEnabled)
                 movementSpeed += PlayerController.instance.moveForwardBoostSpeed;
 
-            transform.Translate(Vector3.back * (movementSpeed * Time.deltaTime));
+            transform.position += Camera.main.transform.forward * (-movementSpeed * Time.deltaTime);
 
-            // Recycle patch if it goes out of view
-            if (transform.position.z < -190f) // Adjust based on game needs
+            if (transform.position.z < Camera.main.transform.position.z - 190f)
             {
                 ObjectPooler.Instance.ReturnActiveEnvironmentPatch(gameObject);
             }
         }
     }
-
     public void SetPosition(Vector3 newPosition)
     {
         transform.position = newPosition;
