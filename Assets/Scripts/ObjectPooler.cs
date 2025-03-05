@@ -36,6 +36,7 @@ public class ObjectPooler : MonoBehaviour
     [HideInInspector] public List<GameObject> bag;
 
     private bool turnedPatchSpawned = false; // Ensure Turned Patch spawns only once
+    public Transform nextSpawnPoint; // Add this at the top of ObjectPooler
 
     private void Start()
     {
@@ -54,7 +55,7 @@ public class ObjectPooler : MonoBehaviour
     {
         if (CollectableObjectPool.Count == 0)
         {
-            Debug.LogWarning("No collectables left in the pool.");
+            Debug.Log("No collectables left in the pool.");
             return null;
         }
 
@@ -71,7 +72,7 @@ public class ObjectPooler : MonoBehaviour
     {
         if (activeEnvironmentPatches.Count < 3 || PlayerController.instance.BoostEnabled || bag.Count != 0) 
         {
-            Debug.LogWarning("Not enough active environment patches to spawn the bag.");
+            Debug.Log("Not enough active environment patches to spawn the bag.");
             return;
         }
 
@@ -82,7 +83,7 @@ public class ObjectPooler : MonoBehaviour
 
         if (selectedPatch == null)
         {
-            Debug.LogWarning("Could not determine the correct patch to spawn the bag.");
+            Debug.Log("Could not determine the correct patch to spawn the bag.");
             return;
         }
 
@@ -97,16 +98,21 @@ public class ObjectPooler : MonoBehaviour
     {
         if (environmentPool.Count == 0)
         {
-            Debug.LogWarning("No available environment patches in the pool.");
+            Debug.Log("No available environment patches in the pool.");
             return null;
         }
 
         GameObject patch = environmentPool.Dequeue();
         patch.SetActive(true);
-    
+
+        if (nextSpawnPoint != null)
+        {
+            // Convert local position to world position
+            patch.transform.position = nextSpawnPoint.position;
+        }
+
         activeEnvironmentPatches.Add(patch);
 
-        // Check if all regular patches have been spawned and the turned patch hasn't been spawned yet
         if (activeEnvironmentPatches.Count == EnvironmentPoolSize && !turnedPatchSpawned)
         {
             SpawnTurnedEnvironmentPatch();
@@ -119,24 +125,28 @@ public class ObjectPooler : MonoBehaviour
     {
         if (TurnedEnvironmentPatchPrefab == null)
         {
-            Debug.LogWarning("TurnedEnvironmentPatchPrefab is not assigned.");
+            Debug.Log("TurnedEnvironmentPatchPrefab is not assigned.");
             return;
         }
 
         GameObject lastPatch = activeEnvironmentPatches[activeEnvironmentPatches.Count - 1];
 
+        // Get the transform from Turned Patch where new patches should spawn
         Transform turnedPatchTransform = lastPatch.GetComponent<EnvironmentPatch>().TurnedEnviornmentPatch.transform;
 
         GameObject turnedPatch = Instantiate(TurnedEnvironmentPatchPrefab, lastPatch.transform);
 
         turnedPatch.transform.localPosition = turnedPatchTransform.localPosition;
-    
         turnedPatch.SetActive(true);
-    
+
         activeEnvironmentPatches.Add(turnedPatch);
+
+        // **Set nextSpawnPoint to the position for future patches**
+        nextSpawnPoint = turnedPatchTransform;
 
         turnedPatchSpawned = true;
     }
+
     public void ReturnActiveEnvironmentPatch(GameObject patch)
     {
         if (activeEnvironmentPatches.Contains(patch))

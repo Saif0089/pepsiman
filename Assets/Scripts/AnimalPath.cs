@@ -31,14 +31,12 @@ public class AnimalPath : MonoBehaviour
 
         if (!hasStartedMoving && Vector3.Distance(Animal.localPosition, startingPosition) > 0.01f)
         {
-            Debug.Log("Animal started moving towards the target.");
             ActivatedAnimal.transform.localRotation = Quaternion.Euler(0f, 0f, 0f); 
             hasStartedMoving = true;
         }
 
         if (Vector3.Distance(Animal.localPosition, targetPosition) < 0.01f)
         {
-            Debug.Log("Animal reached the target, now returning to starting position.");
             
             movingToTarget = !movingToTarget; // Toggle movement direction
 
