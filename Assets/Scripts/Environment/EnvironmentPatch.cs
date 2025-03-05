@@ -4,6 +4,7 @@ using UnityEngine;
 public class EnvironmentPatch : MonoBehaviour
 {
     public float moveSpeed = 5f; // Speed at which the patch moves
+    public Transform TurnedEnviornmentPatch;
     private bool isMoving = true;
 
     public List<GameObject> gameObjects = new List<GameObject>();
@@ -107,11 +108,6 @@ public class EnvironmentPatch : MonoBehaviour
                 movementSpeed += PlayerController.instance.moveForwardBoostSpeed;
 
             transform.position += Camera.main.transform.forward * (-movementSpeed * Time.deltaTime);
-
-            if (transform.position.z < Camera.main.transform.position.z - 190f)
-            {
-                ObjectPooler.Instance.ReturnActiveEnvironmentPatch(gameObject);
-            }
         }
     }
     public void SetPosition(Vector3 newPosition)
