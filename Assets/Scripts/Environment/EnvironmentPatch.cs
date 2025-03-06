@@ -3,14 +3,13 @@ using UnityEngine;
 
 public class EnvironmentPatch : MonoBehaviour
 {
-    public float moveSpeed = 5f; // Speed at which the patch moves
-    public Transform TurnedEnviornmentPatch;
     private bool isMoving = true;
 
     public List<GameObject> gameObjects = new List<GameObject>();
     public List<GameObject> AllCashTemplates;
 
     public GameObject crossroadpatch;
+    public GameObject TurnedPatch;
     public GameObject crossroadreplacementpatch;
     public GameObject[] NPCinMid;
     

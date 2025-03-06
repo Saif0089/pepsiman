@@ -7,6 +7,7 @@ public class ObjectPooler : MonoBehaviour
 {
     public static ObjectPooler Instance;
 
+    public bool CanDestroy;
     private void Awake()
     {
         Instance = this;
@@ -25,20 +26,24 @@ public class ObjectPooler : MonoBehaviour
     [Space]
 
     public int EnvironmentPoolSize = 5;
+    
     public GameObject BoosterBag;
 
-    public int CollectablePoolSize = 10;
+    public Transform NextPoint;
 
     private Queue<GameObject> CollectableObjectPool = new Queue<GameObject>();
     private Queue<GameObject> environmentPool = new Queue<GameObject>();
 
     public List<GameObject> activeEnvironmentPatches = new List<GameObject>();
+    public List<GameObject> newPatches = new List<GameObject>();
     [HideInInspector] public List<GameObject> bag;
 
     private bool turnedPatchSpawned = false; // Ensure Turned Patch spawns only once
-    public Vector3 nextSpawnPoint; // Add this at the top of ObjectPooler
-
     private void Start()
+    {
+       SpawnEnviornment();
+    }
+    public void SpawnEnviornment()
     {
         // Initialize Environment Pool
         for (int i = 0; i < EnvironmentPoolSize; i++)
@@ -50,7 +55,6 @@ public class ObjectPooler : MonoBehaviour
             environmentPool.Enqueue(obj);
         }
     }
-
     public GameObject SpawnCollectableFromPool(Vector3 position, Quaternion rotation)
     {
         if (CollectableObjectPool.Count == 0)
@@ -105,20 +109,17 @@ public class ObjectPooler : MonoBehaviour
         GameObject patch = environmentPool.Dequeue();
         patch.SetActive(true);
 
-        if (nextSpawnPoint != null)
-        {
-            // Convert local position to world position
-            patch.transform.position = nextSpawnPoint;
-        }
-
         activeEnvironmentPatches.Add(patch);
 
         if (activeEnvironmentPatches.Count == EnvironmentPoolSize && !turnedPatchSpawned)
         {
             SpawnTurnedEnvironmentPatch();
         }
-
+        
+        Debug.Log("Patch Spawned location: " + patch.transform.position);
+        
         return patch;
+        
     }
 
     private void SpawnTurnedEnvironmentPatch()
@@ -128,22 +129,16 @@ public class ObjectPooler : MonoBehaviour
             Debug.Log("TurnedEnvironmentPatchPrefab is not assigned.");
             return;
         }
-
         GameObject lastPatch = activeEnvironmentPatches[activeEnvironmentPatches.Count - 1];
 
-        // Get the transform from Turned Patch where new patches should spawn
-        Transform turnedPatchTransform = lastPatch.GetComponent<EnvironmentPatch>().TurnedEnviornmentPatch.transform;
-
         GameObject turnedPatch = Instantiate(TurnedEnvironmentPatchPrefab, lastPatch.transform);
-
-        turnedPatch.transform.localPosition = turnedPatchTransform.localPosition;
+        
         turnedPatch.SetActive(true);
 
-        activeEnvironmentPatches.Add(turnedPatch);
-
-        // **Set nextSpawnPoint to the position for future patches**
-        nextSpawnPoint = turnedPatchTransform.position;
-
+        lastPatch.GetComponent<EnvironmentPatch>().TurnedPatch = turnedPatch;
+        
+        NextPoint=lastPatch.GetComponent<EnvironmentPatch>().TurnedPatch.GetComponent<TurnedPatchEnv>().PatchPoint;
+        
         turnedPatchSpawned = true;
     }
 
