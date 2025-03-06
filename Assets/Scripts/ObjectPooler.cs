@@ -36,7 +36,7 @@ public class ObjectPooler : MonoBehaviour
     [HideInInspector] public List<GameObject> bag;
 
     private bool turnedPatchSpawned = false; // Ensure Turned Patch spawns only once
-    public Transform nextSpawnPoint; // Add this at the top of ObjectPooler
+    public Vector3 nextSpawnPoint; // Add this at the top of ObjectPooler
 
     private void Start()
     {
@@ -108,7 +108,7 @@ public class ObjectPooler : MonoBehaviour
         if (nextSpawnPoint != null)
         {
             // Convert local position to world position
-            patch.transform.position = nextSpawnPoint.position;
+            patch.transform.position = nextSpawnPoint;
         }
 
         activeEnvironmentPatches.Add(patch);
@@ -142,7 +142,7 @@ public class ObjectPooler : MonoBehaviour
         activeEnvironmentPatches.Add(turnedPatch);
 
         // **Set nextSpawnPoint to the position for future patches**
-        nextSpawnPoint = turnedPatchTransform;
+        nextSpawnPoint = turnedPatchTransform.position;
 
         turnedPatchSpawned = true;
     }
