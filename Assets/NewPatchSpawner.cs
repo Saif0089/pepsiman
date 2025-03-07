@@ -41,6 +41,7 @@ public class NewPatchSpawner : MonoBehaviour
             }
         }
         ObjectPooler.Instance.CanDestroy = true;
+        Time.timeScale = 0;
         SetPos();
     }
     
