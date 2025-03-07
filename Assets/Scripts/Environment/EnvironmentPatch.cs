@@ -10,6 +10,7 @@ public class EnvironmentPatch : MonoBehaviour
 
     public GameObject crossroadpatch;
     public GameObject TurnedPatch;
+    public Transform NextPoint;
     public GameObject crossroadreplacementpatch;
     public GameObject[] NPCinMid;
     

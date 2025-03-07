@@ -1,29 +1,33 @@
 using UnityEngine;
 using DG.Tweening;
+
 public class TurnStyle : MonoBehaviour
 {
     public LayerMask TargetLayer;
     public float RotationSpeed = 1f;
-    void OnTriggerEnter(Collider other)
+    public bool IsLeftTurn;
+
+    private void OnTriggerEnter(Collider other)
     {
         if (((1 << other.gameObject.layer) & TargetLayer) != 0)
         {
             RotateEnvPatch();
         }
     }
-    void RotateEnvPatch()
+    private void RotateEnvPatch()
     {
         Transform envHolder = ObjectPooler.Instance.EnvironmentHolder.transform;
-        float newYRotation = envHolder.eulerAngles.y - 45f;
+        float newRotation = envHolder.eulerAngles.y + (IsLeftTurn ? 45f : -45f);
 
-        envHolder.DORotate(new Vector3(0, newYRotation, 0), RotationSpeed, RotateMode.Fast)
+        envHolder.DORotate(new Vector3(0, newRotation, 0), RotationSpeed, RotateMode.Fast)
             .OnComplete(() =>
             {
-                if (Mathf.Abs(newYRotation) >= 360f)
+                // Normalize rotation to avoid exceeding 360 degrees
+                float currentY = envHolder.eulerAngles.y;
+                if (currentY >= 360f || currentY <= -360f)
                 {
-                    envHolder.rotation = Quaternion.Euler(0f, 0f, 0f);
+                    envHolder.rotation = Quaternion.Euler(0f, currentY % 360f, 0f);
                 }
             });
     }
-   
 }

@@ -1,8 +1,6 @@
 using UnityEngine;
-using DG.Tweening;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
-
 public class ObjectPooler : MonoBehaviour
 {
     public static ObjectPooler Instance;

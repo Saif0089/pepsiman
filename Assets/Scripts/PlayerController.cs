@@ -55,7 +55,6 @@ public class PlayerController : MonoBehaviour
         controller = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
         animator.SetTrigger("Run"); // Start with running animation
-        currSpeed = moveForwardSpeed;
     }
 
     private void Update()
@@ -70,6 +69,7 @@ public class PlayerController : MonoBehaviour
         ApplyGravity();
         StopBooster();
 
+        currSpeed = moveForwardSpeed;
         // Move the player using CharacterController
         controller.Move(moveDirection * Time.deltaTime);
 
