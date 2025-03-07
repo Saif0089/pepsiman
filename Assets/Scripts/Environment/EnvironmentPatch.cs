@@ -4,6 +4,7 @@ using UnityEngine;
 public class EnvironmentPatch : MonoBehaviour
 {
     private bool isMoving = true;
+    public bool canOffThis;
 
     public List<GameObject> gameObjects = new List<GameObject>();
     public List<GameObject> AllCashTemplates;
@@ -108,8 +109,18 @@ public class EnvironmentPatch : MonoBehaviour
                 movementSpeed += PlayerController.instance.moveForwardBoostSpeed;
 
             transform.position += Camera.main.transform.forward * (-movementSpeed * Time.deltaTime);
+
+            // Check the distance from the camera
+            float distanceBehindCamera = Camera.main.transform.position.z - transform.position.z;
+            float deactivateDistance = 190f; // Adjust this threshold as needed
+
+            if (canOffThis && distanceBehindCamera > deactivateDistance)
+            {
+                gameObject.SetActive(false);
+            }
         }
     }
+
     public void SetPosition(Vector3 newPosition)
     {
         transform.position = newPosition;

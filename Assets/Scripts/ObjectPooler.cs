@@ -6,6 +6,8 @@ public class ObjectPooler : MonoBehaviour
     public static ObjectPooler Instance;
 
     public bool CanDestroy;
+    
+    public bool IsToSpawnRightTurnAtStart;
     private void Awake()
     {
         Instance = this;
@@ -29,6 +31,8 @@ public class ObjectPooler : MonoBehaviour
 
     public Transform NextPoint;
 
+    public GameObject ActivedTuredPatch;
+
     private Queue<GameObject> CollectableObjectPool = new Queue<GameObject>();
     private Queue<GameObject> environmentPool = new Queue<GameObject>();
 
@@ -36,7 +40,7 @@ public class ObjectPooler : MonoBehaviour
     public List<GameObject> newPatches = new List<GameObject>();
     [HideInInspector] public List<GameObject> bag;
 
-    private bool turnedPatchSpawned = false; // Ensure Turned Patch spawns only once
+    bool turnedPatchSpawned = false;
     private void Start()
     {
        SpawnEnviornment();
@@ -108,11 +112,6 @@ public class ObjectPooler : MonoBehaviour
         patch.SetActive(true);
 
         activeEnvironmentPatches.Add(patch);
-
-        if (activeEnvironmentPatches.Count == EnvironmentPoolSize && !turnedPatchSpawned)
-        {
-            SpawnTurnedEnvironmentPatch();
-        }
         
         Debug.Log("Patch Spawned location: " + patch.transform.position);
         
@@ -120,7 +119,8 @@ public class ObjectPooler : MonoBehaviour
         
     }
 
-    private void SpawnTurnedEnvironmentPatch()
+    [ContextMenu("SpawnTurnedEnvironmentPatch")]
+    public void SpawnTurnedEnvironmentPatch()
     {
         if (TurnedEnvironmentPatchPrefab == null)
         {
@@ -130,12 +130,21 @@ public class ObjectPooler : MonoBehaviour
         GameObject lastPatch = activeEnvironmentPatches[activeEnvironmentPatches.Count - 1];
 
         GameObject turnedPatch = Instantiate(TurnedEnvironmentPatchPrefab, lastPatch.transform);
+
+        if (IsToSpawnRightTurnAtStart)
+        {
+            turnedPatch.GetComponent<TurnedPatchesManager>().ActivateRight();
+        }
+        else
+        {
+            turnedPatch.GetComponent<TurnedPatchesManager>().ActivateLeft();
+        }
         
         turnedPatch.SetActive(true);
 
-        lastPatch.GetComponent<EnvironmentPatch>().TurnedPatch = turnedPatch;
+        // lastPatch.GetComponent<EnvironmentPatch>().TurnedPatch = turnedPatch;
         
-        NextPoint=lastPatch.GetComponent<EnvironmentPatch>().TurnedPatch.GetComponent<TurnedPatchEnv>().PatchPoint;
+        NextPoint = ActivedTuredPatch.GetComponent<TurnedPatchEnv>().PatchPoint;
         
         turnedPatchSpawned = true;
     }
@@ -158,7 +167,6 @@ public class ObjectPooler : MonoBehaviour
                     cash.SetActive(true);
                 }
             }
-            EnvironmentManager.Instance.checkSpawn();
         }
     }
 

@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
        mainMenu.SetActive(false);
         Time.timeScale = 1;
         gameStarted = true;
+        ObjectPooler.Instance.SpawnTurnedEnvironmentPatch();
     }
     private void Start()
     {
