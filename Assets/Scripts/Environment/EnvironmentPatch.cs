@@ -8,6 +8,7 @@ public class EnvironmentPatch : MonoBehaviour
 
     public List<GameObject> gameObjects = new List<GameObject>();
     public List<GameObject> AllCashTemplates;
+    public List<BarrierTemplateHandler> AllBarrierTemplates;
 
     public GameObject crossroadpatch;
     public GameObject TurnedPatch;

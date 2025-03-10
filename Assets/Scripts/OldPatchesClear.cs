@@ -19,6 +19,7 @@ public class OldPatchesClear : MonoBehaviour
         foreach (GameObject patch in ObjectPooler.Instance.activeEnvironmentPatches)
         {
             patch.SetActive(false);
+            Destroy(patch);
         }
         ObjectPooler.Instance.activeEnvironmentPatches.Clear();
         ObjectPooler.Instance.activeEnvironmentPatches.AddRange(ObjectPooler.Instance.newPatches);

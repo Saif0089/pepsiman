@@ -33,6 +33,8 @@ public class NewPatchSpawner : MonoBehaviour
         }
         
         SpawnNextTurnedPatch();
+        RestoreAllPatches();
+        
         ObjectPooler.Instance.NextPoint = ObjectPooler.Instance.ActivedTuredPatch.GetComponent<TurnedPatchEnv>().PatchPoint;
         ObjectPooler.Instance.CanDestroy = true;
         SetPos();
@@ -67,7 +69,6 @@ public class NewPatchSpawner : MonoBehaviour
             }
         }
     }
-
     public void SetPos()
     {
         for (int i = 1; i < ObjectPooler.Instance.newPatches.Count; i++)
@@ -78,5 +79,27 @@ public class NewPatchSpawner : MonoBehaviour
 
             ObjectPooler.Instance.newPatches[i].transform.rotation = ObjectPooler.Instance.newPatches[i - 1].transform.rotation;
         }
+    }
+    public void RestoreAllPatches()
+    {
+        foreach (GameObject patch in ObjectPooler.Instance.newPatches)
+        {
+            EnvironmentPatch envPatch = patch.GetComponent<EnvironmentPatch>();
+            if (envPatch != null)
+            {
+                foreach (GameObject cash in envPatch.AllCashTemplates)
+                {
+                    if (!cash.activeSelf) 
+                        cash.SetActive(true);
+                }
+                foreach (BarrierTemplateHandler barrier in envPatch.AllBarrierTemplates)
+                {
+                    barrier.OnRandomBarriers();
+                }
+            }
+        }
+        
+        ObjectPooler.Instance.ActivedTuredPatch.GetComponent<TurnedPatchEnv>().TurnOnAllCash();
+        ObjectPooler.Instance.ActivedTuredPatch.GetComponent<TurnedPatchEnv>().Barrier.GetComponent<BarrierTemplateHandler>().OnRandomBarriers();
     }
 }

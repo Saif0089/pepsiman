@@ -11,14 +11,14 @@ public class BarrierTemplateHandler : MonoBehaviour
     {
         OnRandomBarriers();
     }
-    void OnRandomBarriers()
+    public void OnRandomBarriers()
     {
         OffAllBarriers();
         
         int rand = Random.Range(0, AllBarriers.Count);
         AllBarriers[rand].SetActive(true);
     }
-    void OffAllBarriers()
+    public void OffAllBarriers()
     {
         foreach (GameObject barrier in AllBarriers)
         {
