@@ -8,6 +8,13 @@ public class ObjectPooler : MonoBehaviour
     public bool CanDestroy;
     
     public bool IsToSpawnRightTurnAtStart;
+    
+    public NextPatchToSpawn NextPatchWillBe;
+    public enum NextPatchToSpawn
+    {
+        LeftTurn,
+        RightTurn,
+    }
     private void Awake()
     {
         Instance = this;
@@ -32,6 +39,8 @@ public class ObjectPooler : MonoBehaviour
     public Transform NextPoint;
 
     public GameObject ActivedTuredPatch;
+
+    public GameObject TurnedPatchParent;
 
     private Queue<GameObject> CollectableObjectPool = new Queue<GameObject>();
     private Queue<GameObject> environmentPool = new Queue<GameObject>();
@@ -142,9 +151,13 @@ public class ObjectPooler : MonoBehaviour
         
         turnedPatch.SetActive(true);
 
-        // lastPatch.GetComponent<EnvironmentPatch>().TurnedPatch = turnedPatch;
-        
         NextPoint = ActivedTuredPatch.GetComponent<TurnedPatchEnv>().PatchPoint;
+
+        TurnedPatchParent = turnedPatch;
+
+        lastPatch.GetComponent<EnvironmentPatch>().TurnedPatch = TurnedPatchParent;
+
+        lastPatch.GetComponent<EnvironmentPatch>().canOffThis = false;
         
         turnedPatchSpawned = true;
     }
