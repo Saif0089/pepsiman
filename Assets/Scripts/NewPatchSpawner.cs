@@ -8,7 +8,7 @@ public class NewPatchSpawner : MonoBehaviour
     {
         if (((1 << other.gameObject.layer) & TargetLayer) != 0)
         {
-            SpawnNewPatches();
+            SpawnNewPatches(); 
         }
     }
     void SpawnNewPatches()
