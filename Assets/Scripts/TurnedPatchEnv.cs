@@ -10,6 +10,8 @@ public class TurnedPatchEnv : MonoBehaviour
    
    public List<GameObject> AllCashTemplates;
 
+   public List<GameObject> AllPuddles;
+
    public void TurnOnAllCash()
    {
       foreach (GameObject cash in AllCashTemplates)

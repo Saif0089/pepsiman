@@ -92,14 +92,24 @@ public class NewPatchSpawner : MonoBehaviour
                     if (!cash.activeSelf) 
                         cash.SetActive(true);
                 }
+                
                 foreach (BarrierTemplateHandler barrier in envPatch.AllBarrierTemplates)
                 {
                     barrier.OnRandomBarriers();
+                }
+                
+                foreach (PuddleHandler puddle in envPatch.AllPuddles)
+                {
+                    puddle.ShufflePuddle();
                 }
             }
         }
         
         ObjectPooler.Instance.ActivedTuredPatch.GetComponent<TurnedPatchEnv>().TurnOnAllCash();
         ObjectPooler.Instance.ActivedTuredPatch.GetComponent<TurnedPatchEnv>().Barrier.GetComponent<BarrierTemplateHandler>().OnRandomBarriers();
+        foreach (GameObject puddle in ObjectPooler.Instance.ActivedTuredPatch.GetComponent<TurnedPatchEnv>().AllPuddles)
+        {
+            puddle.GetComponent<PuddleHandler>().ShufflePuddle();
+        }
     }
 }

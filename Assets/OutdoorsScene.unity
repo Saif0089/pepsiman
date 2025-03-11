@@ -1843,6 +1843,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1737f2d58651b76408352f2aaa4c0490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PuddleMaterials:
+  - {fileID: 2100000, guid: 154532cabf479ef44bb0f65b59c03aea, type: 2}
+  - {fileID: 2100000, guid: dcf8d3fcbe9613b478bf401e8c0a432b, type: 2}
+  - {fileID: 2100000, guid: d15a04d15188f34419a6e4426115affd, type: 2}
   ScoreText:
   - {fileID: 1003679785}
   - {fileID: 1641778347}
@@ -3301,6 +3305,8 @@ MonoBehaviour:
   GroundLayer:
     serializedVersion: 2
     m_Bits: 8
+  canMovement: 0
+  animator: {fileID: 0}
   BoostEnabled: 0
   BoostTimer: 5
 --- !u!143 &1851075673

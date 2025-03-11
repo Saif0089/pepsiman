@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     public float rotationSpeed = 5f; // Speed of rotation when moving left/right
     public float maxRotation = 15f; // Maximum rotation angle when moving left/right
     public float GroundCheckRayCastLenght = 1f;
+    [HideInInspector] public float horizontalInput; 
 
     [Header("Slide Settings")]
     public float slideDuration = 0.5f; // Duration of the slide
@@ -24,13 +25,14 @@ public class PlayerController : MonoBehaviour
     public float maxX = 5f; // Maximum X position
     public LayerMask GroundLayer;
 
-    private Vector3 moveDirection = Vector3.zero;
-    private CharacterController controller;
-    private bool isJumping = false;
-    private bool isSliding = false;
+    [HideInInspector] public Vector3 moveDirection = Vector3.zero;
+    [SerializeField] public CharacterController controller;
+    bool isJumping = false;
+    bool isSliding = false;
+    [HideInInspector] public bool canMovement;
     private bool isHurt = false;
     [Header("Animation Settings")]
-    private Animator animator;
+    public Animator animator;
 
     [Header("Boost Management")]
     public bool BoostEnabled = false;
@@ -55,10 +57,12 @@ public class PlayerController : MonoBehaviour
         controller = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
         animator.SetTrigger("Run"); // Start with running animation
+        canMovement = true;
     }
 
     private void Update()
     {
+        
         if (isHurt)
         {
             return;
@@ -83,46 +87,52 @@ public class PlayerController : MonoBehaviour
 
     private void HandleLaneMovement()
     {
-        float horizontalInput = Input.GetAxis("Horizontal"); // Left/Right input
-
-        // Update movement direction (horizontal input)
-        moveDirection.x = horizontalInput * moveSpeed;
-
-        // Smoothly rotate the player in the direction of movement
-        if (horizontalInput != 0)
+        if (canMovement)
         {
-            float targetRotation = maxRotation * Mathf.Sign(horizontalInput); // Rotate left/right
-            Quaternion newRotation = Quaternion.Euler(0, targetRotation, 0);
-            transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, Time.deltaTime * rotationSpeed);
-        }
-        else
-        {
-            // Smoothly return to default rotation when not moving
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.identity, Time.deltaTime * rotationSpeed);
+            horizontalInput = Input.GetAxis("Horizontal"); // Left/Right input
+
+            // Update movement direction (horizontal input)
+            moveDirection.x = horizontalInput * moveSpeed;
+
+            // Smoothly rotate the player in the direction of movement
+            if (horizontalInput != 0)
+            {
+                float targetRotation = maxRotation * Mathf.Sign(horizontalInput); // Rotate left/right
+                Quaternion newRotation = Quaternion.Euler(0, targetRotation, 0);
+                transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, Time.deltaTime * rotationSpeed);
+            }
+            else
+            {
+                // Smoothly return to default rotation when not moving
+                transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.identity, Time.deltaTime * rotationSpeed);
+            }
         }
     }
 
     private void HandleJumpAndSlide()
     {
-        bool jumpPressed = Input.GetKeyDown(KeyCode.UpArrow);
-        bool slidePressed = Input.GetKeyDown(KeyCode.DownArrow);
-
-        if (IsGrounded())
+        if (canMovement)
         {
-            isJumping = false;
-            moveDirection.y = 0f;
-            animator.SetTrigger("Run"); // Return to running when grounded
+            bool jumpPressed = Input.GetKeyDown(KeyCode.UpArrow);
+            bool slidePressed = Input.GetKeyDown(KeyCode.DownArrow);
 
-            if (jumpPressed)
+            if (IsGrounded())
             {
-                moveDirection.y = jumpForce;
-                isJumping = true;
-                animator.SetTrigger("Jump");
-            }
+                isJumping = false;
+                moveDirection.y = 0f;
+                animator.SetTrigger("Run"); // Return to running when grounded
 
-            if (slidePressed)
-            {
-                StartSlide();
+                if (jumpPressed)
+                {
+                    moveDirection.y = jumpForce;
+                    isJumping = true;
+                    animator.SetTrigger("Jump");
+                }
+
+                if (slidePressed)
+                {
+                    StartSlide();
+                }
             }
         }
     }
@@ -230,6 +240,14 @@ public class PlayerController : MonoBehaviour
         
         EnvironmentManager.Instance.StopSpawning(true);
         StopAllEnvironment(true);
+        ResetStumble();
+    }
+
+    public void ResetStumble()
+    {
+        canMovement = true;
+        moveForwardSpeed = 20f;
+        moveSpeed = 7f;
     }
     private bool IsGrounded()
     {

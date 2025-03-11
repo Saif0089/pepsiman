@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+    
+    public Material[] PuddleMaterials;
 
     [Header("UI")]
     public TMP_Text[] ScoreText;
