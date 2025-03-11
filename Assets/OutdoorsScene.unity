@@ -175446,6 +175446,7 @@ MonoBehaviour:
   - {fileID: 8288248012077812173}
   - {fileID: 3127654152325011857}
   AllCashTemplates: []
+  AllBarrierTemplates: []
   crossroadpatch: {fileID: 7406597891092357849}
   TurnedPatch: {fileID: 0}
   NextPoint: {fileID: 0}

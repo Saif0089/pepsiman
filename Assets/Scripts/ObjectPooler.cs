@@ -157,7 +157,7 @@ public class ObjectPooler : MonoBehaviour
 
         lastPatch.GetComponent<EnvironmentPatch>().TurnedPatch = TurnedPatchParent;
 
-        lastPatch.GetComponent<EnvironmentPatch>().canOffThis = false;
+        lastPatch.GetComponent<EnvironmentPatch>().canOffThis = false; 
         
         turnedPatchSpawned = true;
     }
