@@ -1,7 +1,5 @@
-using System;
 using UnityEngine;
-using Random = UnityEngine.Random;
-
+using DG.Tweening;
 public class PuddleHandler : MonoBehaviour
 {
     [SerializeField] LayerMask TargetLayer;
@@ -28,4 +26,5 @@ public class PuddleHandler : MonoBehaviour
         PlayerController.instance.moveDirection.x = 0f;
         PlayerController.instance.moveForwardSpeed = 7f;
     }
+
 }
