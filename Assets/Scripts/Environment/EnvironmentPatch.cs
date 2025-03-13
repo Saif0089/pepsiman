@@ -110,7 +110,8 @@ public class EnvironmentPatch : MonoBehaviour
             if (PlayerController.instance.BoostEnabled)
                 movementSpeed += PlayerController.instance.moveForwardBoostSpeed;
 
-            transform.position += Camera.main.transform.forward * (-movementSpeed * Time.deltaTime);
+            // Move along world -Z instead of camera's forward
+            transform.position += Vector3.back * movementSpeed * Time.deltaTime;
 
             // Check the distance from the camera
             float distanceBehindCamera = Camera.main.transform.position.z - transform.position.z;
@@ -122,6 +123,7 @@ public class EnvironmentPatch : MonoBehaviour
             }
         }
     }
+
 
     public void SetPosition(Vector3 newPosition)
     {
