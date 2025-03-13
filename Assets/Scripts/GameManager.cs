@@ -1,9 +1,8 @@
+using System;
 using TMPro;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
-
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
@@ -18,15 +17,16 @@ public class GameManager : MonoBehaviour
 
     [Header("Game Settings")]
     public float gameDuration = 30f; // Total time in seconds
-    [Space]
-    public int TilesCount;
+
+    [Space] [Range(0f, 1f)] public int TimeScale;
     
     private float timer;
     private bool gameEnded = false;
     private int[] _totalScore = new int[4];
 
-    [Header("Finish Line")]
+    [Header("Finish Line")] public bool CanEnd;
     public GameObject finishLinePrefab;
+    public GameObject WinScreen;
     public float timeToSpawnFinish = 20f; // Spawn finish line when 10 seconds are left
     public bool FinishLineSpawned = false;
     private GameObject finishLineInstance;
@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
         TimerText.text = FormatTime( (int)timer); // Display as integer
     
         // ⏳ Spawn Finish Line at a Specific Time
-        if (!FinishLineSpawned && timer <= (gameDuration - timeToSpawnFinish))
+        if (!FinishLineSpawned && timer <= (gameDuration - timeToSpawnFinish) && CanEnd)
         {
             FinishLineSpawned = true; 
             SpawnFinishLine();
@@ -95,10 +95,17 @@ public class GameManager : MonoBehaviour
     {
         finishLineInstance = Instantiate(finishLinePrefab);
         finishLineInstance.transform.SetParent(ObjectPooler.Instance.ActivedTuredPatch.transform);
-        finishLineInstance.transform.position=ObjectPooler.Instance.ActivedTuredPatch.GetComponent<TurnedPatchEnv>().PatchPoint.position;
+        finishLineInstance.transform.position=ObjectPooler.Instance.ActivedTuredPatch.GetComponent<TurnedPatchEnv>().SchoolPoint.position;
+        Time.timeScale = TimeScale;
         Debug.Log("🚩 Finish line spawned!");
     }
 
+    [ContextMenu("Play")]
+    void Play()
+    {
+        Time.timeScale = 1;
+    }
+    
     public void PlayerReachedFinish()
     {
         if (!gameEnded) GameOver(true);
@@ -118,6 +125,18 @@ public class GameManager : MonoBehaviour
             PauseMenu.SetActive(true);
             Debug.Log("💀 YOU LOSE! Time's up!");
         }
+    }
+    public void WinGame()
+    {
+        WinScreen.SetActive(true);
+        Time.timeScale = 0f;
+    }
+    private void OnGUI()
+    {
+        // if (GUI.Button(new Rect(10, 10, 150, 30), "Play"))
+        // {
+        //     Play();
+        // }
     }
 
     public void Restart()

@@ -6,6 +6,8 @@ public class TurnedPatchEnv : MonoBehaviour
 {
    public Transform PatchPoint;
 
+   public Transform SchoolPoint;
+   
    public GameObject Barrier;
    
    public List<GameObject> AllCashTemplates;
