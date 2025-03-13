@@ -1855,9 +1855,11 @@ MonoBehaviour:
   TimerText: {fileID: 1866970890}
   PauseMenu: {fileID: 1698911616}
   gameDuration: 160
-  finishLinePrefab: {fileID: 919132149155446097, guid: b0b2c056536ef90448deb70972f3d5c6,
+  TilesCount: 0
+  finishLinePrefab: {fileID: 4225136153523321206, guid: 13177094c6435ec42b5b301cb939545c,
     type: 3}
-  timeToSpawnFinish: 110
+  timeToSpawnFinish: 5
+  FinishLineSpawned: 0
   mainMenu: {fileID: 1633966094}
 --- !u!4 &1016158045
 Transform:
@@ -2150,7 +2152,7 @@ MonoBehaviour:
     type: 3}
   TurnedEnvironmentPatchPrefab: {fileID: 1486478103104723555, guid: f2c18a660cd13c94fa400a3a43dd0046,
     type: 3}
-  EnvironmentPoolSize: 2
+  EnvironmentPoolSize: 1
   BoosterBag: {fileID: 3931391787129581432, guid: 07a8a0bdf5d12cd4d8fcff2d205eeaab,
     type: 3}
   NextPoint: {fileID: 0}

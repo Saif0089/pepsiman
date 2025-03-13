@@ -8,6 +8,10 @@ public class NewPatchSpawner : MonoBehaviour
     {
         if (((1 << other.gameObject.layer) & TargetLayer) != 0)
         {
+            if (GameManager.Instance.FinishLineSpawned)
+            {
+                return;
+            }
             SpawnNewPatches(); 
         }
     }

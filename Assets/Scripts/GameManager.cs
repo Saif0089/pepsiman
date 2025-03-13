@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class GameManager : MonoBehaviour
 {
@@ -17,6 +18,9 @@ public class GameManager : MonoBehaviour
 
     [Header("Game Settings")]
     public float gameDuration = 30f; // Total time in seconds
+    [Space]
+    public int TilesCount;
+    
     private float timer;
     private bool gameEnded = false;
     private int[] _totalScore = new int[4];
@@ -24,7 +28,7 @@ public class GameManager : MonoBehaviour
     [Header("Finish Line")]
     public GameObject finishLinePrefab;
     public float timeToSpawnFinish = 20f; // Spawn finish line when 10 seconds are left
-    private bool finishSpawned = false;
+    public bool FinishLineSpawned = false;
     private GameObject finishLineInstance;
 
     public GameObject mainMenu;
@@ -58,9 +62,9 @@ public class GameManager : MonoBehaviour
         TimerText.text = FormatTime( (int)timer); // Display as integer
     
         // ⏳ Spawn Finish Line at a Specific Time
-        if (!finishSpawned && timer <= (gameDuration - timeToSpawnFinish))
+        if (!FinishLineSpawned && timer <= (gameDuration - timeToSpawnFinish))
         {
-            finishSpawned = true; 
+            FinishLineSpawned = true; 
             SpawnFinishLine();
         }
     
@@ -89,9 +93,9 @@ public class GameManager : MonoBehaviour
 
     private void SpawnFinishLine()
     {
-        // Spawn finish line at a fixed distance in front of the player
-        Vector3 spawnPosition = new Vector3(0, 0, 50f); // Adjust distance as needed
-        finishLineInstance = Instantiate(finishLinePrefab, spawnPosition, Quaternion.identity);
+        finishLineInstance = Instantiate(finishLinePrefab);
+        finishLineInstance.transform.SetParent(ObjectPooler.Instance.ActivedTuredPatch.transform);
+        finishLineInstance.transform.position=ObjectPooler.Instance.ActivedTuredPatch.GetComponent<TurnedPatchEnv>().PatchPoint.position;
         Debug.Log("🚩 Finish line spawned!");
     }
 
