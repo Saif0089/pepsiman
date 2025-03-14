@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 598e2d32e2c7b0c418e030c3236d663a, type: 3}
   m_Name: ChromaticAberration
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   quality:
     m_OverrideState: 1
     m_Value: 3
@@ -40,7 +40,7 @@ MonoBehaviour:
   active: 1
   temperature:
     m_OverrideState: 1
-    m_Value: 29.4
+    m_Value: 30
   tint:
     m_OverrideState: 0
     m_Value: 0
@@ -65,10 +65,10 @@ MonoBehaviour:
     m_Value: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 0.772
+    m_Value: 0.8
   scatter:
     m_OverrideState: 1
-    m_Value: 0.8
+    m_Value: 0
   tint:
     m_OverrideState: 0
     m_Value: {r: 1, g: 1, b: 1, a: 1}
@@ -140,7 +140,7 @@ MonoBehaviour:
     m_Value: 255
   reflectionLightingMultiplier:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0.5
   reflectionLightingLayers:
     m_OverrideState: 0
     m_Value: 255
@@ -173,14 +173,14 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 0
   compensation:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
   limitMin:
     m_OverrideState: 1
     m_Value: 15
   limitMax:
     m_OverrideState: 1
-    m_Value: 13.5
+    m_Value: 13.880466
   curveMap:
     m_OverrideState: 0
     m_Value:
@@ -261,7 +261,7 @@ MonoBehaviour:
       m_RotationOrder: 4
   adaptationMode:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0
   adaptationSpeedDarkToLight:
     m_OverrideState: 1
     m_Value: 3
@@ -420,7 +420,7 @@ MonoBehaviour:
     m_Value: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
   balance:
     m_OverrideState: 1
-    m_Value: -69.5
+    m_Value: -78.2
 --- !u!114 &3056060382721374530
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -436,10 +436,10 @@ MonoBehaviour:
   active: 1
   lift:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 1, z: 1, w: 0.018070111}
+    m_Value: {x: 1, y: 1, z: 1, w: 0.003614022}
   gamma:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 1, z: 1, w: -0.028912181}
+    m_Value: {x: 1, y: 1, z: 1, w: 0.075894475}
   gain:
     m_OverrideState: 0
     m_Value: {x: 0.9913333, y: 0.98, z: 1, w: 0.06505241}
@@ -458,7 +458,7 @@ MonoBehaviour:
   active: 1
   postExposure:
     m_OverrideState: 1
-    m_Value: 0.7
+    m_Value: 0.6
   contrast:
     m_OverrideState: 1
     m_Value: 10
@@ -483,16 +483,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b24b200358312b4fa1004e2431c2f1f, type: 3}
   m_Name: ShadowsMidtonesHighlights
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   shadows:
     m_OverrideState: 1
     m_Value: {x: 1, y: 1, z: 1, w: -0.14817497}
   midtones:
-    m_OverrideState: 0
-    m_Value: {x: 1, y: 1, z: 1, w: 0}
+    m_OverrideState: 1
+    m_Value: {x: 1, y: 1, z: 1, w: -0.22045538}
   highlights:
     m_OverrideState: 0
-    m_Value: {x: 1, y: 1, z: 1, w: 0}
+    m_Value: {x: 1, y: 1, z: 1, w: -0.08673655}
   shadowsStart:
     m_OverrideState: 0
     m_Value: 0
@@ -654,16 +654,16 @@ MonoBehaviour:
   active: 1
   rotation:
     m_OverrideState: 1
-    m_Value: 82
+    m_Value: 166
   skyIntensityMode:
     m_OverrideState: 1
     m_Value: 0
   exposure:
     m_OverrideState: 1
-    m_Value: 15.2
+    m_Value: 16
   multiplier:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 50000
   upperHemisphereLuxValue:
     m_OverrideState: 1
     m_Value: 0.6397493
@@ -672,12 +672,12 @@ MonoBehaviour:
     m_Value: {x: 0.25146252, y: 0.28257474, z: 0.5}
   desiredLuxValue:
     m_OverrideState: 1
-    m_Value: 20000
+    m_Value: 30000
   updateMode:
     m_OverrideState: 0
-    m_Value: 1
+    m_Value: 2
   updatePeriod:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
   includeSunInBaking:
     m_OverrideState: 0
@@ -784,7 +784,7 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.3
+    m_Value: 0.385
   smoothness:
     m_OverrideState: 1
     m_Value: 0.2
@@ -821,21 +821,21 @@ MonoBehaviour:
     m_Value: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 4
+    m_Value: 2.616
   directLightingStrength:
     m_OverrideState: 1
     m_Value: 0.273
   radius:
     m_OverrideState: 1
-    m_Value: 2
+    m_Value: 0.918
   spatialBilateralAggressiveness:
-    m_OverrideState: 0
-    m_Value: 0.15
+    m_OverrideState: 1
+    m_Value: 0.212
   temporalAccumulation:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 1
   ghostingReduction:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0.5
   blurSharpness:
     m_OverrideState: 0
@@ -856,10 +856,10 @@ MonoBehaviour:
     m_Value: 1
   m_StepCount:
     m_OverrideState: 1
-    m_Value: 6
+    m_Value: 20
   m_FullResolution:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 1
   m_MaximumRadiusInPixels:
     m_OverrideState: 1
     m_Value: 16

@@ -24,6 +24,7 @@ public class EndingTrigger : MonoBehaviour
             PlayerController.instance.moveDirection.x = 0f;
 
             PlayerController.instance.transform.DOMoveX(0f, 1f);
+            PlayerController.instance.transform.DORotate(new Vector3(PlayerController.instance.transform.eulerAngles.x, 0f, PlayerController.instance.transform.eulerAngles.z), 1f);
             
             Invoke(nameof(TriggerEndingTimeline),0.2f);
         }
