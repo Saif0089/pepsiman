@@ -1576,7 +1576,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 23.320679}
+  m_SizeDelta: {x: 0, y: 24.229736}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &930279910
 MonoBehaviour:
@@ -1794,10 +1794,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1737f2d58651b76408352f2aaa4c0490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PuddleMaterials:
-  - {fileID: 2100000, guid: 84b6fa5d19154784db39226692d05189, type: 2}
-  - {fileID: 2100000, guid: 38e7096d0a6fbfe4f9c665eb8563e90e, type: 2}
-  - {fileID: 2100000, guid: 15723c690c7f08b4daad493408113fc4, type: 2}
   ScoreText:
   - {fileID: 1003679785}
   - {fileID: 1641778347}
@@ -1806,9 +1802,14 @@ MonoBehaviour:
   TimerText: {fileID: 1866970890}
   PauseMenu: {fileID: 1698911616}
   gameDuration: 160
+  TimeScale: 0
+  CharacterCam: {fileID: 0}
+  CanEnd: 0
   finishLinePrefab: {fileID: 919132149155446097, guid: b0b2c056536ef90448deb70972f3d5c6,
     type: 3}
+  WinScreen: {fileID: 0}
   timeToSpawnFinish: 110
+  FinishLineSpawned: 0
   mainMenu: {fileID: 1633966094}
 --- !u!4 &1016158045
 Transform:
