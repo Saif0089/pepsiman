@@ -6,6 +6,7 @@ public class CashTemplates : MonoBehaviour
 {
     public LayerMask targetLayer;
     public List<GameObject> cashTemplates;
+    public bool CanOnCam;
     private void OnEnable()
     {
         foreach (GameObject cashTemplate in cashTemplates)

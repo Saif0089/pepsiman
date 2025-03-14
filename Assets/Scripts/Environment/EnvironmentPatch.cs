@@ -9,7 +9,7 @@ public class EnvironmentPatch : MonoBehaviour
     public List<GameObject> gameObjects = new List<GameObject>();
     public List<GameObject> AllCashTemplates;
     public List<BarrierTemplateHandler> AllBarrierTemplates;
-    public List<PuddleHandler> AllPuddles;
+    public List<PuddleManager> AllPuddles;
 
     public GameObject crossroadpatch;
     public GameObject TurnedPatch;

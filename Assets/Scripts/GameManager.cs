@@ -1,4 +1,5 @@
 using System;
+using Cinemachine;
 using TMPro;
 using UnityEngine;
 using DG.Tweening;
@@ -6,8 +7,6 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    
-    public Material[] PuddleMaterials;
 
     [Header("UI")]
     public TMP_Text[] ScoreText;
@@ -24,7 +23,9 @@ public class GameManager : MonoBehaviour
     private bool gameEnded = false;
     private int[] _totalScore = new int[4];
 
-    [Header("Finish Line")] public bool CanEnd;
+    [Header("Finish Line")]
+    public GameObject CharacterCam;
+    public bool CanEnd;
     public GameObject finishLinePrefab;
     public GameObject WinScreen;
     public float timeToSpawnFinish = 20f; // Spawn finish line when 10 seconds are left
@@ -95,6 +96,11 @@ public class GameManager : MonoBehaviour
     {
         finishLineInstance = Instantiate(finishLinePrefab);
         finishLineInstance.transform.SetParent(ObjectPooler.Instance.ActivedTuredPatch.transform);
+        if (ObjectPooler.Instance.ActivedTuredPatch ==
+            ObjectPooler.Instance.TurnedPatchParent.GetComponent<TurnedPatchesManager>().LeftTurn)
+        {
+            finishLineInstance.transform.localRotation = Quaternion.Euler(0, 0, 0);
+        }
         finishLineInstance.transform.position=ObjectPooler.Instance.ActivedTuredPatch.GetComponent<TurnedPatchEnv>().SchoolPoint.position;
         Time.timeScale = TimeScale;
         Debug.Log("🚩 Finish line spawned!");
@@ -133,10 +139,10 @@ public class GameManager : MonoBehaviour
     }
     private void OnGUI()
     {
-        // if (GUI.Button(new Rect(10, 10, 150, 30), "Play"))
-        // {
-        //     Play();
-        // }
+        if (GUI.Button(new Rect(10, 10, 150, 30), "Play"))
+        {
+            Play();
+        }
     }
 
     public void Restart()
