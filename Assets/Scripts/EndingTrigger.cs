@@ -21,9 +21,12 @@ public class EndingTrigger : MonoBehaviour
         {
             GameManager.Instance.CharacterCam.SetActive(true);
             PlayerController.instance.canMovement = false;
+
+            PlayerController.instance.transform.DOMoveX(0f, 0.2f);
+            PlayerController.instance.transform.DORotate(Vector3.zero, 0.2f);
+            
             PlayerController.instance.moveDirection.x = 0f;
 
-            PlayerController.instance.transform.DOMoveX(0f, 1f);
             
             Invoke(nameof(TriggerEndingTimeline),0.2f);
         }

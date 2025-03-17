@@ -24,7 +24,7 @@ RenderSettings:
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 4
+  m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
@@ -2273,7 +2273,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1016158043}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1737f2d58651b76408352f2aaa4c0490, type: 3}
   m_Name: 
@@ -2292,7 +2292,7 @@ MonoBehaviour:
   finishLinePrefab: {fileID: 3703501085493076689, guid: a18a9fed642eb964787b2ae2ec1603ad,
     type: 3}
   WinScreen: {fileID: 598008491}
-  timeToSpawnFinish: 3
+  timeToSpawnFinish: 130
   FinishLineSpawned: 0
   mainMenu: {fileID: 1633966094}
 --- !u!4 &1016158045
@@ -2586,7 +2586,7 @@ MonoBehaviour:
     type: 3}
   TurnedEnvironmentPatchPrefab: {fileID: 1486478103104723555, guid: f2c18a660cd13c94fa400a3a43dd0046,
     type: 3}
-  EnvironmentPoolSize: 1
+  EnvironmentPoolSize: 3
   BoosterBag: {fileID: 3931391787129581432, guid: 07a8a0bdf5d12cd4d8fcff2d205eeaab,
     type: 3}
   NextPoint: {fileID: 0}

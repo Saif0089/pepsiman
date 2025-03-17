@@ -137,13 +137,13 @@ public class GameManager : MonoBehaviour
         WinScreen.SetActive(true);
         Time.timeScale = 0f;
     }
-    private void OnGUI()
-    {
-        if (GUI.Button(new Rect(10, 10, 150, 30), "Play"))
-        {
-            Play();
-        }
-    }
+    // private void OnGUI()
+    // {
+    //     if (GUI.Button(new Rect(10, 10, 150, 30), "Play"))
+    //     {
+    //         Play();
+    //     }
+    // }
 
     public void Restart()
     {
