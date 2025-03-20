@@ -15,6 +15,7 @@ public class EndingTrigger : MonoBehaviour
         VirtualCam.SetActive(false);
         Dolly.SetActive(false);
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (((1 << other.gameObject.layer) & TargetLayer) != 0)
@@ -24,18 +25,17 @@ public class EndingTrigger : MonoBehaviour
 
             PlayerController.instance.transform.DOMoveX(0f, 0.2f);
             PlayerController.instance.transform.DORotate(Vector3.zero, 0.2f);
-            
+
             PlayerController.instance.moveDirection.x = 0f;
 
-            
-            Invoke(nameof(TriggerEndingTimeline),0.2f);
+
+            Invoke(nameof(TriggerEndingTimeline), 0.2f);
         }
     }
+
     public void TriggerEndingTimeline()
     {
         VirtualCam.SetActive(true);
         EndTimeLine.Play();
     }
-
-
 }

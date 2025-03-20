@@ -24,8 +24,9 @@ public class CollectableSpawner : MonoBehaviour
     public Transform tokenholder;
     public RectTransform[] tokenTarget;
     public GameObject[] prefTokens;
-    public int collectablelock=1;
+    public int collectablelock = 1;
     public float lastXpos;
+
     private void Start()
     {
         if (SpawnEnabled)
@@ -37,18 +38,16 @@ public class CollectableSpawner : MonoBehaviour
             }
         }
     }
-    public void AddUiEffectCollected(Vector3 pos,int id)
+
+    public void AddUiEffectCollected(Vector3 pos, int id)
     {
-       
-
         var eff = Instantiate(prefTokens[id], tokenholder);
-       RectTransform trans= eff.GetComponent<RectTransform>();
-       trans.position=Camera.main.WorldToScreenPoint(pos);
+        RectTransform trans = eff.GetComponent<RectTransform>();
+        trans.position = Camera.main.WorldToScreenPoint(pos);
         trans.DOMove(tokenTarget[id].position, 1);
-        Destroy(eff,1);
-
-
+        Destroy(eff, 1);
     }
+
     private void FixedUpdate()
     {
         if (!SpawnEnabled) return;
@@ -64,17 +63,18 @@ public class CollectableSpawner : MonoBehaviour
     }
 
     int spawned = 0;
+
     private void SpawnCollectable(float zPosition)
     {
         float randomX;
         int maxAttempts = 5; // Prevent infinite loops
         int attempts = 0;
-        
+
         do
         {
             randomX = Random.Range(minX, maxX);
             attempts++;
-        
+
             if (spawned > 1 && spawned <= collectablelock)
             {
                 randomX = lastXpos;
@@ -83,19 +83,18 @@ public class CollectableSpawner : MonoBehaviour
             {
                 lastXpos = randomX;
             }
-        } 
-        while (SpawnManager.Instance.IsPositionOccupied(randomX, zPosition) && attempts < maxAttempts);
-        
+        } while (SpawnManager.Instance.IsPositionOccupied(randomX, zPosition) && attempts < maxAttempts);
+
         spawned++;
         if (spawned > collectablelock)
         {
-            collectablelock=Random.Range(3, 4);
+            collectablelock = Random.Range(3, 4);
             spawned = 0;
         }
-        
+
         Vector3 spawnPosition = new Vector3(randomX, 1, zPosition);
         SpawnManager.Instance.MarkPositionOccupied(randomX, zPosition);
-        
+
         ObjectPooler.Instance.SpawnCollectableFromPool(spawnPosition, Quaternion.identity);
     }
 

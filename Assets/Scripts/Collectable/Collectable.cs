@@ -1,4 +1,5 @@
 using System;
+using DG.Tweening;
 using UnityEngine;
 
 public class Collectable : MonoBehaviour
@@ -10,8 +11,8 @@ public class Collectable : MonoBehaviour
     public bool canAnimate = true;
 
     public LayerMask targetLayer;
-    
-    private float initialY;
+
+    Vector3 initialPosition;
     public float floatAmount = 0.5f;
     private float floatSpeed = 2f;
     private bool floatingUp = true;
@@ -19,11 +20,12 @@ public class Collectable : MonoBehaviour
     private void Awake()
     {
         targetLayer = LayerMask.GetMask("Runner");
+        initialPosition = transform.localPosition;
     }
 
     private void OnEnable()
     {
-        initialY = transform.position.y; // Store the initial Y position
+        SetDefaultPos();
     }
 
     private void Update()
@@ -34,20 +36,37 @@ public class Collectable : MonoBehaviour
 
             if (transform.position.z < -15f)
             {
-                gameObject.SetActive(false); 
+                gameObject.SetActive(false);
             }
         }
     }
+
+    void SetDefaultPos()
+    {
+        transform.localPosition = initialPosition;
+    }
+
     public void StopMovement(bool state)
     {
         isMoving = state;
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (((1 << other.gameObject.layer) & targetLayer) != 0)
         {
             CollectableSpawner.Instance.AddUiEffectCollected(transform.position, myid);
-            gameObject.SetActive(false);
+            MoveToPlayer();
         }
+    }
+
+    void MoveToPlayer()
+    {
+        transform.DOMove(PlayerController.instance.CashPoint.position, 0.1f)
+            .OnComplete(() =>
+            {
+                SetDefaultPos();
+                gameObject.SetActive(false);
+            });
     }
 }

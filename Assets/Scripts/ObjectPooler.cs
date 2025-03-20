@@ -1,39 +1,35 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+
 public class ObjectPooler : MonoBehaviour
 {
     public static ObjectPooler Instance;
 
     public bool CanDestroy;
-    
+
     public bool IsToSpawnRightTurnAtStart;
-    
+
     public NextPatchToSpawn NextPatchWillBe;
+
     public enum NextPatchToSpawn
     {
         LeftTurn,
         RightTurn,
     }
+
     private void Awake()
     {
         Instance = this;
     }
 
-    [Header("Environment Pool Settings")]
-    [Space]
-
+    [Header("Environment Pool Settings")] [Space]
     public GameObject EnvironmentHolder;
-    [Space]
 
-    public GameObject environmentPatchPrefab;
-    [Space]
+    [Space] public GameObject environmentPatchPrefab;
+    [Space] public GameObject TurnedEnvironmentPatchPrefab;
+    [Space] public int EnvironmentPoolSize = 5;
 
-    public GameObject TurnedEnvironmentPatchPrefab;
-    [Space]
-
-    public int EnvironmentPoolSize = 5;
-    
     public GameObject BoosterBag;
 
     public Transform NextPoint;
@@ -50,10 +46,12 @@ public class ObjectPooler : MonoBehaviour
     [HideInInspector] public List<GameObject> bag;
 
     bool turnedPatchSpawned = false;
+
     private void Start()
     {
-       SpawnEnviornment();
+        SpawnEnviornment();
     }
+
     public void SpawnEnviornment()
     {
         // Initialize Environment Pool
@@ -66,6 +64,7 @@ public class ObjectPooler : MonoBehaviour
             environmentPool.Enqueue(obj);
         }
     }
+
     public GameObject SpawnCollectableFromPool(Vector3 position, Quaternion rotation)
     {
         if (CollectableObjectPool.Count == 0)
@@ -85,7 +84,7 @@ public class ObjectPooler : MonoBehaviour
 
     public void SpawnBoosterBag()
     {
-        if (activeEnvironmentPatches.Count < 3 || PlayerController.instance.BoostEnabled || bag.Count != 0) 
+        if (activeEnvironmentPatches.Count < 3 || PlayerController.instance.BoostEnabled || bag.Count != 0)
         {
             Debug.Log("Not enough active environment patches to spawn the bag.");
             return;
@@ -121,11 +120,10 @@ public class ObjectPooler : MonoBehaviour
         patch.SetActive(true);
 
         activeEnvironmentPatches.Add(patch);
-        
+
         Debug.Log("Patch Spawned location: " + patch.transform.position);
-        
+
         return patch;
-        
     }
 
     [ContextMenu("SpawnTurnedEnvironmentPatch")]
@@ -136,6 +134,7 @@ public class ObjectPooler : MonoBehaviour
             Debug.Log("TurnedEnvironmentPatchPrefab is not assigned.");
             return;
         }
+
         GameObject lastPatch = activeEnvironmentPatches[activeEnvironmentPatches.Count - 1];
 
         GameObject turnedPatch = Instantiate(TurnedEnvironmentPatchPrefab, lastPatch.transform);
@@ -148,7 +147,7 @@ public class ObjectPooler : MonoBehaviour
         {
             turnedPatch.GetComponent<TurnedPatchesManager>().ActivateLeft();
         }
-        
+
         turnedPatch.SetActive(true);
 
         NextPoint = ActivedTuredPatch.GetComponent<TurnedPatchEnv>().PatchPoint;
@@ -157,8 +156,8 @@ public class ObjectPooler : MonoBehaviour
 
         lastPatch.GetComponent<EnvironmentPatch>().TurnedPatch = TurnedPatchParent;
 
-        lastPatch.GetComponent<EnvironmentPatch>().canOffThis = false; 
-        
+        lastPatch.GetComponent<EnvironmentPatch>().canOffThis = false;
+
         turnedPatchSpawned = true;
     }
 
@@ -172,7 +171,7 @@ public class ObjectPooler : MonoBehaviour
             environmentPool.Enqueue(patch);
             patch.SetActive(false);
 
-            if (isFirstPatch) 
+            if (isFirstPatch)
             {
                 EnvironmentPatch patchToReturn = patch.GetComponent<EnvironmentPatch>();
                 foreach (GameObject cash in patchToReturn.AllCashTemplates)

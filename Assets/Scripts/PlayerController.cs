@@ -3,8 +3,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public static PlayerController instance;
-    [Header("Movement Settings")]
-    public float moveSpeed = 10f; // Speed of left/right movement
+    [Header("Movement Settings")] public float moveSpeed = 10f; // Speed of left/right movement
     public float moveForwardSpeed = 10f; // Speed of left/right movement
     public float moveForwardBoostSpeed = 10f; // Speed of left/right movement
 
@@ -14,14 +13,12 @@ public class PlayerController : MonoBehaviour
     public float rotationSpeed = 5f; // Speed of rotation when moving left/right
     public float maxRotation = 15f; // Maximum rotation angle when moving left/right
     public float GroundCheckRayCastLenght = 1f;
-    [HideInInspector] public float horizontalInput; 
+    [HideInInspector] public float horizontalInput;
 
-    [Header("Slide Settings")]
-    public float slideDuration = 0.5f; // Duration of the slide
+    [Header("Slide Settings")] public float slideDuration = 0.5f; // Duration of the slide
     private float slideTimer = 0f;
 
-    [Header("Boundaries")]
-    public float minX = -5f; // Minimum X position
+    [Header("Boundaries")] public float minX = -5f; // Minimum X position
     public float maxX = 5f; // Maximum X position
     public LayerMask GroundLayer;
 
@@ -31,13 +28,13 @@ public class PlayerController : MonoBehaviour
     bool isSliding = false;
     [HideInInspector] public bool canMovement;
     private bool isHurt = false;
-    [Header("Animation Settings")]
-    public Animator animator;
+    [Header("Animation Settings")] public Animator animator;
 
-    [Header("Boost Management")]
-    public bool BoostEnabled = false;
+    [Header("Boost Management")] public bool BoostEnabled = false;
     public float BoostTimer = 5f;
     float currSpeed;
+
+    public Transform CashPoint;
 
     public float getCurrSpeed()
     {
@@ -62,7 +59,6 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        
         if (isHurt)
         {
             return;
@@ -104,7 +100,8 @@ public class PlayerController : MonoBehaviour
             else
             {
                 // Smoothly return to default rotation when not moving
-                transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.identity, Time.deltaTime * rotationSpeed);
+                transform.rotation =
+                    Quaternion.Lerp(transform.rotation, Quaternion.identity, Time.deltaTime * rotationSpeed);
             }
         }
     }
@@ -145,6 +142,7 @@ public class PlayerController : MonoBehaviour
         controller.center = new Vector3(controller.center.x, controller.height / 2, controller.center.z);
         animator.SetTrigger("Slide");
     }
+
     public void EndSlide() // called in animation event
     {
         isSliding = false;
@@ -160,6 +158,7 @@ public class PlayerController : MonoBehaviour
             moveDirection.y -= gravity * Time.deltaTime;
         }
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Obstacle"))
@@ -178,10 +177,10 @@ public class PlayerController : MonoBehaviour
         animator.SetTrigger("Hurt");
         ObstacleSpawner.Instance.StopSpawning(false);
         StopAllObstacles(false);
-        
+
         CollectableSpawner.Instance.StopSpawning(false);
         StopAllCollectables(false);
-        
+
         EnvironmentManager.Instance.StopSpawning(false);
         StopAllEnvironment(false);
 
@@ -190,7 +189,7 @@ public class PlayerController : MonoBehaviour
 
     private void Collect(int id)
     {
-        GameManager.Instance.Collected(1,id);
+        GameManager.Instance.Collected(1, id);
         Audiomanager.instance.PlaySfx_Coins();
     }
 
@@ -202,6 +201,7 @@ public class PlayerController : MonoBehaviour
             obstacle.StopMovement(state);
         }
     }
+
     private void StopAllCollectables(bool state)
     {
         Collectable[] collectables = FindObjectsOfType<Collectable>();
@@ -210,6 +210,7 @@ public class PlayerController : MonoBehaviour
             collectable.StopMovement(state);
         }
     }
+
     private void StopAllEnvironment(bool state)
     {
         EnvironmentPatch[] environmentPatches = FindObjectsOfType<EnvironmentPatch>();
@@ -218,11 +219,12 @@ public class PlayerController : MonoBehaviour
             environment.StopMovement(state);
         }
     }
+
     public void StopBooster()
     {
         if (BoostEnabled)
         {
-            BoostTimer-=Time.deltaTime;
+            BoostTimer -= Time.deltaTime;
             if (BoostTimer <= 0)
             {
                 BoostEnabled = false;
@@ -230,6 +232,7 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
     public void RestHurt() // Called in animation Event
     {
         isHurt = false;
@@ -237,7 +240,7 @@ public class PlayerController : MonoBehaviour
         ObstacleSpawner.Instance.StopSpawning(true);
         StopAllObstacles(true);
         StopAllCollectables(true);
-        
+
         EnvironmentManager.Instance.StopSpawning(true);
         StopAllEnvironment(true);
         ResetStumble();
@@ -249,6 +252,7 @@ public class PlayerController : MonoBehaviour
         moveForwardSpeed = 20f;
         moveSpeed = 7f;
     }
+
     private bool IsGrounded()
     {
         float rayLength = GroundCheckRayCastLenght + 0.1f; // Slightly increase length

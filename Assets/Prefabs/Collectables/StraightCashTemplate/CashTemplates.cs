@@ -7,6 +7,7 @@ public class CashTemplates : MonoBehaviour
     public LayerMask targetLayer;
     public List<GameObject> cashTemplates;
     public bool CanOnCam;
+
     private void OnEnable()
     {
         foreach (GameObject cashTemplate in cashTemplates)
@@ -14,6 +15,7 @@ public class CashTemplates : MonoBehaviour
             cashTemplate.SetActive(true);
         }
     }
+
     private void OnTriggerExit(Collider other)
     {
         if (((1 << other.gameObject.layer) & targetLayer) != 0)
