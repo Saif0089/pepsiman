@@ -2292,7 +2292,7 @@ MonoBehaviour:
   finishLinePrefab: {fileID: 3703501085493076689, guid: a18a9fed642eb964787b2ae2ec1603ad,
     type: 3}
   WinScreen: {fileID: 598008491}
-  timeToSpawnFinish: 130
+  timeToSpawnFinish: 115
   FinishLineSpawned: 0
   mainMenu: {fileID: 1633966094}
 --- !u!4 &1016158045
@@ -2586,7 +2586,7 @@ MonoBehaviour:
     type: 3}
   TurnedEnvironmentPatchPrefab: {fileID: 1486478103104723555, guid: f2c18a660cd13c94fa400a3a43dd0046,
     type: 3}
-  EnvironmentPoolSize: 3
+  EnvironmentPoolSize: 1
   BoosterBag: {fileID: 3931391787129581432, guid: 07a8a0bdf5d12cd4d8fcff2d205eeaab,
     type: 3}
   NextPoint: {fileID: 0}
