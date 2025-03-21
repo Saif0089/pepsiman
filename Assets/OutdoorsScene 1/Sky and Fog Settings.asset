@@ -15,13 +15,13 @@ MonoBehaviour:
   active: 1
   indirectDiffuseLightingMultiplier:
     m_OverrideState: 1
-    m_Value: 0.8
+    m_Value: 0.7
   indirectDiffuseLightingLayers:
     m_OverrideState: 1
     m_Value: 255
   reflectionLightingMultiplier:
     m_OverrideState: 1
-    m_Value: 0.3
+    m_Value: 0.5
   reflectionLightingLayers:
     m_OverrideState: 0
     m_Value: 255
@@ -49,7 +49,7 @@ MonoBehaviour:
     m_Value: {r: 0.16981131, g: 0.16981131, b: 0.16981131, a: 1}
   balance:
     m_OverrideState: 1
-    m_Value: -20
+    m_Value: -13
 --- !u!114 &-3356616591147486447
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -274,7 +274,7 @@ MonoBehaviour:
     m_Value: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 0.929
+    m_Value: 0.7
   scatter:
     m_OverrideState: 0
     m_Value: 1
@@ -317,7 +317,6 @@ MonoBehaviour:
   - {fileID: 1591947112601445934}
   - {fileID: -1914319584008565911}
   - {fileID: 4154127696703798829}
-  - {fileID: 8784426229331482815}
   - {fileID: -190802844075674591}
   - {fileID: -7369158555698933186}
   - {fileID: 2187465329040946000}
@@ -358,7 +357,7 @@ MonoBehaviour:
     m_Value: 15
   limitMax:
     m_OverrideState: 1
-    m_Value: 13.690015
+    m_Value: 13.458847
   curveMap:
     m_OverrideState: 0
     m_Value:
@@ -500,10 +499,10 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.442
+    m_Value: 0.458
   smoothness:
     m_OverrideState: 1
-    m_Value: 0.16
+    m_Value: 0.203
   roundness:
     m_OverrideState: 0
     m_Value: 1
@@ -562,7 +561,7 @@ MonoBehaviour:
   active: 1
   postExposure:
     m_OverrideState: 1
-    m_Value: 0.7
+    m_Value: 0.8
   contrast:
     m_OverrideState: 1
     m_Value: 15
@@ -590,13 +589,13 @@ MonoBehaviour:
   active: 1
   rotation:
     m_OverrideState: 1
-    m_Value: 200
+    m_Value: 201
   skyIntensityMode:
     m_OverrideState: 1
     m_Value: 0
   exposure:
     m_OverrideState: 1
-    m_Value: 16
+    m_Value: 15.5
   multiplier:
     m_OverrideState: 0
     m_Value: 1
@@ -766,84 +765,3 @@ MonoBehaviour:
   maxNits:
     m_OverrideState: 0
     m_Value: 1000
---- !u!114 &8784426229331482815
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9008a067f4d626c4d8bc4bc48f04bb89, type: 3}
-  m_Name: ScreenSpaceAmbientOcclusion
-  m_EditorClassIdentifier: 
-  active: 1
-  quality:
-    m_OverrideState: 1
-    m_Value: 3
-  rayTracing:
-    m_OverrideState: 0
-    m_Value: 0
-  intensity:
-    m_OverrideState: 1
-    m_Value: 4
-  directLightingStrength:
-    m_OverrideState: 1
-    m_Value: 0.273
-  radius:
-    m_OverrideState: 1
-    m_Value: 2
-  spatialBilateralAggressiveness:
-    m_OverrideState: 0
-    m_Value: 0.179
-  temporalAccumulation:
-    m_OverrideState: 0
-    m_Value: 1
-  ghostingReduction:
-    m_OverrideState: 0
-    m_Value: 0.5
-  blurSharpness:
-    m_OverrideState: 0
-    m_Value: 0.1
-  layerMask:
-    m_OverrideState: 0
-    m_Value:
-      serializedVersion: 2
-      m_Bits: 4294967295
-  specularOcclusion:
-    m_OverrideState: 0
-    m_Value: 0.5
-  occluderMotionRejection:
-    m_OverrideState: 0
-    m_Value: 1
-  receiverMotionRejection:
-    m_OverrideState: 0
-    m_Value: 1
-  m_StepCount:
-    m_OverrideState: 1
-    m_Value: 6
-  m_FullResolution:
-    m_OverrideState: 1
-    m_Value: 1
-  m_MaximumRadiusInPixels:
-    m_OverrideState: 1
-    m_Value: 16
-  m_BilateralUpsample:
-    m_OverrideState: 1
-    m_Value: 1
-  m_DirectionCount:
-    m_OverrideState: 1
-    m_Value: 2
-  m_RayLength:
-    m_OverrideState: 1
-    m_Value: 3
-  m_SampleCount:
-    m_OverrideState: 1
-    m_Value: 2
-  m_Denoise:
-    m_OverrideState: 1
-    m_Value: 1
-  m_DenoiserRadius:
-    m_OverrideState: 1
-    m_Value: 0.5

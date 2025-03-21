@@ -1,4 +1,7 @@
+using TMPro;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -35,7 +38,13 @@ public class PlayerController : MonoBehaviour
     public float BoostTimer = 5f;
     float currSpeed;
 
+    public bool IsMagnetOn = false;
+    
     public Transform CashPoint;
+    
+    public Button MagnetButton;
+    
+    public TextMeshProUGUI MagnetText;
 
     public BoxCollider CashCollider;
 
@@ -56,7 +65,8 @@ public class PlayerController : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
-        animator.SetTrigger("Run"); // Start with running animation
+        animator.SetTrigger("Run");
+        MagnetButton.onClick.AddListener(ToggleMagnet);
         canMovement = true;
     }
 
@@ -82,9 +92,6 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.B))
             BoostEnabled = !BoostEnabled;
-        
-        ExpancCollider();
-        ContractCollider();
     }
 
     private void HandleLaneMovement()
@@ -139,23 +146,21 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-
-    void ExpancCollider()
+    void ToggleMagnet()
     {
-        if (Input.GetKeyDown(KeyCode.J))
+        IsMagnetOn = !IsMagnetOn;
+
+        if (IsMagnetOn)
         {
             CashCollider.size = new Vector3(500, 50, 1);
+            MagnetText.text = "On";
         }
-    }
-
-    void ContractCollider()
-    {
-        if (Input.GetKeyDown(KeyCode.K))
+        else
         {
             CashCollider.size = new Vector3(1, 50, 1);
+            MagnetText.text = "Off";
         }
     }
-
     private void StartSlide()
     {
         isSliding = true;
