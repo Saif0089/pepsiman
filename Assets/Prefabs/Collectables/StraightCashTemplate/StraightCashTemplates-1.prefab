@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9027277799924461343}
   - component: {fileID: 6645110655791882266}
   - component: {fileID: -7732941841545791981}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: StraightCashTemplates-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetLayer:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 1024
   cashTemplates:
   - {fileID: 6858322132636896787}
   - {fileID: 1015283191525329642}
@@ -180,7 +180,7 @@ PrefabInstance:
     - target: {fileID: 8334144298968335122, guid: 172281d52b1963a4286f12b060d5d8f9,
         type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -300,7 +300,7 @@ PrefabInstance:
     - target: {fileID: 8334144298968335122, guid: 172281d52b1963a4286f12b060d5d8f9,
         type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -420,7 +420,7 @@ PrefabInstance:
     - target: {fileID: 8334144298968335122, guid: 172281d52b1963a4286f12b060d5d8f9,
         type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -540,7 +540,7 @@ PrefabInstance:
     - target: {fileID: 8334144298968335122, guid: 172281d52b1963a4286f12b060d5d8f9,
         type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

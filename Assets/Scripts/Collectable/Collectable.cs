@@ -10,7 +10,7 @@ public class Collectable : MonoBehaviour
     public bool canMove = true;
     public bool canAnimate = true;
 
-    public LayerMask targetLayer;
+    LayerMask targetLayer;
 
     Vector3 initialPosition;
     public float floatAmount = 0.5f;
@@ -19,7 +19,7 @@ public class Collectable : MonoBehaviour
 
     private void Awake()
     {
-        targetLayer = LayerMask.GetMask("Runner");
+        targetLayer = LayerMask.GetMask("Col");
         initialPosition = transform.localPosition;
     }
 

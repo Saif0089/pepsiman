@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5605295581721923251}
   - component: {fileID: 4974644802584810916}
   - component: {fileID: -5622086095430933481}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: StraightCashTemplates-2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetLayer:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 1024
   cashTemplates:
   - {fileID: 8287837294477628109}
   - {fileID: 5458196055935277678}
@@ -130,7 +130,7 @@ PrefabInstance:
     - target: {fileID: 3950432410633613785, guid: ea1fcdbb1e7fb704393c11c09cab50f8,
         type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5604726290761403099, guid: ea1fcdbb1e7fb704393c11c09cab50f8,
         type: 3}
@@ -265,7 +265,7 @@ PrefabInstance:
     - target: {fileID: 3950432410633613785, guid: ea1fcdbb1e7fb704393c11c09cab50f8,
         type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5604726290761403099, guid: ea1fcdbb1e7fb704393c11c09cab50f8,
         type: 3}
@@ -400,7 +400,7 @@ PrefabInstance:
     - target: {fileID: 3950432410633613785, guid: ea1fcdbb1e7fb704393c11c09cab50f8,
         type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5604726290761403099, guid: ea1fcdbb1e7fb704393c11c09cab50f8,
         type: 3}
@@ -535,7 +535,7 @@ PrefabInstance:
     - target: {fileID: 3950432410633613785, guid: ea1fcdbb1e7fb704393c11c09cab50f8,
         type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5604726290761403099, guid: ea1fcdbb1e7fb704393c11c09cab50f8,
         type: 3}

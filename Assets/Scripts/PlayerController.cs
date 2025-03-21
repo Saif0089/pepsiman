@@ -30,11 +30,14 @@ public class PlayerController : MonoBehaviour
     private bool isHurt = false;
     [Header("Animation Settings")] public Animator animator;
 
-    [Header("Boost Management")] public bool BoostEnabled = false;
+    [Header("Boost Management")]
+    public bool BoostEnabled = false;
     public float BoostTimer = 5f;
     float currSpeed;
 
     public Transform CashPoint;
+
+    public BoxCollider CashCollider;
 
     public float getCurrSpeed()
     {
@@ -79,6 +82,9 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.B))
             BoostEnabled = !BoostEnabled;
+        
+        ExpancCollider();
+        ContractCollider();
     }
 
     private void HandleLaneMovement()
@@ -131,6 +137,22 @@ public class PlayerController : MonoBehaviour
                     StartSlide();
                 }
             }
+        }
+    }
+
+    void ExpancCollider()
+    {
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            CashCollider.size = new Vector3(500, 50, 1);
+        }
+    }
+
+    void ContractCollider()
+    {
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            CashCollider.size = new Vector3(1, 50, 1);
         }
     }
 

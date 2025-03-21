@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9136286961871340118}
   - component: {fileID: 4395463247531873585}
   - component: {fileID: 4364513507872227186}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: StraightCashTemplates-3
   m_TagString: Untagged
   m_Icon: {fileID: 0}

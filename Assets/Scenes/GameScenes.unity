@@ -1351,10 +1351,35 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5362404742713848717}
     m_Modifications:
+    - target: {fileID: -7732941841545791981, guid: 0c1e221d16c4268409f2cf4a77526580,
+        type: 3}
+      propertyPath: targetLayer.m_Bits
+      value: 1024
+      objectReference: {fileID: 0}
+    - target: {fileID: 1015283191525329642, guid: 0c1e221d16c4268409f2cf4a77526580,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6858322132636896787, guid: 0c1e221d16c4268409f2cf4a77526580,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7180756876285561623, guid: 0c1e221d16c4268409f2cf4a77526580,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 7631182610558144788, guid: 0c1e221d16c4268409f2cf4a77526580,
         type: 3}
       propertyPath: m_Name
       value: StraightCashTemplates-1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325705253193304546, guid: 0c1e221d16c4268409f2cf4a77526580,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 9027277799924461343, guid: 0c1e221d16c4268409f2cf4a77526580,
         type: 3}
@@ -2425,13 +2450,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1058145285}
   - component: {fileID: 1058145286}
-  m_Layer: 7
+  m_Layer: 10
   m_Name: Megnet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1058145285
 Transform:
   m_ObjectHideFlags: 0
@@ -2466,7 +2491,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 15.31, y: 5, z: 5}
+  m_Size: {x: 1, y: 50, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1131597382
 GameObject:
@@ -2744,7 +2769,7 @@ MonoBehaviour:
     type: 3}
   TurnedEnvironmentPatchPrefab: {fileID: 1486478103104723555, guid: f2c18a660cd13c94fa400a3a43dd0046,
     type: 3}
-  EnvironmentPoolSize: 3
+  EnvironmentPoolSize: 0
   BoosterBag: {fileID: 3931391787129581432, guid: 07a8a0bdf5d12cd4d8fcff2d205eeaab,
     type: 3}
   NextPoint: {fileID: 0}
@@ -4065,6 +4090,7 @@ MonoBehaviour:
   BoostEnabled: 0
   BoostTimer: 5
   CashPoint: {fileID: 227423176}
+  CashCollider: {fileID: 1058145286}
 --- !u!143 &1851075673
 CharacterController:
   m_ObjectHideFlags: 0
@@ -4316,6 +4342,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5362404742713848717}
     m_Modifications:
+    - target: {fileID: 821057102520859408, guid: 52f66daa6cd1b0748a9c85914689f0df,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1092011325930944112, guid: 52f66daa6cd1b0748a9c85914689f0df,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4364513507872227186, guid: 52f66daa6cd1b0748a9c85914689f0df,
+        type: 3}
+      propertyPath: targetLayer.m_Bits
+      value: 1024
+      objectReference: {fileID: 0}
+    - target: {fileID: 6382937176219721042, guid: 52f66daa6cd1b0748a9c85914689f0df,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 8604091262579230387, guid: 52f66daa6cd1b0748a9c85914689f0df,
         type: 3}
       propertyPath: m_Name
@@ -4370,6 +4416,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9154685746934404642, guid: 52f66daa6cd1b0748a9c85914689f0df,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -88237,7 +88288,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &3946102360087745618
 Animator:
   serializedVersion: 5

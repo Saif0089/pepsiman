@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8920695292835029620}
   - component: {fileID: 3237596982567205939}
   - component: {fileID: -1415873930332665421}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: StraightCashTemplates-4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetLayer:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 1024
   cashTemplates:
   - {fileID: 2582298940959514459}
   - {fileID: 8384840597751759628}
