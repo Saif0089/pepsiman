@@ -9344,7 +9344,7 @@ GameObject:
   - component: {fileID: 7032801813212488874}
   - component: {fileID: 593579981119884376}
   - component: {fileID: 4423889219380447612}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1 (2)
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -9454,9 +9454,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &4423889219380447612
 Rigidbody:
@@ -24674,7 +24671,7 @@ GameObject:
   - component: {fileID: 6892671931736965685}
   - component: {fileID: 3832614092183202373}
   - component: {fileID: 1728598340237140648}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1 (3)
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -24784,9 +24781,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &1728598340237140648
 Rigidbody:
@@ -29633,7 +29627,7 @@ GameObject:
   - component: {fileID: 3577030765853434949}
   - component: {fileID: 5652916411873393314}
   - component: {fileID: 2472632744904139298}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -29743,9 +29737,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &2472632744904139298
 Rigidbody:
@@ -30756,7 +30747,7 @@ GameObject:
   - component: {fileID: 2497823379416724528}
   - component: {fileID: 3652916190701652759}
   - component: {fileID: 1673739900557134449}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1 (4)
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -30866,9 +30857,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &1673739900557134449
 Rigidbody:
@@ -32645,7 +32633,7 @@ GameObject:
   - component: {fileID: 4659745529258512780}
   - component: {fileID: 2172987591881128353}
   - component: {fileID: 4519051470982493301}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1 (3)
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -32755,9 +32743,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &4519051470982493301
 Rigidbody:
@@ -33336,7 +33321,7 @@ GameObject:
   - component: {fileID: 4268526710755681815}
   - component: {fileID: 7399565662264034942}
   - component: {fileID: 4206158970373535054}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -33446,9 +33431,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &4206158970373535054
 Rigidbody:
@@ -35613,7 +35595,7 @@ GameObject:
   - component: {fileID: 8349637695030429176}
   - component: {fileID: 2246807345656868030}
   - component: {fileID: 8734356802429705767}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1 (3)
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -35723,9 +35705,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &8734356802429705767
 Rigidbody:
@@ -45705,7 +45684,7 @@ GameObject:
   - component: {fileID: 5557273302705141469}
   - component: {fileID: 465252202375593805}
   - component: {fileID: 832290967032585483}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1 (4)
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -45815,9 +45794,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &832290967032585483
 Rigidbody:
@@ -52267,7 +52243,7 @@ GameObject:
   - component: {fileID: 675745366737159587}
   - component: {fileID: 1724966561004136628}
   - component: {fileID: 2463066267501812035}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1 (1)
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -52377,9 +52353,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &2463066267501812035
 Rigidbody:
@@ -54415,7 +54388,7 @@ GameObject:
   - component: {fileID: 7527766303582740020}
   - component: {fileID: 7147934072924806084}
   - component: {fileID: 2973775371006039571}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1 (1)
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -54525,9 +54498,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &2973775371006039571
 Rigidbody:
@@ -56949,7 +56919,7 @@ GameObject:
   - component: {fileID: 855398619409351934}
   - component: {fileID: 2158450179608916816}
   - component: {fileID: 6967489366255792309}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1 (1)
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -57059,9 +57029,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &6967489366255792309
 Rigidbody:
@@ -60307,7 +60274,7 @@ GameObject:
   - component: {fileID: 1124438374705365678}
   - component: {fileID: 7410218441225291062}
   - component: {fileID: 1224589457404877276}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1 (3)
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -60417,9 +60384,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &1224589457404877276
 Rigidbody:
@@ -62427,7 +62391,7 @@ GameObject:
   - component: {fileID: 9149400683744448542}
   - component: {fileID: 8267448048387752010}
   - component: {fileID: 5508974364301601359}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1 (3)
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -62537,9 +62501,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &5508974364301601359
 Rigidbody:
@@ -66122,7 +66083,7 @@ GameObject:
   - component: {fileID: 5651384008104969274}
   - component: {fileID: 3413775269243549757}
   - component: {fileID: 1834886560357867226}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1 (4)
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -66232,9 +66193,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &1834886560357867226
 Rigidbody:
@@ -66800,7 +66758,7 @@ GameObject:
   - component: {fileID: 3094846249666844261}
   - component: {fileID: 4913536089927020238}
   - component: {fileID: 6717814103608633641}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1 (2)
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -66910,9 +66868,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &6717814103608633641
 Rigidbody:
@@ -69933,7 +69888,7 @@ GameObject:
   - component: {fileID: 8219149319691563379}
   - component: {fileID: 3720426819378790784}
   - component: {fileID: 8452921868102739988}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -70043,9 +69998,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &8452921868102739988
 Rigidbody:
@@ -70341,7 +70293,7 @@ GameObject:
   - component: {fileID: 1266707120485465870}
   - component: {fileID: 3942110539652763426}
   - component: {fileID: 9046753692171604029}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -70451,9 +70403,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &9046753692171604029
 Rigidbody:
@@ -74246,7 +74195,7 @@ GameObject:
   - component: {fileID: 9148792299446358680}
   - component: {fileID: 6747199359815273229}
   - component: {fileID: 606023534421427254}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -74356,9 +74305,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &606023534421427254
 Rigidbody:
@@ -83971,7 +83917,7 @@ GameObject:
   - component: {fileID: 2595772001265233584}
   - component: {fileID: 1341239146279617568}
   - component: {fileID: 3174214041831808453}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1 (2)
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -84081,9 +84027,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &3174214041831808453
 Rigidbody:
@@ -88637,7 +88580,7 @@ GameObject:
   - component: {fileID: 6360170025730579317}
   - component: {fileID: 7399815828463622750}
   - component: {fileID: 324798682306072824}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1 (3)
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -88747,9 +88690,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &324798682306072824
 Rigidbody:
@@ -96866,7 +96806,7 @@ GameObject:
   - component: {fileID: 6136128371679567415}
   - component: {fileID: 9088794769822066188}
   - component: {fileID: 2423026068851731194}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1 (4)
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -96976,9 +96916,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &2423026068851731194
 Rigidbody:
@@ -97494,7 +97431,7 @@ GameObject:
   - component: {fileID: 2508244483934417369}
   - component: {fileID: 7551441109353115149}
   - component: {fileID: 6614629721297285302}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1 (3)
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -97604,9 +97541,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &6614629721297285302
 Rigidbody:
@@ -100343,7 +100277,7 @@ GameObject:
   - component: {fileID: 7644437732870093423}
   - component: {fileID: 8368669634546593582}
   - component: {fileID: 5767988606731524223}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1 (1)
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -100453,9 +100387,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &5767988606731524223
 Rigidbody:
@@ -102047,7 +101978,7 @@ GameObject:
   - component: {fileID: 4678032157419083146}
   - component: {fileID: 5805707506755982208}
   - component: {fileID: 4025940661459008775}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1 (2)
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -102157,9 +102088,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &4025940661459008775
 Rigidbody:
@@ -103411,7 +103339,7 @@ GameObject:
   - component: {fileID: 4717751739627035822}
   - component: {fileID: 3751571700415363288}
   - component: {fileID: 4559020068719741427}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1 (1)
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -103521,9 +103449,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &4559020068719741427
 Rigidbody:
@@ -108285,7 +108210,7 @@ GameObject:
   - component: {fileID: 5125234929887224004}
   - component: {fileID: 2661618116515551014}
   - component: {fileID: 9093865059941397781}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1 (2)
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -108395,9 +108320,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &9093865059941397781
 Rigidbody:
@@ -109555,7 +109477,7 @@ GameObject:
   - component: {fileID: 4107176710030201845}
   - component: {fileID: 2263073147022386459}
   - component: {fileID: 3476375183585523974}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1 (4)
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -109665,9 +109587,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &3476375183585523974
 Rigidbody:
@@ -114518,7 +114437,7 @@ GameObject:
   - component: {fileID: 5106564968872753621}
   - component: {fileID: 1129799839545015001}
   - component: {fileID: 6987433312332679112}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -114628,9 +114547,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &6987433312332679112
 Rigidbody:
@@ -114755,7 +114671,7 @@ GameObject:
   - component: {fileID: 585496474618958254}
   - component: {fileID: 4354013337395882763}
   - component: {fileID: 6497585072227684536}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -114865,9 +114781,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &6497585072227684536
 Rigidbody:
@@ -138122,9 +138035,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &8530201504515416772
 Rigidbody:
@@ -148831,7 +148741,7 @@ GameObject:
   - component: {fileID: 223147023700593425}
   - component: {fileID: 1932658656097327830}
   - component: {fileID: 1848286503720647278}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1 (2)
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -148941,9 +148851,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &1848286503720647278
 Rigidbody:
@@ -151977,7 +151884,7 @@ GameObject:
   - component: {fileID: 5046747067962712526}
   - component: {fileID: 6030723108945756315}
   - component: {fileID: 3232675961489188588}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1 (2)
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -152087,9 +151994,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &3232675961489188588
 Rigidbody:
@@ -163227,9 +163131,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &123771428401228678
 Rigidbody:
@@ -166562,7 +166463,7 @@ GameObject:
   - component: {fileID: 3555178009617284063}
   - component: {fileID: 4587620425491325849}
   - component: {fileID: 311837137381410607}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1 (2)
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -166672,9 +166573,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &311837137381410607
 Rigidbody:
@@ -200612,7 +200510,7 @@ GameObject:
   - component: {fileID: 3721776499773412662}
   - component: {fileID: 6448513077953252039}
   - component: {fileID: 917570206764414009}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1 (4)
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -200722,9 +200620,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &917570206764414009
 Rigidbody:
@@ -206115,7 +206010,7 @@ GameObject:
   - component: {fileID: 6222652136955533413}
   - component: {fileID: 3806600126266228904}
   - component: {fileID: 337803997694829169}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1 (4)
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -206225,9 +206120,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &337803997694829169
 Rigidbody:
@@ -206487,7 +206379,7 @@ GameObject:
   - component: {fileID: 398984045567937171}
   - component: {fileID: 7901999008174199370}
   - component: {fileID: 8628451469293093395}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1 (1)
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -206597,9 +206489,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &8628451469293093395
 Rigidbody:
@@ -208262,7 +208151,7 @@ GameObject:
   - component: {fileID: 1700067333774958956}
   - component: {fileID: 6588470867104385011}
   - component: {fileID: 552559646450280970}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1 (3)
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -208372,9 +208261,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &552559646450280970
 Rigidbody:
@@ -221124,7 +221010,7 @@ GameObject:
   - component: {fileID: 2167987379153301767}
   - component: {fileID: 9095056406328196040}
   - component: {fileID: 577793737550371353}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1 (2)
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -221234,9 +221120,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &577793737550371353
 Rigidbody:
@@ -222215,7 +222098,7 @@ GameObject:
   - component: {fileID: 4675584581952269750}
   - component: {fileID: 5050473012873078545}
   - component: {fileID: 1107866485191561650}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1 (3)
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -222325,9 +222208,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &1107866485191561650
 Rigidbody:
@@ -228687,7 +228567,7 @@ GameObject:
   - component: {fileID: 2766701881263772975}
   - component: {fileID: 2548241225173219580}
   - component: {fileID: 2916212792294787224}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1 (3)
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -228797,9 +228677,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &2916212792294787224
 Rigidbody:
@@ -231712,7 +231589,7 @@ GameObject:
   - component: {fileID: 7706683880606027841}
   - component: {fileID: 1910543500238581861}
   - component: {fileID: 1478265746732139092}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1 (3)
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -231822,9 +231699,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &1478265746732139092
 Rigidbody:
@@ -233981,7 +233855,7 @@ GameObject:
   - component: {fileID: 5673160930383571473}
   - component: {fileID: 2392826794444963198}
   - component: {fileID: 2679241147053590198}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1 (1)
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -234091,9 +233965,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &2679241147053590198
 Rigidbody:
@@ -238974,7 +238845,7 @@ GameObject:
   - component: {fileID: 3480147768797102852}
   - component: {fileID: 1775804917189783173}
   - component: {fileID: 3523678308582995707}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -239084,9 +238955,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &3523678308582995707
 Rigidbody:
@@ -241049,7 +240917,7 @@ GameObject:
   - component: {fileID: 10470174037065806}
   - component: {fileID: 1671543966283274392}
   - component: {fileID: 4132898918596350974}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1 (3)
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -241159,9 +241027,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &4132898918596350974
 Rigidbody:
@@ -242356,7 +242221,7 @@ GameObject:
   - component: {fileID: 2081341249569500157}
   - component: {fileID: 7903562168981802654}
   - component: {fileID: 8776157075127687771}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1 (3)
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -242466,9 +242331,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &8776157075127687771
 Rigidbody:
@@ -243304,7 +243166,7 @@ GameObject:
   - component: {fileID: 5322680949181934882}
   - component: {fileID: 6860134842853311446}
   - component: {fileID: 2685870194535602753}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1 (4)
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -243414,9 +243276,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &2685870194535602753
 Rigidbody:
@@ -248620,7 +248479,7 @@ GameObject:
   - component: {fileID: 7417722383701542273}
   - component: {fileID: 2905720864845400817}
   - component: {fileID: 6037927242383180707}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1 (4)
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -248730,9 +248589,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &6037927242383180707
 Rigidbody:
@@ -254721,7 +254577,7 @@ GameObject:
   - component: {fileID: 5759828146411258814}
   - component: {fileID: 5654540520145486885}
   - component: {fileID: 7503749684509846557}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -254831,9 +254687,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &7503749684509846557
 Rigidbody:
@@ -259927,7 +259780,7 @@ GameObject:
   - component: {fileID: 1594245422922587139}
   - component: {fileID: 6094779004882124931}
   - component: {fileID: 5465919612390863441}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1 (1)
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -260037,9 +259890,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &5465919612390863441
 Rigidbody:
@@ -263214,7 +263064,7 @@ GameObject:
   - component: {fileID: 2755779096286850329}
   - component: {fileID: 2249672099528293902}
   - component: {fileID: 2622770377304843635}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1 (4)
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -263324,9 +263174,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &2622770377304843635
 Rigidbody:
@@ -271291,9 +271138,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &7480288543325041376
 Rigidbody:
@@ -277683,7 +277527,7 @@ GameObject:
   - component: {fileID: 6973911897992486008}
   - component: {fileID: 5760604606134134071}
   - component: {fileID: 7678369943470393469}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -277793,9 +277637,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &7678369943470393469
 Rigidbody:
@@ -279410,7 +279251,7 @@ GameObject:
   - component: {fileID: 450429669558616463}
   - component: {fileID: 3027617939355692532}
   - component: {fileID: 709827502861021719}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1 (4)
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -279520,9 +279361,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &709827502861021719
 Rigidbody:
@@ -279953,9 +279791,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &7932621484577696733
 Rigidbody:
@@ -282424,7 +282259,7 @@ GameObject:
   - component: {fileID: 2077416316226055945}
   - component: {fileID: 2034238222230210266}
   - component: {fileID: 2296792442028201243}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1 (4)
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -282534,9 +282369,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &2296792442028201243
 Rigidbody:
@@ -286099,7 +285931,7 @@ GameObject:
   - component: {fileID: 4778215712762337456}
   - component: {fileID: 5436621335646504025}
   - component: {fileID: 6844065085915833752}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1 (2)
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -286209,9 +286041,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &6844065085915833752
 Rigidbody:
@@ -293217,7 +293046,7 @@ GameObject:
   - component: {fileID: 2186805947343280691}
   - component: {fileID: 1870883473198398269}
   - component: {fileID: 1328370218740583377}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1 (2)
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -293327,9 +293156,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &1328370218740583377
 Rigidbody:
@@ -297356,7 +297182,7 @@ GameObject:
   - component: {fileID: 1335098138668448963}
   - component: {fileID: 309239355575140111}
   - component: {fileID: 1750057051011628147}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1 (1)
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -297466,9 +297292,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &1750057051011628147
 Rigidbody:
@@ -299791,7 +299614,7 @@ GameObject:
   - component: {fileID: 1226678857106107923}
   - component: {fileID: 5163660375979992113}
   - component: {fileID: 5936908598755996803}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1 (1)
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -299901,9 +299724,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &5936908598755996803
 Rigidbody:
@@ -301042,7 +300862,7 @@ GameObject:
   - component: {fileID: 3328796926754596413}
   - component: {fileID: 3571717749249857480}
   - component: {fileID: 4425340546231243033}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1 (2)
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -301152,9 +300972,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &4425340546231243033
 Rigidbody:
@@ -312339,7 +312156,7 @@ GameObject:
   - component: {fileID: 4052440326703400900}
   - component: {fileID: 2875256051669672106}
   - component: {fileID: 9166075696257775757}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -312449,9 +312266,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &9166075696257775757
 Rigidbody:
@@ -317864,7 +317678,7 @@ GameObject:
   - component: {fileID: 4711711935963211382}
   - component: {fileID: 6704162523943638688}
   - component: {fileID: 5185053996816707645}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -317974,9 +317788,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &5185053996816707645
 Rigidbody:
@@ -324176,7 +323987,7 @@ GameObject:
   - component: {fileID: 3561754808063597220}
   - component: {fileID: 4726176123943561431}
   - component: {fileID: 3137909018628048591}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1 (1)
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -324286,9 +324097,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &3137909018628048591
 Rigidbody:
@@ -327082,7 +326890,7 @@ GameObject:
   - component: {fileID: 457390046786339680}
   - component: {fileID: 3118653944816597114}
   - component: {fileID: 1116345170378012744}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -327192,9 +327000,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &1116345170378012744
 Rigidbody:
@@ -333965,7 +333770,7 @@ GameObject:
   - component: {fileID: 8866102938782190730}
   - component: {fileID: 3252154135629243112}
   - component: {fileID: 438786242170855703}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -334075,9 +333880,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &438786242170855703
 Rigidbody:
@@ -334836,7 +334638,7 @@ GameObject:
   - component: {fileID: 7699827115584712322}
   - component: {fileID: 5755393732729158795}
   - component: {fileID: 8466959960586281973}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1 (1)
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -334946,9 +334748,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &8466959960586281973
 Rigidbody:
@@ -351991,7 +351790,7 @@ GameObject:
   - component: {fileID: 4443835932900137755}
   - component: {fileID: 6846476789258798501}
   - component: {fileID: 8798021030861175832}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1 (3)
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -352101,9 +351900,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &8798021030861175832
 Rigidbody:
@@ -352626,7 +352422,7 @@ GameObject:
   - component: {fileID: 3054314854818257221}
   - component: {fileID: 203023453957804498}
   - component: {fileID: 4950184193417920937}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1 (1)
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -352736,9 +352532,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &4950184193417920937
 Rigidbody:
@@ -356135,9 +355928,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &3189784916109816661
 Rigidbody:
@@ -364174,9 +363964,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &1959838080107870961
 Rigidbody:
@@ -370162,7 +369949,7 @@ GameObject:
   - component: {fileID: 6802170427204388559}
   - component: {fileID: 6116302649683998415}
   - component: {fileID: 6554795773376822441}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1 (4)
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -370272,9 +370059,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &6554795773376822441
 Rigidbody:
@@ -372067,7 +371851,7 @@ GameObject:
   - component: {fileID: 4752451383923218107}
   - component: {fileID: 2120191913064124392}
   - component: {fileID: 2884592128604819893}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1 (1)
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -372177,9 +371961,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &2884592128604819893
 Rigidbody:
@@ -374299,7 +374080,7 @@ GameObject:
   - component: {fileID: 8672889930753680520}
   - component: {fileID: 2554282147917249553}
   - component: {fileID: 623575914191393157}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1 (4)
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -374409,9 +374190,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &623575914191393157
 Rigidbody:
@@ -380617,7 +380395,7 @@ GameObject:
   - component: {fileID: 1175153362726907128}
   - component: {fileID: 8863260455588907102}
   - component: {fileID: 6364637990817074646}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1 (2)
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -380727,9 +380505,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &6364637990817074646
 Rigidbody:
@@ -387701,7 +387476,7 @@ GameObject:
   - component: {fileID: 7149790125299262534}
   - component: {fileID: 5150849814854578846}
   - component: {fileID: 7753397915860565938}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1 (1)
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -387811,9 +387586,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &7753397915860565938
 Rigidbody:
@@ -390380,7 +390152,7 @@ GameObject:
   - component: {fileID: 2175290097580979930}
   - component: {fileID: 5974921221140783807}
   - component: {fileID: 3194130386409761823}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1 (2)
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -390490,9 +390262,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &3194130386409761823
 Rigidbody:
@@ -406393,7 +406162,7 @@ GameObject:
   - component: {fileID: 8690190481445893237}
   - component: {fileID: 1081686179373063145}
   - component: {fileID: 7585683000997896382}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1 (2)
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -406503,9 +406272,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &7585683000997896382
 Rigidbody:
@@ -425676,7 +425442,7 @@ GameObject:
   - component: {fileID: 4780171116413088937}
   - component: {fileID: 2107026206576935324}
   - component: {fileID: 3023906305508965480}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1 (3)
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -425786,9 +425552,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &3023906305508965480
 Rigidbody:
@@ -441767,7 +441530,7 @@ GameObject:
   - component: {fileID: 8556558203953230944}
   - component: {fileID: 4038344223177412528}
   - component: {fileID: 5264420845540668072}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -441877,9 +441640,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &5264420845540668072
 Rigidbody:
@@ -445688,7 +445448,7 @@ GameObject:
   - component: {fileID: 8945574643386322284}
   - component: {fileID: 798638077336692432}
   - component: {fileID: 4878933821837292161}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Clever1 (4)
   m_TagString: Collectable
   m_Icon: {fileID: 0}
@@ -445798,9 +445558,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
   floatAmount: 0.5
 --- !u!54 &4878933821837292161
 Rigidbody:
