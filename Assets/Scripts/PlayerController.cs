@@ -1,57 +1,48 @@
+using System;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
     public static PlayerController instance;
-    [Header("Movement Settings")] public float moveSpeed = 10f; // Speed of left/right movement
-    public float moveForwardSpeed = 10f; // Speed of left/right movement
-    public float moveForwardBoostSpeed = 10f; // Speed of left/right movement
 
-    public float boost_moveSpeed = 20f; // Speed of left/right movement
-    public float jumpForce = 8f; // Jump strength
-    public float gravity = 20f; // Gravity applied when airborne
-    public float rotationSpeed = 5f; // Speed of rotation when moving left/right
-    public float maxRotation = 15f; // Maximum rotation angle when moving left/right
-    public float GroundCheckRayCastLenght = 1f;
+    [Header("Movement Settings")] public float moveSpeed = 10f;
+    public float moveForwardSpeed = 10f;
+    public float moveForwardBoostSpeed = 10f;
+    public float boost_moveSpeed = 20f;
+    public float jumpForce = 8f;
+    public float gravity = 20f;
+    public float rotationSpeed = 5f;
+    public float maxRotation = 15f;
+    public float groundCheckDistance = 0.2f; // Reduced to a more reasonable value
     [HideInInspector] public float horizontalInput;
 
-    [Header("Slide Settings")] public float slideDuration = 0.5f; // Duration of the slide
+    [Header("Slide Settings")] public float slideDuration = 0.5f;
     private float slideTimer = 0f;
 
-    [Header("Boundaries")] public float minX = -5f; // Minimum X position
-    public float maxX = 5f; // Maximum X position
-    public LayerMask GroundLayer;
+    [Header("Boundaries")] public float minX = -5f;
+    public float maxX = 5f;
+    public LayerMask groundLayer;
 
     [HideInInspector] public Vector3 moveDirection = Vector3.zero;
     [SerializeField] public CharacterController controller;
-    bool isJumping = false;
-    bool isSliding = false;
+    private bool isJumping = false;
+    private bool isSliding = false;
     [HideInInspector] public bool canMovement;
     private bool isHurt = false;
+
     [Header("Animation Settings")] public Animator animator;
 
-    [Header("Boost Management")]
-    public bool BoostEnabled = false;
+    [Header("Boost Management")] public bool BoostEnabled = false;
     public float BoostTimer = 5f;
-    float currSpeed;
+    private float currSpeed;
 
     public bool IsMagnetOn = false;
-    
     public Transform CashPoint;
-    
     public Button MagnetButton;
-    
     public TextMeshProUGUI MagnetText;
-
     public BoxCollider CashCollider;
-
-    public float getCurrSpeed()
-    {
-        return currSpeed;
-    }
 
     private void Awake()
     {
@@ -72,10 +63,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (isHurt)
-        {
-            return;
-        }
+        if (isHurt) return;
 
         HandleLaneMovement();
         HandleJumpAndSlide();
@@ -83,10 +71,11 @@ public class PlayerController : MonoBehaviour
         StopBooster();
 
         currSpeed = moveForwardSpeed;
+
         // Move the player using CharacterController
         controller.Move(moveDirection * Time.deltaTime);
 
-        // Manually clamp the X position after movement
+        // Clamp the X position after movement
         float clampedX = Mathf.Clamp(transform.position.x, minX, maxX);
         transform.position = new Vector3(clampedX, transform.position.y, transform.position.z);
 
@@ -98,21 +87,17 @@ public class PlayerController : MonoBehaviour
     {
         if (canMovement)
         {
-            horizontalInput = Input.GetAxis("Horizontal"); // Left/Right input
-
-            // Update movement direction (horizontal input)
+            horizontalInput = Input.GetAxis("Horizontal");
             moveDirection.x = horizontalInput * moveSpeed;
 
-            // Smoothly rotate the player in the direction of movement
             if (horizontalInput != 0)
             {
-                float targetRotation = maxRotation * Mathf.Sign(horizontalInput); // Rotate left/right
+                float targetRotation = maxRotation * Mathf.Sign(horizontalInput);
                 Quaternion newRotation = Quaternion.Euler(0, targetRotation, 0);
                 transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, Time.deltaTime * rotationSpeed);
             }
             else
             {
-                // Smoothly return to default rotation when not moving
                 transform.rotation =
                     Quaternion.Lerp(transform.rotation, Quaternion.identity, Time.deltaTime * rotationSpeed);
             }
@@ -129,8 +114,9 @@ public class PlayerController : MonoBehaviour
             if (IsGrounded())
             {
                 isJumping = false;
-                moveDirection.y = 0f;
-                animator.SetTrigger("Run"); // Return to running when grounded
+                moveDirection.y = -0.1f; // Keep grounded
+
+                animator.SetTrigger("Run");
 
                 if (jumpPressed)
                 {
@@ -146,34 +132,27 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-    void ToggleMagnet()
+
+    private void ToggleMagnet()
     {
         IsMagnetOn = !IsMagnetOn;
-
-        if (IsMagnetOn)
-        {
-            CashCollider.size = new Vector3(500, 50, 1);
-            MagnetText.text = "On";
-        }
-        else
-        {
-            CashCollider.size = new Vector3(1, 50, 1);
-            MagnetText.text = "Off";
-        }
+        CashCollider.size = IsMagnetOn ? new Vector3(500, 50, 1) : new Vector3(1, 50, 1);
+        MagnetText.text = IsMagnetOn ? "On" : "Off";
     }
+
     private void StartSlide()
     {
         isSliding = true;
         slideTimer = slideDuration;
-        controller.height = 1f; // Adjust height for sliding
+        controller.height = 1f;
         controller.center = new Vector3(controller.center.x, controller.height / 2, controller.center.z);
         animator.SetTrigger("Slide");
     }
 
-    public void EndSlide() // called in animation event
+    public void EndSlide() // Called in animation event
     {
         isSliding = false;
-        controller.height = 2.22f; // Reset height after sliding
+        controller.height = 2.22f;
         controller.center = new Vector3(controller.center.x, controller.height / 2, controller.center.z);
         animator.SetTrigger("Run");
     }
@@ -202,12 +181,11 @@ public class PlayerController : MonoBehaviour
     {
         isHurt = true;
         animator.SetTrigger("Hurt");
+
         ObstacleSpawner.Instance.StopSpawning(false);
         StopAllObstacles(false);
-
         CollectableSpawner.Instance.StopSpawning(false);
         StopAllCollectables(false);
-
         EnvironmentManager.Instance.StopSpawning(false);
         StopAllEnvironment(false);
 
@@ -222,8 +200,7 @@ public class PlayerController : MonoBehaviour
 
     private void StopAllObstacles(bool state)
     {
-        Obstacle[] obstacles = FindObjectsOfType<Obstacle>();
-        foreach (Obstacle obstacle in obstacles)
+        foreach (Obstacle obstacle in FindObjectsOfType<Obstacle>())
         {
             obstacle.StopMovement(state);
         }
@@ -231,8 +208,7 @@ public class PlayerController : MonoBehaviour
 
     private void StopAllCollectables(bool state)
     {
-        Collectable[] collectables = FindObjectsOfType<Collectable>();
-        foreach (Collectable collectable in collectables)
+        foreach (Collectable collectable in FindObjectsOfType<Collectable>())
         {
             collectable.StopMovement(state);
         }
@@ -240,8 +216,7 @@ public class PlayerController : MonoBehaviour
 
     private void StopAllEnvironment(bool state)
     {
-        EnvironmentPatch[] environmentPatches = FindObjectsOfType<EnvironmentPatch>();
-        foreach (EnvironmentPatch environment in environmentPatches)
+        foreach (EnvironmentPatch environment in FindObjectsOfType<EnvironmentPatch>())
         {
             environment.StopMovement(state);
         }
@@ -260,14 +235,13 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void RestHurt() // Called in animation Event
+    public void RestHurt() // Called in animation event
     {
         isHurt = false;
         CollectableSpawner.Instance.StopSpawning(true);
         ObstacleSpawner.Instance.StopSpawning(true);
         StopAllObstacles(true);
         StopAllCollectables(true);
-
         EnvironmentManager.Instance.StopSpawning(true);
         StopAllEnvironment(true);
         ResetStumble();
@@ -282,14 +256,12 @@ public class PlayerController : MonoBehaviour
 
     private bool IsGrounded()
     {
-        float rayLength = GroundCheckRayCastLenght + 0.1f; // Slightly increase length
-        Vector3 rayOrigin = transform.position + Vector3.up * 0.1f; // Offset to prevent inside-ground issues
+        return controller.isGrounded; // Use CharacterController's built-in ground detection
+    }
 
-        if (Physics.Raycast(rayOrigin, Vector3.down, out RaycastHit hit, rayLength, GroundLayer))
-        {
-            return hit.collider.CompareTag("Ground"); // Optional: Check tag
-        }
-
-        return false;
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawRay(transform.position, Vector3.down * groundCheckDistance);
     }
 }

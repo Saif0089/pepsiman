@@ -105,7 +105,7 @@ public class EnvironmentPatch : MonoBehaviour
     {
         if (isMoving)
         {
-            float movementSpeed = PlayerController.instance.getCurrSpeed();
+            float movementSpeed = PlayerController.instance.moveForwardSpeed;
 
             if (PlayerController.instance.BoostEnabled)
                 movementSpeed += PlayerController.instance.moveForwardBoostSpeed;
