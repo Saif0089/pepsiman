@@ -4304,6 +4304,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3902382119048645518}
   m_PrefabAsset: {fileID: 0}
+--- !u!143 &1851075677 stripped
+CharacterController:
+  m_CorrespondingSourceObject: {fileID: 6139780494011406652, guid: 661f14bb680fcf84d92c94e81cb14806,
+    type: 3}
+  m_PrefabInstance: {fileID: 3902382119048645518}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1863146951
 GameObject:
   m_ObjectHideFlags: 0
@@ -83073,7 +83079,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!146 &3769854949802933845
 WheelCollider:
   m_ObjectHideFlags: 0
@@ -85621,14 +85627,39 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 347694387309686430, guid: 661f14bb680fcf84d92c94e81cb14806,
         type: 3}
+      propertyPath: Offset
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 347694387309686430, guid: 661f14bb680fcf84d92c94e81cb14806,
+        type: 3}
       propertyPath: MagnetText
       value: 
       objectReference: {fileID: 533984807}
     - target: {fileID: 347694387309686430, guid: 661f14bb680fcf84d92c94e81cb14806,
         type: 3}
+      propertyPath: SkateBoard
+      value: 
+      objectReference: {fileID: 3769854949355500443}
+    - target: {fileID: 347694387309686430, guid: 661f14bb680fcf84d92c94e81cb14806,
+        type: 3}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 1851075677}
+    - target: {fileID: 347694387309686430, guid: 661f14bb680fcf84d92c94e81cb14806,
+        type: 3}
       propertyPath: MagnetButton
       value: 
       objectReference: {fileID: 1076155945}
+    - target: {fileID: 347694387309686430, guid: 661f14bb680fcf84d92c94e81cb14806,
+        type: 3}
+      propertyPath: moveForwardSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 347694387309686430, guid: 661f14bb680fcf84d92c94e81cb14806,
+        type: 3}
+      propertyPath: GroundCheckRayCastLenght
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 7096203686498644427, guid: 661f14bb680fcf84d92c94e81cb14806,
         type: 3}
       propertyPath: m_Name
@@ -85642,7 +85673,7 @@ PrefabInstance:
     - target: {fileID: 7579864985080294257, guid: 661f14bb680fcf84d92c94e81cb14806,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.101
+      value: 0.017
       objectReference: {fileID: 0}
     - target: {fileID: 7579864985080294257, guid: 661f14bb680fcf84d92c94e81cb14806,
         type: 3}

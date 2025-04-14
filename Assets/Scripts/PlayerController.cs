@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -36,9 +37,14 @@ public class PlayerController : MonoBehaviour
     [Header("Boost Management")]
     public bool BoostEnabled = false;
     public float BoostTimer = 5f;
+    public float SkateTimer = 20f;
     float currSpeed;
 
+    public GameObject SkateBoard;
+
     public bool IsMagnetOn = false;
+    
+    public bool IsSkateBoardOn = false;
     
     public Transform CashPoint;
     
@@ -82,6 +88,16 @@ public class PlayerController : MonoBehaviour
         ApplyGravity();
         StopBooster();
 
+        if (IsSkateBoardOn)
+        {
+            SkateTimer -= Time.deltaTime;
+
+            if (SkateTimer <= 0f)
+            {
+                StopSkate();
+            }
+        }
+
         currSpeed = moveForwardSpeed;
         // Move the player using CharacterController
         controller.Move(moveDirection * Time.deltaTime);
@@ -94,6 +110,14 @@ public class PlayerController : MonoBehaviour
             BoostEnabled = !BoostEnabled;
     }
 
+    void StopSkate()
+    {
+        IsSkateBoardOn = false;
+        ToggleMagnet();
+        SkateBoard.SetActive(false);
+        animator.SetBool("Skate",false);
+        SkateTimer = 5f;
+    }
     private void HandleLaneMovement()
     {
         if (canMovement)
@@ -146,7 +170,7 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-    void ToggleMagnet()
+    public void ToggleMagnet()
     {
         IsMagnetOn = !IsMagnetOn;
 

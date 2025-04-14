@@ -26,10 +26,4 @@ public class AutoCarSelector : MonoBehaviour
         }
 
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
