@@ -116,7 +116,7 @@ public class PlayerController : MonoBehaviour
         ToggleMagnet();
         SkateBoard.SetActive(false);
         animator.SetBool("Skate",false);
-        SkateTimer = 5f;
+        SkateTimer = 12f;
     }
     private void HandleLaneMovement()
     {
