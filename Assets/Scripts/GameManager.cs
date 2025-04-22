@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
 
     [Space] [Range(0f, 1f)] public int TimeScale;
     
-    private float timer;
+    public float timer;
     private bool gameEnded = false;
     private int[] _totalScore = new int[4];
 
@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour
 
         Time.timeScale = 0;
     }
+
     public void StartGame()
     {
        mainMenu.SetActive(false);
@@ -49,18 +50,31 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
-        timer = gameDuration;
+      //  timer = gameDuration;
     }
 
+    public void UpdateInGameTimer()
+    {
+        timer += Time.deltaTime;
+        TimerText.text = FormatTime((int)timer);
+
+        if (timer >= gameDuration)
+        {
+            Debug.Log("time over");
+            GameOver(false);
+        }
+
+    }
     private void Update()
     {
         if(!gameStarted) { return; }
 
         if (gameEnded) return;
-    
+
         // Countdown Timer
-        timer -= Time.deltaTime;
-        TimerText.text = FormatTime( (int)timer); // Display as integer
+
+        UpdateInGameTimer();
+
     
         // ⏳ Spawn Finish Line at a Specific Time
         if (!FinishLineSpawned && timer <= (gameDuration - timeToSpawnFinish) && CanEnd)
@@ -70,10 +84,7 @@ public class GameManager : MonoBehaviour
         }
     
         // ❌ Lose condition: Time runs out
-        if (timer <= 0)
-        {
-            GameOver(false);
-        }
+       
     }
     public static string FormatTime(int totalSeconds)
     {
