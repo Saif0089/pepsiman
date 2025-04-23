@@ -34,6 +34,12 @@ public class GameManager : MonoBehaviour
 
     public GameObject mainMenu;
     bool gameStarted;
+
+    public float totalTime;
+  
+
+
+    
     private void Awake()
     {
         Instance = this;
@@ -55,15 +61,23 @@ public class GameManager : MonoBehaviour
 
     public void UpdateInGameTimer()
     {
-        timer += Time.deltaTime;
-        TimerText.text = FormatTime((int)timer);
+       
+    
+    
 
         if (timer >= gameDuration)
         {
             Debug.Log("time over");
             GameOver(false);
+   
+        }
+        else
+
+        {
+            timer += Time.deltaTime;
         }
 
+        TimerText.text = FormatTime((int)timer);
     }
     private void Update()
     {
@@ -130,6 +144,7 @@ public class GameManager : MonoBehaviour
 
     private void GameOver(bool won)
     {
+       
         gameEnded = true;
 
         if (won)
@@ -145,6 +160,10 @@ public class GameManager : MonoBehaviour
     }
     public void WinGame()
     {
+        totalTime = Time.time;
+        LeaderBoardMenu.instance.SubmitScore((long)totalTime);
+        LeaderBoardMenu.instance.GetLeaderboardTop();
+
         WinScreen.SetActive(true);
         Time.timeScale = 0f;
     }
