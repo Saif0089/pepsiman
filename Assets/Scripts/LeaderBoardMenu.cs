@@ -3,13 +3,16 @@ using UnityEngine;
 using Unity.Services.Authentication;
 using Unity.Services.Leaderboards;
 using Unity.Services.Core;
+using TMPro;
+using static UnityEditor.Progress;
+using UnityEditor;
 public class LeaderBoardMenu : MonoBehaviour
 {
     public static LeaderBoardMenu instance;
     public string id;
     public GameObject container;
+    public TMP_InputField userNameInputField; 
  
-
 
     private void Awake()
     {
@@ -18,10 +21,45 @@ public class LeaderBoardMenu : MonoBehaviour
             instance = this;
         }
     }
-    private void Start()
+    private async void Start()
     {
-        InitServices();
+        var options = new InitializationOptions();
+
+        string playerId = string.Empty;
+
+        if (!PlayerPrefs.HasKey(nameof(playerId)))
+        {
+            playerId=System.Guid.NewGuid().ToString();
+            playerId=playerId.Replace('-',' ').Trim();
+            if(playerId.Length>5)
+            {
+                for(int i=6;i<playerId.Length;i++)
+                {
+                    playerId=playerId.Remove(i);
+                }
+            }
+
+            PlayerPrefs.SetString(nameof(playerId), playerId);
+        }
+        else
+        {
+            playerId = PlayerPrefs.GetString(nameof(playerId));
+            userNameInputField.gameObject.SetActive(false);
+        }
+
+        options.SetProfile(playerId);
+        await UnityServices.InitializeAsync(options);
+        await AuthenticationService.Instance.SignInAnonymouslyAsync();
+        GetLeaderboardTop();
     }
+    public async void SetUserName()
+    {
+        await AuthenticationService.Instance.UpdatePlayerNameAsync(userName);
+        Debug.Log("New Player ID: " + AuthenticationService.Instance.PlayerId);
+        Debug.Log("New Player name: " + AuthenticationService.Instance.PlayerName);
+    }
+   
+
     private void OnDestroy()
     {
      
@@ -30,14 +68,14 @@ public class LeaderBoardMenu : MonoBehaviour
             instance=null;
         }
     } 
-    public async void InitServices()
-    {
-  
-        await UnityServices.InitializeAsync();
-        await  AuthenticationService.Instance.SignInAnonymouslyAsync();
-        await AuthenticationService.Instance.UpdatePlayerNameAsync("william");
+    //public async void InitServices()
+    //{
 
-    }
+    //    await UnityServices.InitializeAsync();
+    //    var options = new InitializationOptions();
+    //    await AuthenticationService.Instance.SignInAnonymouslyAsync(); 
+
+    //}
 
 
 
@@ -52,10 +90,15 @@ public class LeaderBoardMenu : MonoBehaviour
         var scoresResponse = await LeaderboardsService.Instance.GetScoresAsync(id);
         LeaderBoardItem[] items = container.GetComponentsInChildren<LeaderBoardItem>(true);
         Debug.Log("result count "+scoresResponse.Results.Count);
-        for(int i=0;i<items.Length;i++)
+        for(int i=0;i<scoresResponse.Results.Count;i++)
         {
-            items[i].Initialize(scoresResponse.Results[0], i);
+            items[i].Initialize(scoresResponse.Results[i], i);
         }
+    }
+     public  string userName;
+    public void GetInput()
+    {
+      userName = userNameInputField.text;
     }
   }
 

@@ -1,6 +1,7 @@
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;
+using Unity.Services.Authentication;
 
 public class WinScreen : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class WinScreen : MonoBehaviour
     void PlayAgain()
     {
         GameManager.Instance.Restart();
+        AuthenticationService.Instance.SignOut();
     }
     
 }

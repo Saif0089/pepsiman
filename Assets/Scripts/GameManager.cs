@@ -4,6 +4,8 @@ using TMPro;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.SceneManagement;
+using System.Collections;
+using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
@@ -36,10 +38,11 @@ public class GameManager : MonoBehaviour
     bool gameStarted;
 
     public float totalTime;
-  
+
+    public Button leaderboardButton;
 
 
-    
+
     private void Awake()
     {
         Instance = this;
@@ -48,15 +51,20 @@ public class GameManager : MonoBehaviour
     }
 
     public void StartGame()
+
     {
-       mainMenu.SetActive(false);
+        leaderboardButton.gameObject.SetActive(false);
+        LeaderBoardMenu.instance.userNameInputField.gameObject.SetActive(false);
+        LeaderBoardMenu.instance.SetUserName();
+        mainMenu.SetActive(false);
         Time.timeScale = 1;
         gameStarted = true;
         ObjectPooler.Instance.SpawnTurnedEnvironmentPatch();
     }
     private void Start()
     {
-      //  timer = gameDuration;
+        leaderboardButton.gameObject.SetActive(true);
+        LeaderBoardMenu.instance.userNameInputField.gameObject.SetActive(true);
     }
 
     public void UpdateInGameTimer()
@@ -162,7 +170,7 @@ public class GameManager : MonoBehaviour
     {
         totalTime = Time.time;
         LeaderBoardMenu.instance.SubmitScore((long)totalTime);
-        LeaderBoardMenu.instance.GetLeaderboardTop();
+    
 
         WinScreen.SetActive(true);
         Time.timeScale = 0f;
@@ -179,7 +187,11 @@ public class GameManager : MonoBehaviour
     //         RestartDebug();
     //     }
     // }
-    
+    //public IEnumerator getLeaderboardData()
+    //{
+    //    yield return new WaitForSeconds(1);
+    //    LeaderBoardMenu.instance.GetLeaderboardTop();
+    //}
     public void RestartDebug()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -188,5 +200,6 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
     }
 }
