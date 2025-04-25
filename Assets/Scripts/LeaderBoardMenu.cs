@@ -11,7 +11,8 @@ public class LeaderBoardMenu : MonoBehaviour
     public static LeaderBoardMenu instance;
     public string id;
     public GameObject container;
-    public TMP_InputField userNameInputField; 
+    public TMP_InputField userNameInputField;
+    public GameObject leaderBoardItemPrefab;
  
 
     private void Awake()
@@ -88,17 +89,25 @@ public class LeaderBoardMenu : MonoBehaviour
     public async void GetLeaderboardTop()
     {
         var scoresResponse = await LeaderboardsService.Instance.GetScoresAsync(id);
-        LeaderBoardItem[] items = container.GetComponentsInChildren<LeaderBoardItem>(true);
+      //  LeaderBoardItem[] items = container.GetComponentsInChildren<LeaderBoardItem>(true);
         Debug.Log("result count "+scoresResponse.Results.Count);
         for(int i=0;i<scoresResponse.Results.Count;i++)
         {
-            items[i].Initialize(scoresResponse.Results[i], i);
+           GameObject obj= SpawnLeaderBoarditem();
+           obj.GetComponent<LeaderBoardItem>().Initialize(scoresResponse.Results[i], i);
         }
     }
      public  string userName;
     public void GetInput()
     {
       userName = userNameInputField.text;
+    }
+    public GameObject SpawnLeaderBoarditem()
+    {
+
+        GameObject obj = Instantiate(leaderBoardItemPrefab, container.transform);
+        return obj;
+
     }
   }
 
