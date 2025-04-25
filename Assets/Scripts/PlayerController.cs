@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour
     public float SkateTimer = 20f;
     private float currSpeed;
 
+    public float slideColliderHeight = 0.4667208f;
     public GameObject SkateBoard;
 
     public bool IsMagnetOn = false;
@@ -44,6 +45,7 @@ public class PlayerController : MonoBehaviour
     public Button MagnetButton;
     public TextMeshProUGUI MagnetText;
     public BoxCollider CashCollider;
+    public BoxCollider PlayerCollider;
 
     private Rigidbody rb;
     private bool isGrounded;
@@ -153,15 +155,18 @@ public class PlayerController : MonoBehaviour
 
     void StartSlide()
     {
+        PlayerCollider.center = new Vector3(0f, 0.2507838f, 0.1132071f);
+        PlayerCollider.size = new Vector3(1, 0.5066212f, 1.00319f);
         isSliding = true;
         slideTimer = slideDuration;
         animator.SetTrigger("Slide");
-        // adjust player collider or scale if needed
     }
 
     public void EndSlide() // Called from animation event
     {
         isSliding = false;
+        PlayerCollider.center = new Vector3(0f, 0.9869743f, 0.1132071f);
+        PlayerCollider.size = new Vector3(1, 1.979002f, 1.00319f);
         animator.SetTrigger("Run");
     }
 
@@ -257,10 +262,15 @@ public class PlayerController : MonoBehaviour
         canMovement = true;
         moveForwardSpeed = 25f;
         moveSpeed = 7f;
+        PlayerCollider.center = new Vector3(0f, 0.9869743f, 0.1132071f);
+        PlayerCollider.size = new Vector3(1, 1.979002f, 1.00319f);
     }
 
     void StopSkate()
     {
+        PlayerCollider.center = new Vector3(0f, 0.9869743f, 0.1132071f);
+        PlayerCollider.size = new Vector3(1, 1.979002f, 1.00319f);
+        GroundCheckRayCastLenght = 0.25f;
         IsSkateBoardOn = false;
         ToggleMagnet();
         SkateBoard.SetActive(false);

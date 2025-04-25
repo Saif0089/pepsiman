@@ -9560,7 +9560,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 6852540021096505599}
-  smoothSpeed: 7
+  smoothSpeed: 5
 --- !u!114 &1823688470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57884,7 +57884,6 @@ GameObject:
   - component: {fileID: 1703904747291108658}
   - component: {fileID: 7526578603271218985}
   - component: {fileID: 1381891066411337946}
-  - component: {fileID: 3769854949802933845}
   m_Layer: 0
   m_Name: Wheels6
   m_TagString: Untagged
@@ -91094,6 +91093,7 @@ MonoBehaviour:
   BoostEnabled: 0
   BoostTimer: 5
   SkateTimer: 12
+  slideColliderHeight: 0.4667208
   SkateBoard: {fileID: 3769854949355500443}
   IsMagnetOn: 0
   IsSkateBoardOn: 0
@@ -91101,6 +91101,7 @@ MonoBehaviour:
   MagnetButton: {fileID: 1076155945}
   MagnetText: {fileID: 533984807}
   CashCollider: {fileID: 5444635479022595142}
+  PlayerCollider: {fileID: 6852540021096505600}
   canMovement: 1
 --- !u!23 &3674653785624664638
 MeshRenderer:
@@ -93026,45 +93027,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!146 &3769854949802933845
-WheelCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2150419505924925587}
-  serializedVersion: 2
-  m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 0.5
-  m_SuspensionSpring:
-    spring: 35000
-    damper: 4500
-    targetPosition: 0.5
-  m_SuspensionDistance: 0.3
-  m_ForceAppPointDistance: 0
-  m_Mass: 20
-  m_WheelDampingRate: 0.25
-  m_ForwardFriction:
-    m_ExtremumSlip: 0.4
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.8
-    m_AsymptoteValue: 0.5
-    m_Stiffness: 1
-  m_SidewaysFriction:
-    m_ExtremumSlip: 0.2
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.5
-    m_AsymptoteValue: 0.75
-    m_Stiffness: 1
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_Enabled: 1
-  m_ProvidesContacts: 0
 --- !u!54 &3770116988781602472
 Rigidbody:
   m_ObjectHideFlags: 0
