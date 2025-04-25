@@ -168,7 +168,7 @@ public class GameManager : MonoBehaviour
     }
     public void WinGame()
     {
-        totalTime = Time.time;
+        totalTime = timer;
         LeaderBoardMenu.instance.SubmitScore((long)totalTime);
     
 
