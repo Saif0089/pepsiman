@@ -108,7 +108,7 @@ public class EnvironmentPatch : MonoBehaviour
             float movementSpeed = PlayerController.instance.getCurrSpeed();
 
             if (PlayerController.instance.BoostEnabled)
-                movementSpeed += PlayerController.instance.moveForwardBoostSpeed;
+                movementSpeed += PlayerController.instance.boost_moveSpeed;
 
             // Move along world -Z instead of camera's forward
             transform.position += Vector3.back * movementSpeed * Time.deltaTime;
