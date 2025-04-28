@@ -6,44 +6,42 @@ using DG.Tweening;
 using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityEngine.UI;
+
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    [Header("UI")]
-    public TMP_Text[] ScoreText;
+    [Header("UI")] public TMP_Text[] ScoreText;
     public TMP_Text TimerText;
-    
+
     public GameObject PauseMenu;
 
-    [Header("Game Settings")]
-    public float gameDuration = 30f; // Total time in seconds
+    [Header("Game Settings")] public float gameDuration = 30f; // Total time in seconds
 
     [Space] [Range(0f, 1f)] public int TimeScale;
-    
+
     public float timer;
     private bool gameEnded = false;
-    private int[] _totalScore = new int[4];
+    int[] _totalScore = new int[4];
 
-    [Header("Finish Line")]
-    public GameObject CharacterCam;
+    [Header("Finish Line")] public GameObject CharacterCam;
     public bool CanEnd;
     public GameObject finishLinePrefab;
     public GameObject WinScreen;
     public float timeToSpawnFinish = 20f; // Spawn finish line when 10 seconds are left
     public bool FinishLineSpawned = false;
     private GameObject finishLineInstance;
-    
-    [Header("Progress-Bar")]
-    public Image progressBar; // Your UI Slider
+
+    [Header("Progress-Bar")] public Image progressBar; // Your UI Slider
     public TextMeshProUGUI progressText; // Your UI Slider
     public float patchLength = 50f; // Length of ONE patch
     public int totalPatches = 10; // Total number of patches
     public float scrollSpeed = 25f; // Scrolling speed
-
     private float totalDistance;
     private float travelledDistance;
     private float elapsedTime;
+
+    public TextMeshProUGUI Finished_TimeText;
 
     public GameObject mainMenu;
     bool gameStarted;
@@ -51,6 +49,7 @@ public class GameManager : MonoBehaviour
     public float totalTime;
 
     public Button leaderboardButton;
+
     private void Awake()
     {
         Instance = this;
@@ -68,19 +67,20 @@ public class GameManager : MonoBehaviour
         gameStarted = true;
         ObjectPooler.Instance.SpawnTurnedEnvironmentPatch();
     }
+
     private void Start()
     {
         totalDistance = patchLength * totalPatches;
         leaderboardButton.gameObject.SetActive(true);
         LeaderBoardMenu.instance.userNameInputField.gameObject.SetActive(true);
     }
+
     public void UpdateInGameTimer()
     {
         if (timer >= gameDuration)
         {
             Debug.Log("time over");
             GameOver(false);
-   
         }
         else
         {
@@ -89,20 +89,25 @@ public class GameManager : MonoBehaviour
 
         TimerText.text = FormatTime((int)timer);
     }
+
     public float displayedProgress = 0f; // Smooth displayed progress
+
     private void FixedUpdate()
     {
+        if (gameEnded)
+            return;
+
         UpdateInGameTimer();
-    
+
         if (!FinishLineSpawned && timer >= (gameDuration - timeToSpawnFinish) && CanEnd && !gameEnded)
         {
-            FinishLineSpawned = true; 
+            FinishLineSpawned = true;
             SpawnFinishLine();
         }
-        
-        if(PlayerController.instance.isHurt || gameEnded )
+
+        if (PlayerController.instance.isHurt || gameEnded)
             return;
-    
+
         elapsedTime += Time.fixedDeltaTime;
         travelledDistance = scrollSpeed * elapsedTime;
 
@@ -112,13 +117,15 @@ public class GameManager : MonoBehaviour
         int progressPercent = Mathf.RoundToInt(progress * 100f);
         progressText.text = progressPercent + "%";
     }
+
     public static string FormatTime(int totalSeconds)
     {
         int minutes = totalSeconds / 60;
         int seconds = totalSeconds % 60;
         return $"{minutes:D2}:{seconds:D2}";
     }
-    public void Collected(int amount,int id)
+
+    public void Collected(int amount, int id)
     {
         _totalScore[id] += amount;
         ScoreText[id].text = _totalScore[id].ToString(); // Update UI Score
@@ -138,7 +145,9 @@ public class GameManager : MonoBehaviour
         {
             finishLineInstance.transform.localRotation = Quaternion.Euler(0, 0, 0);
         }
-        finishLineInstance.transform.position=ObjectPooler.Instance.ActivedTuredPatch.GetComponent<TurnedPatchEnv>().SchoolPoint.position;
+
+        finishLineInstance.transform.position = ObjectPooler.Instance.ActivedTuredPatch.GetComponent<TurnedPatchEnv>()
+            .SchoolPoint.position;
         Time.timeScale = TimeScale;
         Debug.Log("🚩 Finish line spawned on time : " + timer);
     }
@@ -148,7 +157,7 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1;
     }
-    
+
     public void PlayerReachedFinish()
     {
         if (!gameEnded) GameOver(true);
@@ -174,19 +183,19 @@ public class GameManager : MonoBehaviour
             Debug.Log("💀 YOU LOSE! Time's up!");
         }
     }
+
     public void WinGame()
     {
         totalTime = timer;
         LeaderBoardMenu.instance.SubmitScore((long)totalTime);
-    
-
+        Finished_TimeText.text = FormatTime((int)timer);
         WinScreen.SetActive(true);
         Time.timeScale = 0f;
     }
+
     public void Restart()
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-
     }
 }
