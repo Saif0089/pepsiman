@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     [Space] [Range(0f, 1f)] public int TimeScale;
 
     public float timer;
-    private bool gameEnded = false;
+    public bool gameEnded = false;
     int[] _totalScore = new int[4];
 
     [Header("Finish Line")] public GameObject CharacterCam;
@@ -66,6 +66,8 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
         gameStarted = true;
         ObjectPooler.Instance.SpawnTurnedEnvironmentPatch();
+
+        PlayerController.instance.StartCountdown();
     }
 
     private void Start()

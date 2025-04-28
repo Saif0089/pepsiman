@@ -1,4 +1,4 @@
-using System;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -54,6 +54,11 @@ public class PlayerController : MonoBehaviour
     public bool canMovement = true;
     public bool isHurt = false;
 
+    [Header("Start mach")]
+    public int StartingCountDown;
+    public TextMeshProUGUI StartingCountDownText;
+    private Coroutine countdownCoroutine;
+
     private void Awake()
     {
         if (instance == null)
@@ -68,8 +73,50 @@ public class PlayerController : MonoBehaviour
         animator.SetTrigger("Run");
         MagnetButton.onClick.AddListener(ToggleMagnet);
         rb.useGravity = true;
+        
+        StopPlayerAtStart();
+    }
+    
+    public void StartCountdown()
+    {
+        if (countdownCoroutine != null)
+        {
+            StopCoroutine(countdownCoroutine);
+        }
+        countdownCoroutine = StartCoroutine(StartCountDownTime());
     }
 
+    public void StopCountdown()
+    {
+        if (countdownCoroutine != null)
+        {
+            StopCoroutine(countdownCoroutine);
+            countdownCoroutine = null;
+        }
+    }
+    public IEnumerator StartCountDownTime()
+    {
+        float currentTime = StartingCountDown;
+
+        while (currentTime > 0)
+        {
+            currentTime -= Time.deltaTime;
+            if (StartingCountDownText != null)
+                StartingCountDownText.text = Mathf.Max(0, Mathf.Ceil(currentTime)).ToString("0");
+
+            yield return null;
+        }
+
+        if (StartingCountDownText != null)
+        {
+            StartingCountDownText.text = "Go";
+            yield return new WaitForSeconds(1f); 
+            StartingCountDownText.gameObject.SetActive(false);
+        }
+
+        StartGameNow();
+        StopCountdown();
+    }
     private void Update()
     {
         if (isHurt) return;
@@ -246,6 +293,23 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void StopPlayerAtStart()
+    {
+        moveForwardSpeed = 0f;
+        GameManager.Instance.gameEnded = true;
+        canMovement = false;
+        GameManager.Instance.progressBar.transform.parent.gameObject.SetActive(false);
+        GameManager.Instance.TimerText.gameObject.SetActive(false);
+    }
+    void StartGameNow()
+    {
+        animator.SetBool("Transit",true);
+        moveForwardSpeed = 25f;
+        GameManager.Instance.gameEnded = false;
+        canMovement = true;
+        GameManager.Instance.progressBar.transform.parent.gameObject.SetActive(true);
+        GameManager.Instance.TimerText.gameObject.SetActive(true);
+    }
     public void RestHurt() // Called in animation event
     {
         isHurt = false;
@@ -262,6 +326,7 @@ public class PlayerController : MonoBehaviour
 
     public void ResetStumble()
     {
+        isHurt = false;
         canMovement = true;
         moveForwardSpeed = 25;
         moveSpeed = 7f;
