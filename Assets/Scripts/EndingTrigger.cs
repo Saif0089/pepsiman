@@ -30,6 +30,7 @@ public class EndingTrigger : MonoBehaviour
 
 
             Invoke(nameof(TriggerEndingTimeline), 0.2f);
+            GameManager.Instance.LevelFinished();
         }
     }
 

@@ -44,7 +44,6 @@ public class GameManager : MonoBehaviour
     private float totalDistance;
     private float travelledDistance;
     private float elapsedTime;
-    
 
     public GameObject mainMenu;
     bool gameStarted;
@@ -52,9 +51,6 @@ public class GameManager : MonoBehaviour
     public float totalTime;
 
     public Button leaderboardButton;
-
-
-
     private void Awake()
     {
         Instance = this;
@@ -87,7 +83,6 @@ public class GameManager : MonoBehaviour
    
         }
         else
-
         {
             timer += Time.deltaTime;
         }
@@ -99,13 +94,13 @@ public class GameManager : MonoBehaviour
     {
         UpdateInGameTimer();
     
-        if (!FinishLineSpawned && timer >= (gameDuration - timeToSpawnFinish) && CanEnd)
+        if (!FinishLineSpawned && timer >= (gameDuration - timeToSpawnFinish) && CanEnd && !gameEnded)
         {
             FinishLineSpawned = true; 
             SpawnFinishLine();
         }
         
-        if(PlayerController.instance.isHurt)
+        if(PlayerController.instance.isHurt || gameEnded )
             return;
     
         elapsedTime += Time.fixedDeltaTime;
@@ -114,7 +109,6 @@ public class GameManager : MonoBehaviour
         float progress = Mathf.Clamp01(travelledDistance / totalDistance);
         progressBar.fillAmount = progress;
 
-        // Update Progress Text
         int progressPercent = Mathf.RoundToInt(progress * 100f);
         progressText.text = progressPercent + "%";
     }
@@ -160,9 +154,13 @@ public class GameManager : MonoBehaviour
         if (!gameEnded) GameOver(true);
     }
 
+    public void LevelFinished()
+    {
+        gameEnded = true;
+    }
+
     private void GameOver(bool won)
     {
-       
         gameEnded = true;
 
         if (won)
