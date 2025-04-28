@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
     private bool isJumping = false;
     private bool isSliding = false;
     public bool canMovement = true;
-    private bool isHurt = false;
+    public bool isHurt = false;
 
     private void Awake()
     {
@@ -87,6 +87,9 @@ public class PlayerController : MonoBehaviour
 
         ClampXPosition();
 
+    }
+    void FixedUpdate()
+    {
         currSpeed = moveForwardSpeed;
     }
     void HandleLaneMovement()
@@ -260,7 +263,7 @@ public class PlayerController : MonoBehaviour
     public void ResetStumble()
     {
         canMovement = true;
-        moveForwardSpeed = 25f;
+        moveForwardSpeed = 25;
         moveSpeed = 7f;
         PlayerCollider.center = new Vector3(0f, 0.9869743f, 0.1132071f);
         PlayerCollider.size = new Vector3(1, 1.979002f, 1.00319f);

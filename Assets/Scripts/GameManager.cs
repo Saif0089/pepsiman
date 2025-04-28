@@ -33,6 +33,18 @@ public class GameManager : MonoBehaviour
     public float timeToSpawnFinish = 20f; // Spawn finish line when 10 seconds are left
     public bool FinishLineSpawned = false;
     private GameObject finishLineInstance;
+    
+    [Header("Progress-Bar")]
+    public Image progressBar; // Your UI Slider
+    public TextMeshProUGUI progressText; // Your UI Slider
+    public float patchLength = 50f; // Length of ONE patch
+    public int totalPatches = 10; // Total number of patches
+    public float scrollSpeed = 25f; // Scrolling speed
+
+    private float totalDistance;
+    private float travelledDistance;
+    private float elapsedTime;
+    
 
     public GameObject mainMenu;
     bool gameStarted;
@@ -51,7 +63,6 @@ public class GameManager : MonoBehaviour
     }
 
     public void StartGame()
-
     {
         leaderboardButton.gameObject.SetActive(false);
         LeaderBoardMenu.instance.userNameInputField.gameObject.SetActive(false);
@@ -63,16 +74,12 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
+        totalDistance = patchLength * totalPatches;
         leaderboardButton.gameObject.SetActive(true);
         LeaderBoardMenu.instance.userNameInputField.gameObject.SetActive(true);
     }
-
     public void UpdateInGameTimer()
     {
-       
-    
-    
-
         if (timer >= gameDuration)
         {
             Debug.Log("time over");
@@ -87,26 +94,29 @@ public class GameManager : MonoBehaviour
 
         TimerText.text = FormatTime((int)timer);
     }
-    private void Update()
+    public float displayedProgress = 0f; // Smooth displayed progress
+    private void FixedUpdate()
     {
-        if(!gameStarted) { return; }
-
-        if (gameEnded) return;
-
-        // Countdown Timer
-
         UpdateInGameTimer();
-
     
-        // ⏳ Spawn Finish Line at a Specific Time
-        if (!FinishLineSpawned && timer <= (gameDuration - timeToSpawnFinish) && CanEnd)
+        if (!FinishLineSpawned && timer >= (gameDuration - timeToSpawnFinish) && CanEnd)
         {
             FinishLineSpawned = true; 
             SpawnFinishLine();
         }
+        
+        if(PlayerController.instance.isHurt)
+            return;
     
-        // ❌ Lose condition: Time runs out
-       
+        elapsedTime += Time.fixedDeltaTime;
+        travelledDistance = scrollSpeed * elapsedTime;
+
+        float progress = Mathf.Clamp01(travelledDistance / totalDistance);
+        progressBar.fillAmount = progress;
+
+        // Update Progress Text
+        int progressPercent = Mathf.RoundToInt(progress * 100f);
+        progressText.text = progressPercent + "%";
     }
     public static string FormatTime(int totalSeconds)
     {
@@ -136,7 +146,7 @@ public class GameManager : MonoBehaviour
         }
         finishLineInstance.transform.position=ObjectPooler.Instance.ActivedTuredPatch.GetComponent<TurnedPatchEnv>().SchoolPoint.position;
         Time.timeScale = TimeScale;
-        Debug.Log("🚩 Finish line spawned!");
+        Debug.Log("🚩 Finish line spawned on time : " + timer);
     }
 
     [ContextMenu("Play")]
@@ -174,27 +184,6 @@ public class GameManager : MonoBehaviour
 
         WinScreen.SetActive(true);
         Time.timeScale = 0f;
-    }
-    // private void OnGUI()
-    // {
-    //     if (GUI.Button(new Rect(10, 10, 150, 30), "Play"))
-    //     {
-    //         Play();
-    //     }
-    //     
-    //     if (GUI.Button(new Rect(10, 50, 150, 30), "Restart"))
-    //     {
-    //         RestartDebug();
-    //     }
-    // }
-    //public IEnumerator getLeaderboardData()
-    //{
-    //    yield return new WaitForSeconds(1);
-    //    LeaderBoardMenu.instance.GetLeaderboardTop();
-    //}
-    public void RestartDebug()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     public void Restart()
     {
