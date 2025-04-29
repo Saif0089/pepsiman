@@ -6232,7 +6232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e72f869c27ad7c43af2a15b51b99e42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: LeaderBoard
+  id: Runner
   container: {fileID: 455273120}
   userNameInputField: {fileID: 408082758}
   leaderBoardItemPrefab: {fileID: 2999904313200554742, guid: 39dc5e703ed2a5043b89b0e0dd8cb116,
