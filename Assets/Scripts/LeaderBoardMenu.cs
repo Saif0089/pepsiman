@@ -1,11 +1,8 @@
-
 using UnityEngine;
 using Unity.Services.Authentication;
 using Unity.Services.Leaderboards;
 using Unity.Services.Core;
 using TMPro;
-using static UnityEditor.Progress;
-using UnityEditor;
 public class LeaderBoardMenu : MonoBehaviour
 {
     public static LeaderBoardMenu instance;

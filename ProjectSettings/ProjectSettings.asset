@@ -940,11 +940,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: 63a9c968-ab07-4b07-9081-23781482869d
+  cloudProjectId: 44f6654d-88c9-47be-bf79-859f4a801f22
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: pepsiman
-  organizationId: rafaydevhouse
+  projectName: Pepsi-Man
+  organizationId: unity_jux9hxe5xug2pa
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
