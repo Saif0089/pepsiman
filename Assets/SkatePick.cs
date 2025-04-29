@@ -14,6 +14,7 @@ public class SkatePick : MonoBehaviour
             if (!PlayerController.instance.IsSkateBoardOn)
             {
                 PlayerController.instance.IsSkateBoardOn = true;
+                Audiomanager.instance.PlaySkatePickClip();
 
                 PlayerController.instance.PlayerCollider.center = new Vector3(0f, 0.8697391f, 0.1132071f);
                 PlayerController.instance.PlayerCollider.size = new Vector3(1, 2.213472f, 1.00319f);

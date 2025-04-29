@@ -15,7 +15,8 @@ public class PuddleHandler : MonoBehaviour
         PlayerController.instance.canMovement = false;
         PlayerController.instance.animator.SetTrigger("Stumble");
         PlayerController.instance.isHurt = true;
-        PlayerController.instance.moveForwardSpeed = 7f;
+        PlayerController.instance.moveForwardSpeed = 10f;
+        Audiomanager.instance.Play_StumbleClip();
     }
 
 }

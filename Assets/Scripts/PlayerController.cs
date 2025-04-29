@@ -101,6 +101,7 @@ public class PlayerController : MonoBehaviour
         while (currentTime > 0)
         {
             currentTime -= Time.deltaTime;
+            Audiomanager.instance.PlayCountDown_Time();
             if (StartingCountDownText != null)
                 StartingCountDownText.text = Mathf.Max(0, Mathf.Ceil(currentTime)).ToString("0");
 
@@ -169,7 +170,15 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             isJumping = true;
-            rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z); // reset Y velocity
+            if (IsSkateBoardOn)
+            {
+                Audiomanager.instance.Play_SkateJump();
+            }
+            else
+            {
+                Audiomanager.instance.PlayJump_Sfx();
+            }
+            rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             animator.SetBool("Jump",true);
         }
@@ -205,6 +214,14 @@ public class PlayerController : MonoBehaviour
 
     void StartSlide()
     {
+        if (IsSkateBoardOn)
+        {
+            Audiomanager.instance.Play_SkateSlideClip();
+        }
+        else
+        {
+            Audiomanager.instance.PlaySlide_Sfx();
+        }
         PlayerCollider.center = new Vector3(0f, 0.2507838f, 0.1132071f);
         PlayerCollider.size = new Vector3(1, 0.5066212f, 1.00319f);
         isSliding = true;
