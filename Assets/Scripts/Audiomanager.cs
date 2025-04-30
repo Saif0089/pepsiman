@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -9,6 +10,7 @@ public class Audiomanager : MonoBehaviour
 
     public AudioSource audi_bg;
     public AudioSource audi_Effect;
+    public AudioClip bg_2;
     public AudioClip clip_collision;
     public AudioClip clip_coins;
     public AudioClip clip_bag;
@@ -19,6 +21,7 @@ public class Audiomanager : MonoBehaviour
     public AudioClip PickSkate_Clip;
     public AudioClip Skate_JumpClip;
     public AudioClip Skate_SlideClip;
+
     private void Awake()
     {
         instance = this;
@@ -30,7 +33,6 @@ public class Audiomanager : MonoBehaviour
             audi_Effect.PlayOneShot(Skate_JumpClip);
         }
     }
-    
     public void Play_SkateSlideClip()
     {
         if (Skate_SlideClip != null)
@@ -38,6 +40,7 @@ public class Audiomanager : MonoBehaviour
             audi_Effect.PlayOneShot(Skate_SlideClip);
         }
     }
+
     public void PlaySkatePickClip()
     {
         if (PickSkate_Clip != null)
@@ -45,6 +48,7 @@ public class Audiomanager : MonoBehaviour
             audi_Effect.PlayOneShot(PickSkate_Clip);
         }
     }
+
     public void Play_StumbleClip()
     {
         if (Stumble_Clip != null)
@@ -52,6 +56,7 @@ public class Audiomanager : MonoBehaviour
             audi_Effect.PlayOneShot(Stumble_Clip);
         }
     }
+
     public void PlayCountDown_Time()
     {
         if (CountDown_Clip != null)
@@ -59,6 +64,7 @@ public class Audiomanager : MonoBehaviour
             audi_Effect.PlayOneShot(CountDown_Clip);
         }
     }
+
     public void PlayJump_Sfx()
     {
         if (Jump_Clip != null)
@@ -66,6 +72,7 @@ public class Audiomanager : MonoBehaviour
             audi_Effect.PlayOneShot(Jump_Clip);
         }
     }
+
     public void PlaySlide_Sfx()
     {
         if (Slide_Clip != null)
@@ -73,6 +80,7 @@ public class Audiomanager : MonoBehaviour
             audi_Effect.PlayOneShot(Slide_Clip);
         }
     }
+
     public void PlaySfx_Collision()
     {
         if (clip_collision != null)
@@ -80,6 +88,7 @@ public class Audiomanager : MonoBehaviour
             audi_Effect.PlayOneShot(clip_collision);
         }
     }
+
     public void PlaySfx_Coins()
     {
         if (clip_coins != null)

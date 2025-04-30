@@ -17680,6 +17680,8 @@ MonoBehaviour:
   spawnCollectables: 1
   cashtemplates: []
   positions: []
+  ParentCar: {fileID: 0}
+  OffOnHit: 1
 --- !u!1 &278853100334483274
 GameObject:
   m_ObjectHideFlags: 0
@@ -25338,6 +25340,8 @@ MonoBehaviour:
   spawnCollectables: 1
   cashtemplates: []
   positions: []
+  ParentCar: {fileID: 0}
+  OffOnHit: 1
 --- !u!23 &644835924287768025
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -29808,6 +29812,8 @@ MonoBehaviour:
   spawnCollectables: 1
   cashtemplates: []
   positions: []
+  ParentCar: {fileID: 0}
+  OffOnHit: 1
 --- !u!33 &868751890739225746
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -37931,6 +37937,8 @@ MonoBehaviour:
   spawnCollectables: 1
   cashtemplates: []
   positions: []
+  ParentCar: {fileID: 0}
+  OffOnHit: 1
 --- !u!4 &1239382260779353880
 Transform:
   m_ObjectHideFlags: 0
@@ -38794,6 +38802,8 @@ MonoBehaviour:
   spawnCollectables: 1
   cashtemplates: []
   positions: []
+  ParentCar: {fileID: 0}
+  OffOnHit: 1
 --- !u!1 &1278070716988621347
 GameObject:
   m_ObjectHideFlags: 0
@@ -40191,6 +40201,8 @@ MonoBehaviour:
   spawnCollectables: 1
   cashtemplates: []
   positions: []
+  ParentCar: {fileID: 0}
+  OffOnHit: 1
 --- !u!1 &1353683558771113853
 GameObject:
   m_ObjectHideFlags: 0
@@ -49104,9 +49116,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6174668928187742983, guid: 28c2ddd2766f9d44486e67d6f259887f,
         type: 3}
+      propertyPath: bg_2
+      value: 
+      objectReference: {fileID: 8300000, guid: ae98788c3d41bd44e8e7b5202efa941b, type: 3}
+    - target: {fileID: 6174668928187742983, guid: 28c2ddd2766f9d44486e67d6f259887f,
+        type: 3}
       propertyPath: clip_bag
       value: 
       objectReference: {fileID: 8300000, guid: 85a5655abece68349a00cfc650cbae8f, type: 3}
+    - target: {fileID: 9019372129518720958, guid: 28c2ddd2766f9d44486e67d6f259887f,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -50076,6 +50098,8 @@ MonoBehaviour:
   spawnCollectables: 1
   cashtemplates: []
   positions: []
+  ParentCar: {fileID: 0}
+  OffOnHit: 1
 --- !u!23 &1763932512046245545
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -52233,6 +52257,8 @@ MonoBehaviour:
   spawnCollectables: 1
   cashtemplates: []
   positions: []
+  ParentCar: {fileID: 0}
+  OffOnHit: 1
 --- !u!4 &1866518415619134199
 Transform:
   m_ObjectHideFlags: 0
@@ -53811,6 +53837,8 @@ MonoBehaviour:
   spawnCollectables: 1
   cashtemplates: []
   positions: []
+  ParentCar: {fileID: 0}
+  OffOnHit: 1
 --- !u!23 &1941755681792803538
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -81398,6 +81426,8 @@ MonoBehaviour:
   spawnCollectables: 1
   cashtemplates: []
   positions: []
+  ParentCar: {fileID: 0}
+  OffOnHit: 1
 --- !u!1 &3182661136931222566
 GameObject:
   m_ObjectHideFlags: 0
@@ -86889,6 +86919,8 @@ MonoBehaviour:
   spawnCollectables: 1
   cashtemplates: []
   positions: []
+  ParentCar: {fileID: 0}
+  OffOnHit: 1
 --- !u!1 &3450503092759102017
 GameObject:
   m_ObjectHideFlags: 0
@@ -88845,6 +88877,8 @@ MonoBehaviour:
   spawnCollectables: 1
   cashtemplates: []
   positions: []
+  ParentCar: {fileID: 0}
+  OffOnHit: 1
 --- !u!1 &3532493129267790117
 GameObject:
   m_ObjectHideFlags: 0
@@ -109841,6 +109875,8 @@ MonoBehaviour:
   spawnCollectables: 1
   cashtemplates: []
   positions: []
+  ParentCar: {fileID: 0}
+  OffOnHit: 1
 --- !u!64 &4530800474869922927
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -119094,6 +119130,8 @@ MonoBehaviour:
   spawnCollectables: 1
   cashtemplates: []
   positions: []
+  ParentCar: {fileID: 0}
+  OffOnHit: 1
 --- !u!23 &4953359928572084770
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -131763,6 +131801,8 @@ MonoBehaviour:
   spawnCollectables: 1
   cashtemplates: []
   positions: []
+  ParentCar: {fileID: 0}
+  OffOnHit: 1
 --- !u!1 &5584405196246570847
 GameObject:
   m_ObjectHideFlags: 0
@@ -133989,6 +134029,8 @@ MonoBehaviour:
   spawnCollectables: 1
   cashtemplates: []
   positions: []
+  ParentCar: {fileID: 0}
+  OffOnHit: 1
 --- !u!4 &5693192397945829719
 Transform:
   m_ObjectHideFlags: 0
@@ -134339,6 +134381,8 @@ MonoBehaviour:
   spawnCollectables: 1
   cashtemplates: []
   positions: []
+  ParentCar: {fileID: 0}
+  OffOnHit: 1
 --- !u!33 &5707638149123835759
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -138382,6 +138426,8 @@ MonoBehaviour:
   spawnCollectables: 1
   cashtemplates: []
   positions: []
+  ParentCar: {fileID: 0}
+  OffOnHit: 1
 --- !u!1 &5918956050320766004
 GameObject:
   m_ObjectHideFlags: 0
@@ -146891,6 +146937,8 @@ MonoBehaviour:
   spawnCollectables: 1
   cashtemplates: []
   positions: []
+  ParentCar: {fileID: 0}
+  OffOnHit: 1
 --- !u!33 &6325842662667305411
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -153630,6 +153678,8 @@ MonoBehaviour:
   spawnCollectables: 1
   cashtemplates: []
   positions: []
+  ParentCar: {fileID: 0}
+  OffOnHit: 1
 --- !u!4 &6644661633547480772
 Transform:
   m_ObjectHideFlags: 0
@@ -174699,6 +174749,8 @@ MonoBehaviour:
   spawnCollectables: 1
   cashtemplates: []
   positions: []
+  ParentCar: {fileID: 0}
+  OffOnHit: 1
 --- !u!1 &7620917414647067870
 GameObject:
   m_ObjectHideFlags: 0
@@ -180438,6 +180490,8 @@ MonoBehaviour:
   spawnCollectables: 1
   cashtemplates: []
   positions: []
+  ParentCar: {fileID: 0}
+  OffOnHit: 1
 --- !u!1 &7903755573920008513
 GameObject:
   m_ObjectHideFlags: 0
@@ -184211,6 +184265,8 @@ MonoBehaviour:
   spawnCollectables: 1
   cashtemplates: []
   positions: []
+  ParentCar: {fileID: 0}
+  OffOnHit: 1
 --- !u!23 &8099145027326576434
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -184644,6 +184700,8 @@ MonoBehaviour:
   spawnCollectables: 1
   cashtemplates: []
   positions: []
+  ParentCar: {fileID: 0}
+  OffOnHit: 1
 --- !u!33 &8108204386825248033
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -190142,6 +190200,8 @@ MonoBehaviour:
   spawnCollectables: 1
   cashtemplates: []
   positions: []
+  ParentCar: {fileID: 0}
+  OffOnHit: 1
 --- !u!4 &8369732356794820881
 Transform:
   m_ObjectHideFlags: 0
@@ -192962,6 +193022,8 @@ MonoBehaviour:
   spawnCollectables: 1
   cashtemplates: []
   positions: []
+  ParentCar: {fileID: 0}
+  OffOnHit: 1
 --- !u!1 &8502885547117415915
 GameObject:
   m_ObjectHideFlags: 0

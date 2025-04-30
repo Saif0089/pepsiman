@@ -249,6 +249,7 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("Obstacle"))
         {
             Hurt();
+            other.gameObject.GetComponent<Obstacle>().ToggleCarOnHit();
         }
         else if (other.CompareTag("Collectable"))
         {
@@ -258,6 +259,9 @@ public class PlayerController : MonoBehaviour
 
     private void Hurt()
     {
+        if(isHurt)
+            return;
+        
         isHurt = true;
         animator.SetTrigger("Hurt");
 

@@ -59,6 +59,7 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
+        Audiomanager.instance.audi_bg.Pause();
         leaderboardButton.gameObject.SetActive(false);
         LeaderBoardMenu.instance.userNameInputField.gameObject.SetActive(false);
         LeaderBoardMenu.instance.SetUserName();
@@ -68,8 +69,14 @@ public class GameManager : MonoBehaviour
         ObjectPooler.Instance.SpawnTurnedEnvironmentPatch();
 
         PlayerController.instance.StartCountdown();
+        
+        Invoke(nameof(PlayMusic), 1f);
     }
-
+    void PlayMusic()
+    {
+        Audiomanager.instance.audi_bg.clip = Audiomanager.instance.bg_2;
+        Audiomanager.instance.audi_bg.Play();
+    }
     private void Start()
     {
         totalDistance = patchLength * totalPatches;
