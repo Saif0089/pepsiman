@@ -69,13 +69,6 @@ public class GameManager : MonoBehaviour
         ObjectPooler.Instance.SpawnTurnedEnvironmentPatch();
 
         PlayerController.instance.StartCountdown();
-        
-        Invoke(nameof(PlayMusic), 1f);
-    }
-    void PlayMusic()
-    {
-        Audiomanager.instance.audi_bg.clip = Audiomanager.instance.bg_2;
-        Audiomanager.instance.audi_bg.Play();
     }
     private void Start()
     {

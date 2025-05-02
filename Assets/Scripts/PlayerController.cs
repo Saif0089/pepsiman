@@ -8,8 +8,7 @@ public class PlayerController : MonoBehaviour
 {
     public static PlayerController instance;
 
-    [Header("Movement Settings")]
-    public float moveSpeed = 10f;
+    [Header("Movement Settings")] public float moveSpeed = 10f;
     public float moveForwardSpeed = 10f;
     public float boost_moveSpeed = 20f;
     public float jumpForce = 8f;
@@ -18,19 +17,15 @@ public class PlayerController : MonoBehaviour
     public float GroundCheckRayCastLenght = 1f;
     public LayerMask GroundLayer;
 
-    [Header("Slide Settings")]
-    public float slideDuration = 0.5f;
+    [Header("Slide Settings")] public float slideDuration = 0.5f;
     private float slideTimer = 0f;
 
-    [Header("Boundaries")]
-    public float minX = -5f;
+    [Header("Boundaries")] public float minX = -5f;
     public float maxX = 5f;
 
-    [Header("Animation Settings")]
-    public Animator animator;
+    [Header("Animation Settings")] public Animator animator;
 
-    [Header("Boost Management")]
-    public bool BoostEnabled = false;
+    [Header("Boost Management")] public bool BoostEnabled = false;
     public float BoostTimer = 5f;
     public float SkateTimer = 20f;
     private float currSpeed;
@@ -53,9 +48,9 @@ public class PlayerController : MonoBehaviour
     private bool isSliding = false;
     public bool canMovement = true;
     public bool isHurt = false;
+    bool wasGroundedLastFrame = false;
 
-    [Header("Start mach")]
-    public int StartingCountDown;
+    [Header("Start mach")] public int StartingCountDown;
     public TextMeshProUGUI StartingCountDownText;
     private Coroutine countdownCoroutine;
 
@@ -73,16 +68,17 @@ public class PlayerController : MonoBehaviour
         animator.SetTrigger("Run");
         MagnetButton.onClick.AddListener(ToggleMagnet);
         rb.useGravity = true;
-        
+
         StopPlayerAtStart();
     }
-    
+
     public void StartCountdown()
     {
         if (countdownCoroutine != null)
         {
             StopCoroutine(countdownCoroutine);
         }
+
         countdownCoroutine = StartCoroutine(StartCountDownTime());
     }
 
@@ -94,52 +90,63 @@ public class PlayerController : MonoBehaviour
             countdownCoroutine = null;
         }
     }
+
     public IEnumerator StartCountDownTime()
     {
+        Audiomanager.instance.audi_bg.clip = Audiomanager.instance.bg_2;
         float currentTime = StartingCountDown;
+        Audiomanager.instance.PlayCountDown_Time(); // Play once per second
 
         while (currentTime > 0)
         {
-            currentTime -= Time.deltaTime;
-            Audiomanager.instance.PlayCountDown_Time();
             if (StartingCountDownText != null)
-                StartingCountDownText.text = Mathf.Max(0, Mathf.Ceil(currentTime)).ToString("0");
+                StartingCountDownText.text = Mathf.Ceil(currentTime).ToString("0");
 
-            yield return null;
+            yield return new WaitForSeconds(1f); // Wait for 1 second
+            Audiomanager.instance.PlayCountDown_Time(); // Play once per second
+
+            currentTime--;
         }
 
         if (StartingCountDownText != null)
         {
             StartingCountDownText.text = "Go";
-            yield return new WaitForSeconds(1f); 
+            yield return new WaitForSeconds(1f);
             StartingCountDownText.gameObject.SetActive(false);
+            Audiomanager.instance.audi_bg.Play();
         }
 
         StartGameNow();
         StopCountdown();
     }
+
     private void Update()
     {
         if (isHurt) return;
-
+        
         HandleLaneMovement();
         HandleJumpAndSlide();
         StopBooster();
 
         if (IsSkateBoardOn)
         {
+            if(!BoostEnabled)
+            {
+                Audiomanager.instance.Player_Source.mute = true;
+            }
             SkateTimer -= Time.deltaTime;
             if (SkateTimer <= 0f)
                 StopSkate();
+            
         }
-
         ClampXPosition();
-
     }
+
     void FixedUpdate()
     {
         currSpeed = moveForwardSpeed;
     }
+
     void HandleLaneMovement()
     {
         if (!canMovement) return;
@@ -157,36 +164,68 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.identity, Time.deltaTime * rotationSpeed);
+            transform.rotation =
+                Quaternion.Lerp(transform.rotation, Quaternion.identity, Time.deltaTime * rotationSpeed);
         }
     }
-
     void HandleJumpAndSlide()
     {
-        isGrounded = IsGrounded();
+        bool currentlyGrounded = IsGrounded();
+        isGrounded = currentlyGrounded;
 
-        if (!canMovement || !isGrounded) return;
+        // Audio mute toggle
+        if (canMovement)
+        {
+            Audiomanager.instance.Player_Source.mute = !currentlyGrounded;
+        }
 
+        // Landing sound
+        if (!wasGroundedLastFrame && currentlyGrounded && IsSkateBoardOn)
+        {
+            Audiomanager.instance.Play_SkateLand();
+            Audiomanager.instance.SkateBoard_Source.mute = false;
+        }
+
+        // Reset jump animation
+        if (currentlyGrounded && animator.GetBool("Jump"))
+        {
+            animator.SetBool("Jump", false);
+        }
+
+        // Disable movement while airborne or disallowed
+        if (!canMovement || !isGrounded)
+        {
+            wasGroundedLastFrame = isGrounded;
+            return;
+        }
+
+        // Handle jump
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             isJumping = true;
+
             if (IsSkateBoardOn)
             {
                 Audiomanager.instance.Play_SkateJump();
+                Audiomanager.instance.SkateBoard_Source.mute = true;
             }
             else
             {
                 Audiomanager.instance.PlayJump_Sfx();
             }
+
             rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-            animator.SetBool("Jump",true);
+            animator.SetBool("Jump", true);
         }
 
+        // Handle slide
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             StartSlide();
         }
+
+        wasGroundedLastFrame = isGrounded;
     }
 
     void ClampXPosition()
@@ -214,14 +253,8 @@ public class PlayerController : MonoBehaviour
 
     void StartSlide()
     {
-        if (IsSkateBoardOn)
-        {
-            Audiomanager.instance.Play_SkateSlideClip();
-        }
-        else
-        {
-            Audiomanager.instance.PlaySlide_Sfx();
-        }
+        Audiomanager.instance.PlaySlide_Sfx();
+        Audiomanager.instance.Player_Source.mute = false;
         PlayerCollider.center = new Vector3(0f, 0.2507838f, 0.1132071f);
         PlayerCollider.size = new Vector3(1, 0.5066212f, 1.00319f);
         isSliding = true;
@@ -232,6 +265,7 @@ public class PlayerController : MonoBehaviour
     public void EndSlide() // Called from animation event
     {
         isSliding = false;
+        Audiomanager.instance.Player_Source.mute = true;
         PlayerCollider.center = new Vector3(0f, 0.9869743f, 0.1132071f);
         PlayerCollider.size = new Vector3(1, 1.979002f, 1.00319f);
         animator.SetTrigger("Run");
@@ -240,7 +274,7 @@ public class PlayerController : MonoBehaviour
     private bool IsGrounded()
     {
         Vector3 origin = transform.position + Vector3.up * 0.1f;
-        animator.SetBool("Jump",false);
+        animator.SetBool("Jump", false);
         return Physics.Raycast(origin, Vector3.down, GroundCheckRayCastLenght, GroundLayer);
     }
 
@@ -259,10 +293,15 @@ public class PlayerController : MonoBehaviour
 
     private void Hurt()
     {
-        if(isHurt)
+        if (isHurt)
             return;
-        
+
+        if (IsSkateBoardOn)
+        {
+            Audiomanager.instance.SkateBoard_Source.mute = true;
+        }
         isHurt = true;
+        Audiomanager.instance.Player_Source.mute = true;
         animator.SetTrigger("Hurt");
 
         ObstacleSpawner.Instance.StopSpawning(false);
@@ -309,6 +348,9 @@ public class PlayerController : MonoBehaviour
             if (BoostTimer <= 0)
             {
                 BoostEnabled = false;
+
+                Audiomanager.instance.Player_Source.clip = Audiomanager.instance.Running;
+                
                 BoostTimer = 5;
             }
         }
@@ -316,24 +358,35 @@ public class PlayerController : MonoBehaviour
 
     void StopPlayerAtStart()
     {
+        Audiomanager.instance.Player_Source.mute = true;
         moveForwardSpeed = 0f;
         GameManager.Instance.gameEnded = true;
         canMovement = false;
         GameManager.Instance.progressBar.transform.parent.gameObject.SetActive(false);
         GameManager.Instance.TimerText.gameObject.SetActive(false);
     }
+
     void StartGameNow()
     {
-        animator.SetBool("Transit",true);
+        animator.SetBool("Transit", true);
+        Audiomanager.instance.Player_Source.mute = false;
+
         moveForwardSpeed = 25f;
         GameManager.Instance.gameEnded = false;
         canMovement = true;
         GameManager.Instance.progressBar.transform.parent.gameObject.SetActive(true);
         GameManager.Instance.TimerText.gameObject.SetActive(true);
     }
+
     public void RestHurt() // Called in animation event
     {
         isHurt = false;
+        if (IsSkateBoardOn)
+        {
+            Audiomanager.instance.SkateBoard_Source.mute = false;
+        }
+
+        Audiomanager.instance.Player_Source.mute = false;
         CollectableSpawner.Instance.StopSpawning(true);
         ObstacleSpawner.Instance.StopSpawning(true);
         StopAllObstacles(true);
@@ -347,6 +400,11 @@ public class PlayerController : MonoBehaviour
 
     public void ResetStumble()
     {
+        if (IsSkateBoardOn)
+        {
+            Audiomanager.instance.SkateBoard_Source.mute = false;
+        }
+        Audiomanager.instance.Player_Source.mute = false;
         isHurt = false;
         canMovement = true;
         moveForwardSpeed = 25;
@@ -357,6 +415,7 @@ public class PlayerController : MonoBehaviour
 
     void StopSkate()
     {
+        Audiomanager.instance.Player_Source.mute = false;
         PlayerCollider.center = new Vector3(0f, 0.9869743f, 0.1132071f);
         PlayerCollider.size = new Vector3(1, 1.979002f, 1.00319f);
         GroundCheckRayCastLenght = 0.25f;

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Audiomanager : MonoBehaviour
 {
@@ -10,7 +11,10 @@ public class Audiomanager : MonoBehaviour
 
     public AudioSource audi_bg;
     public AudioSource audi_Effect;
+    public AudioSource SkateBoard_Source;
+    public AudioSource Player_Source;
     public AudioClip bg_2;
+    public AudioClip Running;
     public AudioClip clip_collision;
     public AudioClip clip_coins;
     public AudioClip clip_bag;
@@ -20,8 +24,9 @@ public class Audiomanager : MonoBehaviour
     public AudioClip Stumble_Clip;
     public AudioClip PickSkate_Clip;
     public AudioClip Skate_JumpClip;
-    public AudioClip Skate_SlideClip;
-
+    public AudioClip Skate_Land;
+    public AudioClip Speed_1;
+    public AudioClip Speed_2;
     private void Awake()
     {
         instance = this;
@@ -30,14 +35,14 @@ public class Audiomanager : MonoBehaviour
     {
         if (Skate_JumpClip != null)
         {
-            audi_Effect.PlayOneShot(Skate_JumpClip);
+            audi_Effect.PlayOneShot(Skate_JumpClip,1f);
         }
     }
-    public void Play_SkateSlideClip()
+    public void Play_SkateLand()
     {
-        if (Skate_SlideClip != null)
+        if (Skate_Land != null)
         {
-            audi_Effect.PlayOneShot(Skate_SlideClip);
+            audi_Effect.PlayOneShot(Skate_Land,1f);
         }
     }
 
@@ -45,7 +50,7 @@ public class Audiomanager : MonoBehaviour
     {
         if (PickSkate_Clip != null)
         {
-            audi_Effect.PlayOneShot(PickSkate_Clip);
+            audi_Effect.PlayOneShot(PickSkate_Clip,1f);
         }
     }
 
@@ -53,7 +58,7 @@ public class Audiomanager : MonoBehaviour
     {
         if (Stumble_Clip != null)
         {
-            audi_Effect.PlayOneShot(Stumble_Clip);
+            audi_Effect.PlayOneShot(Stumble_Clip, 1f);
         }
     }
 
@@ -61,7 +66,7 @@ public class Audiomanager : MonoBehaviour
     {
         if (CountDown_Clip != null)
         {
-            audi_Effect.PlayOneShot(CountDown_Clip);
+            audi_Effect.PlayOneShot(CountDown_Clip,1f);
         }
     }
 
@@ -69,7 +74,7 @@ public class Audiomanager : MonoBehaviour
     {
         if (Jump_Clip != null)
         {
-            audi_Effect.PlayOneShot(Jump_Clip);
+            audi_Effect.PlayOneShot(Jump_Clip,1f);
         }
     }
 
@@ -77,7 +82,7 @@ public class Audiomanager : MonoBehaviour
     {
         if (Slide_Clip != null)
         {
-            audi_Effect.PlayOneShot(Slide_Clip);
+            audi_Effect.PlayOneShot(Slide_Clip,1f);
         }
     }
 
@@ -85,7 +90,7 @@ public class Audiomanager : MonoBehaviour
     {
         if (clip_collision != null)
         {
-            audi_Effect.PlayOneShot(clip_collision);
+            audi_Effect.PlayOneShot(clip_collision,1f);
         }
     }
 
@@ -93,7 +98,7 @@ public class Audiomanager : MonoBehaviour
     {
         if (clip_coins != null)
         {
-            audi_Effect.PlayOneShot(clip_coins);
+            audi_Effect.PlayOneShot(clip_coins,1f);
         }
     }
 
@@ -101,7 +106,10 @@ public class Audiomanager : MonoBehaviour
     {
         if (clip_bag != null)
         {
-            audi_Effect.PlayOneShot(clip_bag, 1f);
+            audi_Effect.PlayOneShot(Speed_1, 1f);
+
+            Player_Source.clip = Speed_2;
+            Player_Source.Play();
         }
     }
 }

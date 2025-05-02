@@ -12,11 +12,17 @@ public class PuddleHandler : MonoBehaviour
     }
     void Stumble()
     {
+        Audiomanager.instance.Player_Source.mute = true;
         PlayerController.instance.canMovement = false;
         PlayerController.instance.animator.SetTrigger("Stumble");
         PlayerController.instance.isHurt = true;
         PlayerController.instance.moveForwardSpeed = 10f;
         Audiomanager.instance.Play_StumbleClip();
+        
+        if (PlayerController.instance.IsSkateBoardOn)
+        {
+            Audiomanager.instance.SkateBoard_Source.mute = true;
+        }
     }
 
 }

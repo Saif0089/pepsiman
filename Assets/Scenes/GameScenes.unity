@@ -6193,7 +6193,7 @@ MonoBehaviour:
   finishLinePrefab: {fileID: 3703501085493076689, guid: a18a9fed642eb964787b2ae2ec1603ad,
     type: 3}
   WinScreen: {fileID: 598008491}
-  timeToSpawnFinish: 20
+  timeToSpawnFinish: 90
   FinishLineSpawned: 0
   progressBar: {fileID: 1028067504}
   progressText: {fileID: 558696497}
@@ -6332,7 +6332,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1076155942
 RectTransform:
   m_ObjectHideFlags: 0
@@ -49121,13 +49121,78 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: ae98788c3d41bd44e8e7b5202efa941b, type: 3}
     - target: {fileID: 6174668928187742983, guid: 28c2ddd2766f9d44486e67d6f259887f,
         type: 3}
+      propertyPath: Running
+      value: 
+      objectReference: {fileID: 8300000, guid: 9926c4ce2b211ec448fa439368bbd073, type: 3}
+    - target: {fileID: 6174668928187742983, guid: 28c2ddd2766f9d44486e67d6f259887f,
+        type: 3}
+      propertyPath: Speed_1
+      value: 
+      objectReference: {fileID: 8300000, guid: 8fd68ac529268ca4b9ee8f9898ee476d, type: 3}
+    - target: {fileID: 6174668928187742983, guid: 28c2ddd2766f9d44486e67d6f259887f,
+        type: 3}
+      propertyPath: Speed_2
+      value: 
+      objectReference: {fileID: 8300000, guid: 493649e5b96accf418a1745e2fda31ed, type: 3}
+    - target: {fileID: 6174668928187742983, guid: 28c2ddd2766f9d44486e67d6f259887f,
+        type: 3}
       propertyPath: clip_bag
       value: 
       objectReference: {fileID: 8300000, guid: 85a5655abece68349a00cfc650cbae8f, type: 3}
+    - target: {fileID: 6174668928187742983, guid: 28c2ddd2766f9d44486e67d6f259887f,
+        type: 3}
+      propertyPath: Jump_Clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4dad4e979839bac4292ba718b678e3fe, type: 3}
+    - target: {fileID: 6174668928187742983, guid: 28c2ddd2766f9d44486e67d6f259887f,
+        type: 3}
+      propertyPath: SkateBoard
+      value: 
+      objectReference: {fileID: 3769854949355500444}
+    - target: {fileID: 6174668928187742983, guid: 28c2ddd2766f9d44486e67d6f259887f,
+        type: 3}
+      propertyPath: Skate_Land
+      value: 
+      objectReference: {fileID: 8300000, guid: c26fbe65a621413488b787240a2b8a18, type: 3}
+    - target: {fileID: 6174668928187742983, guid: 28c2ddd2766f9d44486e67d6f259887f,
+        type: 3}
+      propertyPath: Slide_Clip
+      value: 
+      objectReference: {fileID: 8300000, guid: f4f7a630bc9e7ea479c2ff76ac3d1242, type: 3}
+    - target: {fileID: 6174668928187742983, guid: 28c2ddd2766f9d44486e67d6f259887f,
+        type: 3}
+      propertyPath: Stumble_Clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 73cb58a24ae8cf84189d3d2011d751b5, type: 3}
+    - target: {fileID: 6174668928187742983, guid: 28c2ddd2766f9d44486e67d6f259887f,
+        type: 3}
+      propertyPath: Player_Source
+      value: 
+      objectReference: {fileID: 6852540021096505601}
+    - target: {fileID: 6174668928187742983, guid: 28c2ddd2766f9d44486e67d6f259887f,
+        type: 3}
+      propertyPath: CountDown_Clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 37b6578e15e74624d9b74b82f69f4109, type: 3}
+    - target: {fileID: 6174668928187742983, guid: 28c2ddd2766f9d44486e67d6f259887f,
+        type: 3}
+      propertyPath: PickSkate_Clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4b6879ab480861f438bb7de368347381, type: 3}
+    - target: {fileID: 6174668928187742983, guid: 28c2ddd2766f9d44486e67d6f259887f,
+        type: 3}
+      propertyPath: Skate_JumpClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 10667681c1455714e8af4f3acfc97a70, type: 3}
+    - target: {fileID: 6174668928187742983, guid: 28c2ddd2766f9d44486e67d6f259887f,
+        type: 3}
+      propertyPath: SkateBoard_Source
+      value: 
+      objectReference: {fileID: 3769854949355500444}
     - target: {fileID: 9019372129518720958, guid: 28c2ddd2766f9d44486e67d6f259887f,
         type: 3}
       propertyPath: m_Volume
-      value: 0.7
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -93763,6 +93828,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3769854949355500442}
+  - component: {fileID: 3769854949355500444}
   m_Layer: 0
   m_Name: SkateBoard
   m_TagString: Untagged
@@ -93770,6 +93836,102 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
+--- !u!82 &3769854949355500444
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3769854949355500443}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: d9c27ae7d9bfe7b42865e94f2de9641c, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!54 &3770116988781602472
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -141733,6 +141895,7 @@ GameObject:
   - component: {fileID: 3673611213814015248}
   - component: {fileID: 1851075680}
   - component: {fileID: 6852540021096505600}
+  - component: {fileID: 6852540021096505601}
   m_Layer: 7
   m_Name: OWLRUN1
   m_TagString: Player
@@ -158494,6 +158657,102 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1.9790019, z: 1.0031896}
   m_Center: {x: 0, y: 0.9869743, z: 0.1132071}
+--- !u!82 &6852540021096505601
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6076143677475568197}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 9926c4ce2b211ec448fa439368bbd073, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!64 &6854213285210416789
 MeshCollider:
   m_ObjectHideFlags: 0
