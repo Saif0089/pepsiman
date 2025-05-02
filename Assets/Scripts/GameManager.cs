@@ -5,7 +5,9 @@ using UnityEngine;
 using DG.Tweening;
 using UnityEngine.SceneManagement;
 using System.Collections;
-using UnityEngine.UI;
+using UnityEngine.UIElements;
+using Button = UnityEngine.UI.Button;
+using Image = UnityEngine.UI.Image;
 
 public class GameManager : MonoBehaviour
 {
@@ -36,7 +38,6 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI progressText; // Your UI Slider
     public float patchLength = 50f; // Length of ONE patch
     public int totalPatches = 10; // Total number of patches
-    public float scrollSpeed = 25f; // Scrolling speed
     private float totalDistance;
     private float travelledDistance;
     private float elapsedTime;
@@ -111,7 +112,7 @@ public class GameManager : MonoBehaviour
             return;
 
         elapsedTime += Time.fixedDeltaTime;
-        travelledDistance = scrollSpeed * elapsedTime;
+        travelledDistance = 25f * elapsedTime;
 
         float progress = Mathf.Clamp01(travelledDistance / totalDistance);
         progressBar.fillAmount = progress;
@@ -192,6 +193,10 @@ public class GameManager : MonoBehaviour
         LeaderBoardMenu.instance.SubmitScore((long)totalTime);
         Finished_TimeText.text = FormatTime((int)timer);
         WinScreen.SetActive(true);
+        Audiomanager.instance.audi_bg.mute = true;
+        Audiomanager.instance.Player_Source.mute = true;
+        
+        Audiomanager.instance.Play_Win();
         Time.timeScale = 0f;
     }
 

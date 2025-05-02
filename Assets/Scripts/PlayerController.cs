@@ -370,6 +370,7 @@ public class PlayerController : MonoBehaviour
     {
         animator.SetBool("Transit", true);
         Audiomanager.instance.Player_Source.mute = false;
+        Audiomanager.instance.Player_Source.Play();
 
         moveForwardSpeed = 25f;
         GameManager.Instance.gameEnded = false;

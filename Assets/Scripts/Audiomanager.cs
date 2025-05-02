@@ -27,9 +27,18 @@ public class Audiomanager : MonoBehaviour
     public AudioClip Skate_Land;
     public AudioClip Speed_1;
     public AudioClip Speed_2;
+    public AudioClip Win;
     private void Awake()
     {
         instance = this;
+    }
+    
+    public void Play_Win()
+    {
+        if (Win != null)
+        {
+            audi_Effect.PlayOneShot(Win,1f);
+        }
     }
     public void Play_SkateJump()
     {

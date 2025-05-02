@@ -6193,13 +6193,12 @@ MonoBehaviour:
   finishLinePrefab: {fileID: 3703501085493076689, guid: a18a9fed642eb964787b2ae2ec1603ad,
     type: 3}
   WinScreen: {fileID: 598008491}
-  timeToSpawnFinish: 90
+  timeToSpawnFinish: 20
   FinishLineSpawned: 0
   progressBar: {fileID: 1028067504}
   progressText: {fileID: 558696497}
   patchLength: 165
   totalPatches: 10
-  scrollSpeed: 25
   Finished_TimeText: {fileID: 1970083227}
   mainMenu: {fileID: 1633966094}
   totalTime: 0
@@ -49116,6 +49115,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6174668928187742983, guid: 28c2ddd2766f9d44486e67d6f259887f,
         type: 3}
+      propertyPath: Win
+      value: 
+      objectReference: {fileID: 8300000, guid: e2b0cb3ecb5d4a548b6656ec0e88c3f1, type: 3}
+    - target: {fileID: 6174668928187742983, guid: 28c2ddd2766f9d44486e67d6f259887f,
+        type: 3}
       propertyPath: bg_2
       value: 
       objectReference: {fileID: 8300000, guid: ae98788c3d41bd44e8e7b5202efa941b, type: 3}
@@ -49192,7 +49196,7 @@ PrefabInstance:
     - target: {fileID: 9019372129518720958, guid: 28c2ddd2766f9d44486e67d6f259887f,
         type: 3}
       propertyPath: m_Volume
-      value: 0
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -158668,7 +158672,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 9926c4ce2b211ec448fa439368bbd073, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
