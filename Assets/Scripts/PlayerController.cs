@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody rb;
     private bool isGrounded;
-    private bool isJumping = false;
+    public bool isJumping = false;
     private bool isSliding = false;
     public bool canMovement = true;
     public bool isHurt = false;
@@ -78,6 +78,11 @@ public class PlayerController : MonoBehaviour
 
     public void StartCountdown()
     {
+        Audiomanager.instance.audi_bg.mute = true;
+        
+        Audiomanager.instance.audi_bg.clip = Audiomanager.instance.Bg_2;
+        Audiomanager.instance.audi_bg.Play();
+        
         if (countdownCoroutine != null)
         {
             StopCoroutine(countdownCoroutine);
@@ -96,7 +101,6 @@ public class PlayerController : MonoBehaviour
     }
     public IEnumerator StartCountDownTime()
     {
-        Audiomanager.instance.audi_bg.clip = Audiomanager.instance.bg_2;
         float currentTime = StartingCountDown;
         Audiomanager.instance.PlayCountDown_Time(); // Play once per second
 
@@ -116,7 +120,6 @@ public class PlayerController : MonoBehaviour
             StartingCountDownText.text = "Go";
             yield return new WaitForSeconds(1f);
             StartingCountDownText.gameObject.SetActive(false);
-            Audiomanager.instance.audi_bg.Play();
         }
 
         StartGameNow();
@@ -378,6 +381,8 @@ public class PlayerController : MonoBehaviour
 
     void StartGameNow()
     {
+      
+        Audiomanager.instance.audi_bg.mute = false;
         animator.SetBool("Transit", true);
         moveForwardSpeed = 25f;
         GameManager.Instance.gameEnded = false;

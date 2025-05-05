@@ -53,7 +53,10 @@ public class EnvironmentManager : MonoBehaviour
         if (spawned <= initialPatchCount)
         {
             GameObject patch = ObjectPooler.Instance.GetActiveEnvironmentPatch();
-            patch.GetComponent<EnvironmentPatch>().SetPosition(new Vector3(0, 0, lastSpawnZ));
+            if (patch != null)
+            {
+                patch.GetComponent<EnvironmentPatch>().SetPosition(new Vector3(0, 0, lastSpawnZ));
+            }
            
             if(spawned<initialPatchCount)
             lastSpawnZ += patchLength; // Move next patch forward

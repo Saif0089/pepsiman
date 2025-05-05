@@ -5633,7 +5633,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.278209, y: -0.313749, z: 10.8023}
+  m_Size: {x: 0.278209, y: 0.2, z: 10.8023}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &125913090686725889
 GameObject:
@@ -8785,7 +8785,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &4423889219380447612
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9541,7 +9540,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4895231707816226012}
   - component: {fileID: 211022787532715523}
-  - component: {fileID: 3890321853518185805}
   m_Layer: 0
   m_Name: Animals-Parent
   m_TagString: Obstacle
@@ -9588,102 +9586,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.16731718, y: 0.22223663, z: 0.5382249}
   m_Center: {x: 0.11302687, y: 0.10736962, z: 0.014784679}
---- !u!82 &3890321853518185805
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 201461904780089724}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 178fc42449df0ee4f9f0acb589fdd601, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 0.01
-  m_Pitch: 1
-  Loop: 1
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 20
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1 &201649115785770377
 GameObject:
   m_ObjectHideFlags: 0
@@ -22040,7 +21942,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &1728598340237140648
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -26098,7 +25999,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &2472632744904139298
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -27205,7 +27105,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &1673739900557134449
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -28984,7 +28883,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &4519051470982493301
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -29732,7 +29630,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &4206158970373535054
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -31506,7 +31403,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &8734356802429705767
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -39918,7 +39814,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &832290967032585483
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -45566,7 +45461,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &2463066267501812035
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -47538,7 +47432,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &2973775371006039571
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -49407,7 +49300,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &6967489366255792309
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -49835,7 +49727,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.278209, y: -0.313749, z: 10.8023}
+  m_Size: {x: 0.278209, y: 0.2, z: 10.8023}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1174418044048639348
 GameObject:
@@ -52560,7 +52452,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &1224589457404877276
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -54399,7 +54290,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &5508974364301601359
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -57554,7 +57444,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &1834886560357867226
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -58087,7 +57976,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &6717814103608633641
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -60910,7 +60798,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &8452921868102739988
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -61398,7 +61285,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &9046753692171604029
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -61977,59 +61863,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &1431394474837673272
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 752463449150059717}
-  - component: {fileID: 5225397681066838636}
-  m_Layer: 0
-  m_Name: Box1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &752463449150059717
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1431394474837673272}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0.5, y: -0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: -0.001925, y: 10.55115, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3392964428436908503}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &5225397681066838636
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1431394474837673272}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2.278191, y: -0.313749, z: 0.278453}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1431916990475484414
 GameObject:
   m_ObjectHideFlags: 0
@@ -64734,7 +64567,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &606023534421427254
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -72861,7 +72693,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &3174214041831808453
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -77045,7 +76876,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &324798682306072824
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -84149,7 +83979,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &2423026068851731194
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -84659,7 +84488,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &6614629721297285302
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -85360,7 +85188,6 @@ GameObject:
   m_Component:
   - component: {fileID: 976661502607889875}
   - component: {fileID: 1462184255966464210}
-  - component: {fileID: 8035654277936105401}
   m_Layer: 0
   m_Name: Animals-Parent
   m_TagString: Obstacle
@@ -85407,102 +85234,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.16731718, y: 0.22223663, z: 0.5382249}
   m_Center: {x: 0.11302687, y: 0.10736962, z: 0.014784679}
---- !u!82 &8035654277936105401
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1984086449821683163}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 178fc42449df0ee4f9f0acb589fdd601, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 0.01
-  m_Pitch: 1
-  Loop: 1
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 20
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1 &1984371049565404886
 GameObject:
   m_ObjectHideFlags: 0
@@ -87255,7 +86986,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &5767988606731524223
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -88500,7 +88230,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &4025940661459008775
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -89700,7 +89429,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &4559020068719741427
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -93993,7 +93721,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &9093865059941397781
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -95108,7 +94835,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &3476375183585523974
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -99459,7 +99185,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &6987433312332679112
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -99693,7 +99418,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &6497585072227684536
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -119053,7 +118777,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2111450519796887954}
   - component: {fileID: 598328492890142704}
-  - component: {fileID: 6060460613841377359}
   m_Layer: 0
   m_Name: Animals-Parent
   m_TagString: Obstacle
@@ -119100,102 +118823,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.16731718, y: 0.22223663, z: 0.5382249}
   m_Center: {x: 0.11302687, y: 0.10736962, z: 0.014784679}
---- !u!82 &6060460613841377359
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2834973816314011657}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 95ac2994bb58de64a8eabf04e2cb1b60, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 0.01
-  m_Pitch: 1
-  Loop: 1
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 20
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1 &2838156297783966344
 GameObject:
   m_ObjectHideFlags: 0
@@ -126521,59 +126148,6 @@ Transform:
   - {fileID: 1175281904686247897}
   m_Father: {fileID: 7284235516683924095}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3026496444139510779
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3827841147708633108}
-  - component: {fileID: 1283625710243983306}
-  m_Layer: 0
-  m_Name: Box1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3827841147708633108
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3026496444139510779}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0.5, y: -0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: -0.001925, y: 10.55115, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1050063163528753061}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1283625710243983306
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3026496444139510779}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2.278191, y: -0.313749, z: 0.278453}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3027403671799575703
 GameObject:
   m_ObjectHideFlags: 0
@@ -128713,7 +128287,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &1848286503720647278
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -131466,7 +131039,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &3232675961489188588
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -131806,7 +131378,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1596317684590895275}
-  - {fileID: 1759082866520950887}
   - {fileID: 4932955447395026498}
   m_Father: {fileID: 7834670251347808894}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -143018,7 +142589,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5927289828481442672}
   - component: {fileID: 9034724714843145945}
-  - component: {fileID: 213986333336274297}
   m_Layer: 0
   m_Name: Animals-Parent
   m_TagString: Obstacle
@@ -143065,102 +142635,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.16731718, y: 0.22223663, z: 0.5382249}
   m_Center: {x: 0.11302687, y: 0.10736962, z: 0.014784679}
---- !u!82 &213986333336274297
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3415468742601757508}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 95ac2994bb58de64a8eabf04e2cb1b60, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 0.01
-  m_Pitch: 1
-  Loop: 1
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 20
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1 &3416057012674479589
 GameObject:
   m_ObjectHideFlags: 0
@@ -143901,7 +143375,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &311837137381410607
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -152938,7 +152411,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.278209, y: -0.313749, z: 10.8023}
+  m_Size: {x: 0.278209, y: 0.2, z: 10.8023}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3705053338423595220
 GameObject:
@@ -165469,7 +164942,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 3.4886, z: 7.08}
-  m_LocalScale: {x: 73.87525, y: 7.9772, z: 1}
+  m_LocalScale: {x: 73.87525, y: 25.97, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5362404743622801659}
@@ -165543,7 +165016,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 1, z: 0}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6153873180309332758
 MonoBehaviour:
@@ -170043,59 +169516,6 @@ Transform:
   - {fileID: 7049032594689427634}
   m_Father: {fileID: 6661081160254874756}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &4136859387017641032
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8116608451960658346}
-  - component: {fileID: 6451744574492068740}
-  m_Layer: 0
-  m_Name: Box1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8116608451960658346
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4136859387017641032}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0.5, y: -0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: -0.001925, y: 10.55115, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1232496506990000266}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &6451744574492068740
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4136859387017641032}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2.278191, y: -0.313749, z: 0.278453}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4136895901412475537
 GameObject:
   m_ObjectHideFlags: 0
@@ -173072,7 +172492,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &917570206764414009
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -174841,7 +174260,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3153234307635009374}
-  - {fileID: 118029845509242021}
   - {fileID: 1945571360521504893}
   m_Father: {fileID: 7834670251347808894}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -177796,7 +177214,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &337803997694829169
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -178101,7 +177518,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &8628451469293093395
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -179821,7 +179237,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &552559646450280970
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -191657,7 +191072,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &577793737550371353
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -192796,7 +192210,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &1107866485191561650
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -197054,7 +196467,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.278209, y: -0.313749, z: 10.8023}
+  m_Size: {x: 0.278209, y: 0.2, z: 10.8023}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4741397062678784056
 GameObject:
@@ -198111,7 +197524,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &2916212792294787224
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -200893,7 +200305,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &1478265746732139092
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -202771,7 +202182,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &2679241147053590198
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -207768,7 +207178,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &3523678308582995707
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -209753,7 +209162,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &4132898918596350974
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -210666,7 +210074,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &8776157075127687771
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -211579,7 +210986,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &2685870194535602753
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -216224,7 +215630,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &6037927242383180707
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -219186,59 +218591,6 @@ Transform:
   - {fileID: 2429889896556108291}
   m_Father: {fileID: 8435301590894483863}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &5275489416564156441
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 299569487396553354}
-  - component: {fileID: 7705982431542491158}
-  m_Layer: 0
-  m_Name: Box1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &299569487396553354
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5275489416564156441}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0.5, y: -0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: -0.001925, y: 10.55115, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8812947496528304577}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &7705982431542491158
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5275489416564156441}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2.278191, y: -0.313749, z: 0.278453}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5276278725449074817
 GameObject:
   m_ObjectHideFlags: 0
@@ -221244,7 +220596,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &7503749684509846557
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -221487,7 +220838,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2410109144401762881}
-  - {fileID: 299569487396553354}
   - {fileID: 4298919702400165594}
   m_Father: {fileID: 3285831047299534737}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -222547,7 +221897,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4539231193062005409}
-  - {fileID: 752463449150059717}
   - {fileID: 6501439011213230484}
   m_Father: {fileID: 3285831047299534737}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -225552,7 +224901,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &5465919612390863441
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -228512,7 +227860,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &2622770377304843635
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -231914,59 +231261,6 @@ Transform:
   - {fileID: 6188667638832709849}
   m_Father: {fileID: 8698992260090565353}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &5595199326245107331
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1759082866520950887}
-  - component: {fileID: 8146601512255313509}
-  m_Layer: 0
-  m_Name: Box1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1759082866520950887
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5595199326245107331}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0.5, y: -0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: -0.001925, y: 10.55115, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2162811436292085083}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &8146601512255313509
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5595199326245107331}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2.278191, y: -0.313749, z: 0.278453}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5595450827449101912
 GameObject:
   m_ObjectHideFlags: 0
@@ -241175,7 +240469,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &7678369943470393469
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -242623,7 +241916,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &709827502861021719
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -244789,7 +244081,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.278209, y: -0.313749, z: 10.8023}
+  m_Size: {x: 0.278209, y: 0.2, z: 10.8023}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5920298668772146326
 GameObject:
@@ -245040,7 +244332,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &2296792442028201243
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -248301,7 +247592,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &6844065085915833752
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -254425,7 +253715,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &1328370218740583377
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -255048,7 +254337,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6074970966180600643}
-  - {fileID: 3827841147708633108}
   - {fileID: 7675454392526080895}
   m_Father: {fileID: 8333333604933622503}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -258109,7 +257397,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &1750057051011628147
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -260352,7 +259639,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &5936908598755996803
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -261582,7 +260868,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &4425340546231243033
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -267467,7 +266752,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.278209, y: -0.313749, z: 10.8023}
+  m_Size: {x: 0.278209, y: 0.2, z: 10.8023}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6450083600488160438
 GameObject:
@@ -271210,7 +270495,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &9166075696257775757
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -275735,7 +275019,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &5185053996816707645
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -281313,7 +280596,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &3137909018628048591
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -283571,7 +282853,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &1116345170378012744
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -289897,7 +289178,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &438786242170855703
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -290675,7 +289955,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &8466959960586281973
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -298117,7 +297396,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6662229734381393289}
-  - {fileID: 8116608451960658346}
   - {fileID: 5586177977470623257}
   m_Father: {fileID: 8333333604933622503}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -305224,7 +304502,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &8798021030861175832
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -305690,7 +304967,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &4950184193417920937
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -320137,7 +319413,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &6554795773376822441
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -321737,7 +321012,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &2884592128604819893
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -323450,7 +322724,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &623575914191393157
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -323791,7 +323064,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6443305084339628355}
   - component: {fileID: 3013211268608054191}
-  - component: {fileID: 6114531003714298344}
   m_Layer: 0
   m_Name: Animals-Parent
   m_TagString: Obstacle
@@ -323838,102 +323110,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.16731718, y: 0.22223663, z: 0.5382249}
   m_Center: {x: 0.11302687, y: 0.10736962, z: 0.014784679}
---- !u!82 &6114531003714298344
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7762279814924435875}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 95ac2994bb58de64a8eabf04e2cb1b60, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 0.01
-  m_Pitch: 1
-  Loop: 1
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 20
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1 &7765147193325936764
 GameObject:
   m_ObjectHideFlags: 0
@@ -328683,7 +327859,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &6364637990817074646
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -334975,7 +334150,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &7753397915860565938
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -337322,7 +336496,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &3194130386409761823
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -350981,7 +350154,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &7585683000997896382
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -367529,7 +366701,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &3023906305508965480
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -379206,59 +378377,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4333088300566714115}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &9013557828391157197
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 118029845509242021}
-  - component: {fileID: 3431577284763022640}
-  m_Layer: 0
-  m_Name: Box1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &118029845509242021
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9013557828391157197}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0.5, y: -0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: -0.001925, y: 10.55115, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3957583836621353657}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &3431577284763022640
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9013557828391157197}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2.278191, y: -0.313749, z: 0.278453}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &9014152536510024591
 GameObject:
   m_ObjectHideFlags: 0
@@ -381328,7 +380446,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &5264420845540668072
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -384935,7 +384052,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  floatAmount: 0.5
 --- !u!54 &4878933821837292161
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -109,7 +109,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 430281232701914756}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.016801901, y: -0.88571274, z: 0.462814, w: 0.0321546}
+  m_LocalRotation: {x: 0.016800787, y: -0.8857133, z: 0.46281317, w: 0.03215267}
   m_LocalPosition: {x: -0.476, y: 1.3, z: 66.1}
   m_LocalScale: {x: 8, y: 8, z: 8}
   m_ConstrainProportionsScale: 1
@@ -153,7 +153,6 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 128
-  pick: {fileID: 0}
 --- !u!1 &836207484865228247
 GameObject:
   m_ObjectHideFlags: 0
@@ -386,7 +385,6 @@ GameObject:
   - component: {fileID: 8704799814700193277}
   - component: {fileID: 3477439512941088313}
   - component: {fileID: 382976113521893205}
-  - component: {fileID: 2398381344452080182}
   m_Layer: 0
   m_Name: Wheels6
   m_TagString: Untagged
@@ -459,45 +457,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!146 &2398381344452080182
-WheelCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1856225681040914641}
-  serializedVersion: 2
-  m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 0.5
-  m_SuspensionSpring:
-    spring: 35000
-    damper: 4500
-    targetPosition: 0.5
-  m_SuspensionDistance: 0.3
-  m_ForceAppPointDistance: 0
-  m_Mass: 20
-  m_WheelDampingRate: 0.25
-  m_ForwardFriction:
-    m_ExtremumSlip: 0.4
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.8
-    m_AsymptoteValue: 0.5
-    m_Stiffness: 1
-  m_SidewaysFriction:
-    m_ExtremumSlip: 0.2
-    m_ExtremumValue: 1
-    m_AsymptoteSlip: 0.5
-    m_AsymptoteValue: 0.75
-    m_Stiffness: 1
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_Enabled: 1
-  m_ProvidesContacts: 0
 --- !u!1 &1897988028457164885
 GameObject:
   m_ObjectHideFlags: 0

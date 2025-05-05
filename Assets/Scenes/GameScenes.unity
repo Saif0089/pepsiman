@@ -32089,7 +32089,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.278209, y: -0.313749, z: 10.8023}
+  m_Size: {x: 0.278209, y: 0, z: 10.8023}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &26886896706814720
 MeshFilter:
@@ -58559,7 +58559,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.278191, y: -0.313749, z: 0.278453}
+  m_Size: {x: 2.278191, y: 0, z: 0.278453}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1284505833032348859
 GameObject:
@@ -68659,11 +68659,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 325627791178722567, guid: 28c2ddd2766f9d44486e67d6f259887f,
+    - target: {fileID: 302809312952497903, guid: 28c2ddd2766f9d44486e67d6f259887f,
         type: 3}
-      propertyPath: m_Volume
-      value: 0.2
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2841439890827614538, guid: 28c2ddd2766f9d44486e67d6f259887f,
+        type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2841439890827614538, guid: 28c2ddd2766f9d44486e67d6f259887f,
+        type: 3}
+      propertyPath: Mute
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2841439890827614538, guid: 28c2ddd2766f9d44486e67d6f259887f,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: ae98788c3d41bd44e8e7b5202efa941b, type: 3}
     - target: {fileID: 4426529097524167598, guid: 28c2ddd2766f9d44486e67d6f259887f,
         type: 3}
       propertyPath: m_Name
@@ -68721,59 +68736,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6174668928187742983, guid: 28c2ddd2766f9d44486e67d6f259887f,
         type: 3}
-      propertyPath: Win
-      value: 
-      objectReference: {fileID: 8300000, guid: e2b0cb3ecb5d4a548b6656ec0e88c3f1, type: 3}
-    - target: {fileID: 6174668928187742983, guid: 28c2ddd2766f9d44486e67d6f259887f,
-        type: 3}
-      propertyPath: bg_2
+      propertyPath: Bg_2
       value: 
       objectReference: {fileID: 8300000, guid: ae98788c3d41bd44e8e7b5202efa941b, type: 3}
     - target: {fileID: 6174668928187742983, guid: 28c2ddd2766f9d44486e67d6f259887f,
         type: 3}
-      propertyPath: Running
+      propertyPath: audi_bg_2
       value: 
-      objectReference: {fileID: 8300000, guid: 9926c4ce2b211ec448fa439368bbd073, type: 3}
-    - target: {fileID: 6174668928187742983, guid: 28c2ddd2766f9d44486e67d6f259887f,
-        type: 3}
-      propertyPath: Speed_1
-      value: 
-      objectReference: {fileID: 8300000, guid: 8fd68ac529268ca4b9ee8f9898ee476d, type: 3}
-    - target: {fileID: 6174668928187742983, guid: 28c2ddd2766f9d44486e67d6f259887f,
-        type: 3}
-      propertyPath: Speed_2
-      value: 
-      objectReference: {fileID: 8300000, guid: 493649e5b96accf418a1745e2fda31ed, type: 3}
-    - target: {fileID: 6174668928187742983, guid: 28c2ddd2766f9d44486e67d6f259887f,
-        type: 3}
-      propertyPath: clip_bag
-      value: 
-      objectReference: {fileID: 8300000, guid: 85a5655abece68349a00cfc650cbae8f, type: 3}
-    - target: {fileID: 6174668928187742983, guid: 28c2ddd2766f9d44486e67d6f259887f,
-        type: 3}
-      propertyPath: Jump_Clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 4dad4e979839bac4292ba718b678e3fe, type: 3}
-    - target: {fileID: 6174668928187742983, guid: 28c2ddd2766f9d44486e67d6f259887f,
-        type: 3}
-      propertyPath: SkateBoard
-      value: 
-      objectReference: {fileID: 3769854949355500444}
-    - target: {fileID: 6174668928187742983, guid: 28c2ddd2766f9d44486e67d6f259887f,
-        type: 3}
-      propertyPath: Skate_Land
-      value: 
-      objectReference: {fileID: 8300000, guid: c26fbe65a621413488b787240a2b8a18, type: 3}
-    - target: {fileID: 6174668928187742983, guid: 28c2ddd2766f9d44486e67d6f259887f,
-        type: 3}
-      propertyPath: Slide_Clip
-      value: 
-      objectReference: {fileID: 8300000, guid: f4f7a630bc9e7ea479c2ff76ac3d1242, type: 3}
-    - target: {fileID: 6174668928187742983, guid: 28c2ddd2766f9d44486e67d6f259887f,
-        type: 3}
-      propertyPath: Stumble_Clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 73cb58a24ae8cf84189d3d2011d751b5, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 6174668928187742983, guid: 28c2ddd2766f9d44486e67d6f259887f,
         type: 3}
       propertyPath: Player_Source
@@ -68781,41 +68751,22 @@ PrefabInstance:
       objectReference: {fileID: 6852540021096505601}
     - target: {fileID: 6174668928187742983, guid: 28c2ddd2766f9d44486e67d6f259887f,
         type: 3}
-      propertyPath: CountDown_Clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 37b6578e15e74624d9b74b82f69f4109, type: 3}
-    - target: {fileID: 6174668928187742983, guid: 28c2ddd2766f9d44486e67d6f259887f,
-        type: 3}
-      propertyPath: PickSkate_Clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 4b6879ab480861f438bb7de368347381, type: 3}
-    - target: {fileID: 6174668928187742983, guid: 28c2ddd2766f9d44486e67d6f259887f,
-        type: 3}
-      propertyPath: Skate_JumpClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 10667681c1455714e8af4f3acfc97a70, type: 3}
-    - target: {fileID: 6174668928187742983, guid: 28c2ddd2766f9d44486e67d6f259887f,
-        type: 3}
       propertyPath: SkateBoard_Source
       value: 
       objectReference: {fileID: 3769854949355500444}
     - target: {fileID: 9019372129518720958, guid: 28c2ddd2766f9d44486e67d6f259887f,
         type: 3}
-      propertyPath: Mute
+      propertyPath: Loop
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9019372129518720958, guid: 28c2ddd2766f9d44486e67d6f259887f,
         type: 3}
-      propertyPath: m_Volume
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 9019372129518720958, guid: 28c2ddd2766f9d44486e67d6f259887f,
-        type: 3}
-      propertyPath: m_Enabled
+      propertyPath: Mute
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 302809312952497903, guid: 28c2ddd2766f9d44486e67d6f259887f, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28c2ddd2766f9d44486e67d6f259887f, type: 3}
@@ -68898,7 +68849,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.278209, y: -0.313749, z: 10.8023}
+  m_Size: {x: 0.278209, y: 0, z: 10.8023}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1728366637804774594
 GameObject:
@@ -106343,7 +106294,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.278191, y: -0.313749, z: 0.278453}
+  m_Size: {x: 2.278191, y: 0, z: 0.278453}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3434812052170659014
 GameObject:
@@ -111509,7 +111460,7 @@ MonoBehaviour:
     SpeedLines: {fileID: 1764032585}
   moveSpeed: 7
   moveForwardSpeed: 25
-  BoosterSpeed: 11
+  BoosterSpeed: 12
   jumpForce: 8
   rotationSpeed: 6.5
   maxRotation: 28
@@ -111533,6 +111484,7 @@ MonoBehaviour:
   MagnetText: {fileID: 533984807}
   CashCollider: {fileID: 5444635479022595142}
   PlayerCollider: {fileID: 6852540021096505600}
+  isJumping: 0
   canMovement: 1
   isHurt: 0
   StartingCountDown: 3
@@ -118682,7 +118634,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.278209, y: -0.313749, z: 10.8023}
+  m_Size: {x: 0.278209, y: 0, z: 10.8023}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &4016413359709827631
 Transform:
@@ -144314,7 +144266,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.278191, y: -0.313749, z: 0.278453}
+  m_Size: {x: 2.278191, y: 0, z: 0.278453}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &5225937501397480159
 Transform:
@@ -149105,7 +149057,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.278209, y: -0.313749, z: 10.8023}
+  m_Size: {x: 0.278209, y: 0, z: 10.8023}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!64 &5480423973181385311
 MeshCollider:
@@ -154854,7 +154806,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.278209, y: -0.313749, z: 10.8023}
+  m_Size: {x: 0.278209, y: 0, z: 10.8023}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &5733320220233776324
 MeshFilter:
@@ -169211,7 +169163,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.278191, y: -0.313749, z: 0.278453}
+  m_Size: {x: 2.278191, y: 0, z: 0.278453}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6452158309332327769
 GameObject:
@@ -170616,7 +170568,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.278209, y: -0.313749, z: 10.8023}
+  m_Size: {x: 0.278209, y: 0, z: 10.8023}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &6514532316507095461
 MeshFilter:
@@ -196276,7 +196228,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.278191, y: -0.313749, z: 0.278453}
+  m_Size: {x: 2.278191, y: 0, z: 0.278453}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &7706640371527601077
 Transform:
@@ -205220,7 +205172,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.278191, y: -0.313749, z: 0.278453}
+  m_Size: {x: 2.278191, y: 0, z: 0.278453}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &8147904471880067328
 MeshRenderer:

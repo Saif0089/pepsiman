@@ -13,10 +13,7 @@ public class Collectable : MonoBehaviour
     LayerMask targetLayer;
 
     Vector3 initialPosition;
-    public float floatAmount = 0.5f;
     private float floatSpeed = 2f;
-    private bool floatingUp = true;
-
     private void Awake()
     {
         targetLayer = LayerMask.GetMask("Col");

@@ -7,8 +7,7 @@ public class Audiomanager : MonoBehaviour
     public AudioSource audi_Effect;
     public AudioSource SkateBoard_Source;
     public AudioSource Player_Source;
-    public AudioClip bg_2;
-    public AudioClip Running;
+    public AudioClip Bg_2;
     public AudioClip clip_collision;
     public AudioClip clip_coins;
     public AudioClip clip_bag;
@@ -20,7 +19,6 @@ public class Audiomanager : MonoBehaviour
     public AudioClip Skate_JumpClip;
     public AudioClip Skate_Land;
     public AudioClip Speed_1;
-    public AudioClip Speed_2;
     public AudioClip Win;
     private void Awake()
     {
