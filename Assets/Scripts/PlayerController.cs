@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -7,7 +8,8 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     public static PlayerController instance;
-
+    public Particles particles;
+    
     [Header("Movement Settings")] public float moveSpeed = 10f;
     public float moveForwardSpeed = 10f;
     public float boost_moveSpeed = 20f;
@@ -296,6 +298,8 @@ public class PlayerController : MonoBehaviour
         if (isHurt)
             return;
 
+        particles.HitEffect.Play();
+        
         if (IsSkateBoardOn)
         {
             Audiomanager.instance.SkateBoard_Source.mute = true;
@@ -431,4 +435,10 @@ public class PlayerController : MonoBehaviour
     {
         return currSpeed;
     }
+}
+
+[Serializable]
+public class Particles
+{
+    public ParticleSystem HitEffect;
 }
