@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class BoostBag : MonoBehaviour
 {
@@ -40,6 +39,11 @@ public class BoostBag : MonoBehaviour
             Audiomanager.instance.PlaySfx_bag();
             PickUpParticles.Play();
             PlayerController.instance.BoostEnabled = true;
+            if (!PlayerController.instance.IsSkateBoardOn)
+            {
+                Audiomanager.instance.Player_Source.mute = false;
+                DOTween.To(() => Audiomanager.instance.Player_Source.volume, x => Audiomanager.instance.Player_Source.volume = x, 0.5f, 1f);
+            }
             PlayerController.instance.particles.SpeedLines.gameObject.SetActive(true);
             PlayerController.instance.particles.SpeedLines.Play();
             Invoke(nameof(DestroyBag), 1f);

@@ -14,7 +14,6 @@ public class EnvironmentPatch : MonoBehaviour
     public GameObject crossroadpatch;
     public GameObject TurnedPatch;
     public Transform NextPoint;
-    public GameObject crossroadreplacementpatch;
     public GameObject[] NPCinMid;
     
     private void Start()
@@ -22,13 +21,13 @@ public class EnvironmentPatch : MonoBehaviour
         int rand1 = Random.Range(0, 100);
         if (rand1 <= 0)
         {
-            crossroadreplacementpatch.SetActive(true);
+            // crossroadreplacementpatch.SetActive(true);
             crossroadpatch.SetActive(false);
         }
         else
         {
             crossroadpatch.SetActive(true);
-            crossroadreplacementpatch.SetActive(false);
+            // crossroadreplacementpatch.SetActive(false);
             int NPCRandom = Random.Range(0, NPCinMid.Length);
 
             for (int i = 0; i < NPCinMid.Length; i++)
@@ -51,13 +50,13 @@ public class EnvironmentPatch : MonoBehaviour
         int rand1 = Random.Range(0, 100);
         if (rand1 <= 50)
         {
-            crossroadreplacementpatch.SetActive(true);
+            // crossroadreplacementpatch.SetActive(true);
             crossroadpatch.SetActive(false);
         }
         else
         {
             crossroadpatch.SetActive(true);
-            crossroadreplacementpatch.SetActive(false);
+            // crossroadreplacementpatch.SetActive(false);
             int NPCRandom = Random.Range(0, NPCinMid.Length);
 
             for (int i = 0; i < NPCinMid.Length; i++)
@@ -108,7 +107,7 @@ public class EnvironmentPatch : MonoBehaviour
             float movementSpeed = PlayerController.instance.getCurrSpeed();
 
             if (PlayerController.instance.BoostEnabled)
-                movementSpeed += PlayerController.instance.boost_moveSpeed;
+                movementSpeed += PlayerController.instance.BoosterSpeed;
 
             // Move along world -Z instead of camera's forward
             transform.position += Vector3.back * movementSpeed * Time.deltaTime;

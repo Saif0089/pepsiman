@@ -194,8 +194,6 @@ public class GameManager : MonoBehaviour
         Finished_TimeText.text = FormatTime((int)timer);
         WinScreen.SetActive(true);
         Audiomanager.instance.audi_bg.mute = true;
-        Audiomanager.instance.Player_Source.mute = true;
-        
         Audiomanager.instance.Play_Win();
         Time.timeScale = 0f;
     }

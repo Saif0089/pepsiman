@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,7 +13,7 @@ public class PlayerController : MonoBehaviour
     
     [Header("Movement Settings")] public float moveSpeed = 10f;
     public float moveForwardSpeed = 10f;
-    public float boost_moveSpeed = 20f;
+    public float BoosterSpeed = 20f;
     public float jumpForce = 8f;
     public float rotationSpeed = 5f;
     public float maxRotation = 15f;
@@ -27,7 +28,8 @@ public class PlayerController : MonoBehaviour
 
     [Header("Animation Settings")] public Animator animator;
 
-    [Header("Boost Management")] public bool BoostEnabled = false;
+    [Header("Boost Management")]
+    public bool BoostEnabled = false;
     public float BoostTimer = 5f;
     public float SkateTimer = 20f;
     private float currSpeed;
@@ -92,7 +94,6 @@ public class PlayerController : MonoBehaviour
             countdownCoroutine = null;
         }
     }
-
     public IEnumerator StartCountDownTime()
     {
         Audiomanager.instance.audi_bg.clip = Audiomanager.instance.bg_2;
@@ -177,6 +178,8 @@ public class PlayerController : MonoBehaviour
         {
             Audiomanager.instance.Play_SkateLand();
             Audiomanager.instance.SkateBoard_Source.mute = false;
+            DOTween.To(() => Audiomanager.instance.SkateBoard_Source.volume, x => Audiomanager.instance.SkateBoard_Source.volume = x, 0.5f, 1f);
+
         }
 
         // Reset jump animation
@@ -201,6 +204,8 @@ public class PlayerController : MonoBehaviour
             {
                 Audiomanager.instance.Play_SkateJump();
                 Audiomanager.instance.SkateBoard_Source.mute = true;
+                DOTween.To(() => Audiomanager.instance.SkateBoard_Source.volume, x => Audiomanager.instance.SkateBoard_Source.volume = x, 0f, 1f);
+
             }
             else
             {
@@ -274,7 +279,10 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("Obstacle"))
         {
             Hurt();
-            other.gameObject.GetComponent<Obstacle>().ToggleCarOnHit();
+            if (other.gameObject.GetComponent<Obstacle>()!= null)
+            {
+                other.gameObject.GetComponent<Obstacle>().ToggleCarOnHit();
+            }
         }
         else if (other.CompareTag("Collectable"))
         {
@@ -288,10 +296,17 @@ public class PlayerController : MonoBehaviour
             return;
 
         particles.HitEffect.Play();
-        
+
+        if (BoostEnabled)
+        {
+            particles.SpeedLines.gameObject.SetActive(false);
+            DOTween.To(() => Audiomanager.instance.Player_Source.volume, x => Audiomanager.instance.Player_Source.volume = x, 0f, 0.3f);
+        }
         if (IsSkateBoardOn)
         {
             Audiomanager.instance.SkateBoard_Source.mute = true;
+            DOTween.To(() => Audiomanager.instance.SkateBoard_Source.volume, x => Audiomanager.instance.SkateBoard_Source.volume = x, 0f, 1f);
+            
         }
         isHurt = true;
         animator.SetTrigger("Hurt");
@@ -343,6 +358,8 @@ public class PlayerController : MonoBehaviour
             {
                 BoostEnabled = false;
                 
+                DOTween.To(() => Audiomanager.instance.Player_Source.volume, x => Audiomanager.instance.Player_Source.volume = x, 0f, 0.3f);
+                
                 particles.SpeedLines.gameObject.SetActive(false);
                 
                 BoostTimer = 5;
@@ -375,6 +392,12 @@ public class PlayerController : MonoBehaviour
         if (IsSkateBoardOn)
         {
             Audiomanager.instance.SkateBoard_Source.mute = false;
+            DOTween.To(() => Audiomanager.instance.SkateBoard_Source.volume, x => Audiomanager.instance.SkateBoard_Source.volume = x, 0.5f, 1f);
+        }
+        if (BoostEnabled)
+        {
+            particles.SpeedLines.gameObject.SetActive(true);
+            DOTween.To(() => Audiomanager.instance.Player_Source.volume, x => Audiomanager.instance.Player_Source.volume = x, 0.5f, 0.7f);
         }
         CollectableSpawner.Instance.StopSpawning(true);
         ObstacleSpawner.Instance.StopSpawning(true);
@@ -392,6 +415,7 @@ public class PlayerController : MonoBehaviour
         if (IsSkateBoardOn)
         {
             Audiomanager.instance.SkateBoard_Source.mute = false;
+            DOTween.To(() => Audiomanager.instance.SkateBoard_Source.volume, x => Audiomanager.instance.SkateBoard_Source.volume = x, 0.5f, 1f);
         }
         isHurt = false;
         canMovement = true;
@@ -403,6 +427,12 @@ public class PlayerController : MonoBehaviour
 
     void StopSkate()
     {
+        if (BoostEnabled)
+        {
+            Audiomanager.instance.Player_Source.mute = false;
+            DOTween.To(() => Audiomanager.instance.Player_Source.volume, x => Audiomanager.instance.Player_Source.volume = x, 0.5f, 1f);
+        }
+        
         PlayerCollider.center = new Vector3(0f, 0.9869743f, 0.1132071f);
         PlayerCollider.size = new Vector3(1, 1.979002f, 1.00319f);
         GroundCheckRayCastLenght = 0.25f;
@@ -417,6 +447,7 @@ public class PlayerController : MonoBehaviour
     {
         return currSpeed;
     }
+
 }
 
 [Serializable]

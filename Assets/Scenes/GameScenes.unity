@@ -68659,6 +68659,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 325627791178722567, guid: 28c2ddd2766f9d44486e67d6f259887f,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 4426529097524167598, guid: 28c2ddd2766f9d44486e67d6f259887f,
         type: 3}
       propertyPath: m_Name
@@ -68796,8 +68801,18 @@ PrefabInstance:
       objectReference: {fileID: 3769854949355500444}
     - target: {fileID: 9019372129518720958, guid: 28c2ddd2766f9d44486e67d6f259887f,
         type: 3}
+      propertyPath: Mute
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9019372129518720958, guid: 28c2ddd2766f9d44486e67d6f259887f,
+        type: 3}
       propertyPath: m_Volume
       value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9019372129518720958, guid: 28c2ddd2766f9d44486e67d6f259887f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -111494,7 +111509,7 @@ MonoBehaviour:
     SpeedLines: {fileID: 1764032585}
   moveSpeed: 7
   moveForwardSpeed: 25
-  boost_moveSpeed: 20
+  BoosterSpeed: 11
   jumpForce: 8
   rotationSpeed: 6.5
   maxRotation: 28
@@ -113459,7 +113474,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d9c27ae7d9bfe7b42865e94f2de9641c, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -158254,7 +158269,6 @@ MonoBehaviour:
   crossroadpatch: {fileID: 5195801873983972862}
   TurnedPatch: {fileID: 0}
   NextPoint: {fileID: 6500512580865837685}
-  crossroadreplacementpatch: {fileID: 0}
   NPCinMid:
   - {fileID: 0}
   - {fileID: 0}
@@ -178282,12 +178296,12 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 9926c4ce2b211ec448fa439368bbd073, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
+  m_audioClip: {fileID: 8300000, guid: 0e375b925f2e6cd47a94a303e3a460b6, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0
   m_Pitch: 1
   Loop: 1
-  Mute: 0
+  Mute: 1
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128

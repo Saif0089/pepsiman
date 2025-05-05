@@ -1,7 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class SkatePick : MonoBehaviour
 {
@@ -20,6 +18,7 @@ public class SkatePick : MonoBehaviour
                 PlayerController.instance.GroundCheckRayCastLenght = 0.35f;
 
                 PlayerController.instance.SkateBoard.SetActive(true);
+                DOTween.To(() => Audiomanager.instance.SkateBoard_Source.volume, x => Audiomanager.instance.SkateBoard_Source.volume = x, 0.5f, 1f);
                 PlayerController.instance.ToggleMagnet();
                 PlayerController.instance.animator.SetBool("Skate", true);
                 gameObject.SetActive(false);
