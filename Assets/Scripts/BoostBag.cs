@@ -40,6 +40,8 @@ public class BoostBag : MonoBehaviour
             Audiomanager.instance.PlaySfx_bag();
             PickUpParticles.Play();
             PlayerController.instance.BoostEnabled = true;
+            PlayerController.instance.particles.SpeedLines.gameObject.SetActive(true);
+            PlayerController.instance.particles.SpeedLines.Play();
             Invoke(nameof(DestroyBag), 1f);
         }
     }

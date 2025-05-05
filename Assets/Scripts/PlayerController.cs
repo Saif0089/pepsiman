@@ -132,10 +132,6 @@ public class PlayerController : MonoBehaviour
 
         if (IsSkateBoardOn)
         {
-            if(!BoostEnabled)
-            {
-                Audiomanager.instance.Player_Source.mute = true;
-            }
             SkateTimer -= Time.deltaTime;
             if (SkateTimer <= 0f)
                 StopSkate();
@@ -175,11 +171,6 @@ public class PlayerController : MonoBehaviour
         bool currentlyGrounded = IsGrounded();
         isGrounded = currentlyGrounded;
 
-        // Audio mute toggle
-        if (canMovement)
-        {
-            Audiomanager.instance.Player_Source.mute = !currentlyGrounded;
-        }
 
         // Landing sound
         if (!wasGroundedLastFrame && currentlyGrounded && IsSkateBoardOn)
@@ -256,7 +247,6 @@ public class PlayerController : MonoBehaviour
     void StartSlide()
     {
         Audiomanager.instance.PlaySlide_Sfx();
-        Audiomanager.instance.Player_Source.mute = false;
         PlayerCollider.center = new Vector3(0f, 0.2507838f, 0.1132071f);
         PlayerCollider.size = new Vector3(1, 0.5066212f, 1.00319f);
         isSliding = true;
@@ -267,7 +257,6 @@ public class PlayerController : MonoBehaviour
     public void EndSlide() // Called from animation event
     {
         isSliding = false;
-        Audiomanager.instance.Player_Source.mute = true;
         PlayerCollider.center = new Vector3(0f, 0.9869743f, 0.1132071f);
         PlayerCollider.size = new Vector3(1, 1.979002f, 1.00319f);
         animator.SetTrigger("Run");
@@ -305,7 +294,6 @@ public class PlayerController : MonoBehaviour
             Audiomanager.instance.SkateBoard_Source.mute = true;
         }
         isHurt = true;
-        Audiomanager.instance.Player_Source.mute = true;
         animator.SetTrigger("Hurt");
 
         ObstacleSpawner.Instance.StopSpawning(false);
@@ -354,8 +342,8 @@ public class PlayerController : MonoBehaviour
             if (BoostTimer <= 0)
             {
                 BoostEnabled = false;
-
-                Audiomanager.instance.Player_Source.clip = Audiomanager.instance.Running;
+                
+                particles.SpeedLines.gameObject.SetActive(false);
                 
                 BoostTimer = 5;
             }
@@ -364,7 +352,6 @@ public class PlayerController : MonoBehaviour
 
     void StopPlayerAtStart()
     {
-        Audiomanager.instance.Player_Source.mute = true;
         moveForwardSpeed = 0f;
         GameManager.Instance.gameEnded = true;
         canMovement = false;
@@ -375,9 +362,6 @@ public class PlayerController : MonoBehaviour
     void StartGameNow()
     {
         animator.SetBool("Transit", true);
-        Audiomanager.instance.Player_Source.mute = false;
-        Audiomanager.instance.Player_Source.Play();
-
         moveForwardSpeed = 25f;
         GameManager.Instance.gameEnded = false;
         canMovement = true;
@@ -392,8 +376,6 @@ public class PlayerController : MonoBehaviour
         {
             Audiomanager.instance.SkateBoard_Source.mute = false;
         }
-
-        Audiomanager.instance.Player_Source.mute = false;
         CollectableSpawner.Instance.StopSpawning(true);
         ObstacleSpawner.Instance.StopSpawning(true);
         StopAllObstacles(true);
@@ -411,7 +393,6 @@ public class PlayerController : MonoBehaviour
         {
             Audiomanager.instance.SkateBoard_Source.mute = false;
         }
-        Audiomanager.instance.Player_Source.mute = false;
         isHurt = false;
         canMovement = true;
         moveForwardSpeed = 25;
@@ -422,7 +403,6 @@ public class PlayerController : MonoBehaviour
 
     void StopSkate()
     {
-        Audiomanager.instance.Player_Source.mute = false;
         PlayerCollider.center = new Vector3(0f, 0.9869743f, 0.1132071f);
         PlayerCollider.size = new Vector3(1, 1.979002f, 1.00319f);
         GroundCheckRayCastLenght = 0.25f;
@@ -446,4 +426,5 @@ public class Particles
     public ParticleSystem HitEffect;
     public ParticleSystem Stumble;
     public ParticleSystem SkatePick;
+    public ParticleSystem SpeedLines;
 }
