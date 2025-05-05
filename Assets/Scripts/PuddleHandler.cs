@@ -13,6 +13,7 @@ public class PuddleHandler : MonoBehaviour
     void Stumble()
     {
         Audiomanager.instance.Player_Source.mute = true;
+        PlayerController.instance.particles.Stumble.Play();
         PlayerController.instance.canMovement = false;
         PlayerController.instance.animator.SetTrigger("Stumble");
         PlayerController.instance.isHurt = true;

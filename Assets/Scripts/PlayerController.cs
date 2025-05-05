@@ -322,8 +322,10 @@ public class PlayerController : MonoBehaviour
 
     private void Collect(int id)
     {
+        particles.CoinPick.Play();
         GameManager.Instance.Collected(1, id);
         Audiomanager.instance.PlaySfx_Coins();
+        
     }
 
     void StopAllObstacles(bool state)
@@ -440,5 +442,8 @@ public class PlayerController : MonoBehaviour
 [Serializable]
 public class Particles
 {
+    public ParticleSystem CoinPick;
     public ParticleSystem HitEffect;
+    public ParticleSystem Stumble;
+    public ParticleSystem SkatePick;
 }
