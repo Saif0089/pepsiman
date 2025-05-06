@@ -36,6 +36,7 @@ namespace GAP_ParticleSystemController
             Debug.Log ("Original Settings of '" + prefabVFX.name + "' saved to: " + prefabFolderPath + "/OriginalSettings");
 		}
 
+		[System.Obsolete]
 		public static List<ParticleSystemOriginalSettings> LoadVFX (GameObject prefabVFX) {
 #if UNITY_2018_3_OR_NEWER
             var prefabFolderPath = GetPrefabFolder2018_3 (prefabVFX);
@@ -59,6 +60,7 @@ namespace GAP_ParticleSystemController
 			}
 		}
 
+		[System.Obsolete]
 		public static bool CheckExistingFile (GameObject prefabVFX){
 #if UNITY_2018_3_OR_NEWER
             var prefabFolderPath = GetPrefabFolder2018_3 (prefabVFX);
@@ -85,6 +87,8 @@ namespace GAP_ParticleSystemController
 		}
 
 #if UNITY_2018_3_OR_NEWER
+		
+		[System.Obsolete]
         static string GetPrefabFolder2018_3 (GameObject prefabVFX)
         {
 #if UNITY_EDITOR

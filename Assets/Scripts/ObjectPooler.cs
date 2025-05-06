@@ -45,7 +45,7 @@ public class ObjectPooler : MonoBehaviour
     public List<GameObject> newPatches = new List<GameObject>();
     [HideInInspector] public List<GameObject> bag;
 
-    bool turnedPatchSpawned = false;
+    public bool turnedPatchSpawned = false;
 
     private void Start()
     {

@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI Finished_TimeText;
 
     public GameObject mainMenu;
-    bool gameStarted;
+    public bool gameStarted;
 
     public float totalTime;
 

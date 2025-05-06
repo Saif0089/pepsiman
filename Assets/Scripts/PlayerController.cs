@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
     private bool isGrounded;
     public bool isJumping = false;
-    private bool isSliding = false;
+    public bool isSliding = false;
     public bool canMovement = true;
     public bool isHurt = false;
     public bool isStumble = false;
