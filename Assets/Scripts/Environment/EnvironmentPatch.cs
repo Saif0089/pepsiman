@@ -106,13 +106,8 @@ public class EnvironmentPatch : MonoBehaviour
         {
             float movementSpeed = PlayerController.instance.getCurrSpeed();
 
-            if (PlayerController.instance.BoostEnabled)
-                movementSpeed += PlayerController.instance.BoosterSpeed;
-
-            // Move along world -Z instead of camera's forward
             transform.position += Vector3.back * movementSpeed * Time.deltaTime;
 
-            // Check the distance from the camera
             float distanceBehindCamera = Camera.main.transform.position.z - transform.position.z;
             float deactivateDistance = 190f; // Adjust this threshold as needed
 

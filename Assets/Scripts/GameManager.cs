@@ -54,7 +54,6 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-
         Time.timeScale = 0;
     }
 
@@ -93,8 +92,6 @@ public class GameManager : MonoBehaviour
         TimerText.text = FormatTime((int)timer);
     }
 
-    public float displayedProgress = 0f; // Smooth displayed progress
-
     private void FixedUpdate()
     {
         if (gameEnded)
@@ -111,8 +108,7 @@ public class GameManager : MonoBehaviour
         if (PlayerController.instance.isHurt || gameEnded)
             return;
 
-        elapsedTime += Time.fixedDeltaTime;
-        travelledDistance = 25f * elapsedTime;
+        travelledDistance += PlayerController.instance.moveForwardSpeed * Time.fixedDeltaTime;
 
         float progress = Mathf.Clamp01(travelledDistance / totalDistance);
         progressBar.fillAmount = progress;
