@@ -1,5 +1,4 @@
 using UnityEngine;
-using DG.Tweening;
 public class PuddleHandler : MonoBehaviour
 {
     [SerializeField] LayerMask TargetLayer;
@@ -12,7 +11,11 @@ public class PuddleHandler : MonoBehaviour
     }
     void Stumble()
     {
+        if(PlayerController.instance.isHurt || PlayerController.instance.isStumble)
+            return;
+        
         PlayerController.instance.particles.Stumble.Play();
+        PlayerController.instance.isStumble = true;
         PlayerController.instance.canMovement = false;
         PlayerController.instance.animator.SetTrigger("Stumble");
         PlayerController.instance.moveForwardSpeed = 10f;

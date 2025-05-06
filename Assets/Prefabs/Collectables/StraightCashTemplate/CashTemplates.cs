@@ -16,11 +16,11 @@ public class CashTemplates : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (((1 << other.gameObject.layer) & targetLayer) != 0)
-        {
-            gameObject.SetActive(false);
-        }
-    }
+    // private void OnTriggerExit(Collider other)
+    // {
+    //     if (((1 << other.gameObject.layer) & targetLayer) != 0)
+    //     {
+    //         gameObject.SetActive(false);
+    //     }
+    // }
 }

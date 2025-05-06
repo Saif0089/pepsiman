@@ -9,6 +9,7 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     public static PlayerController instance;
+    public CameraFollowOffset cam;
     public Particles particles;
 
     [Header("Movement Settings")] public float moveSpeed = 10f;
@@ -51,6 +52,7 @@ public class PlayerController : MonoBehaviour
     private bool isSliding = false;
     public bool canMovement = true;
     public bool isHurt = false;
+    public bool isStumble = false;
     bool wasGroundedLastFrame = false;
 
     [Header("Start mach")] public int StartingCountDown;
@@ -139,7 +141,7 @@ public class PlayerController : MonoBehaviour
             if (SkateTimer <= 0f)
                 StopSkate();
         }
-
+        
         ClampXPosition();
     }
 
@@ -199,7 +201,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // Handle jump
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.S))
         {
             isJumping = true;
 
@@ -242,7 +244,7 @@ public class PlayerController : MonoBehaviour
 
         if (IsMagnetOn)
         {
-            CashCollider.size = new Vector3(500, 50, 1);
+            CashCollider.size = new Vector3(100, 50, 1);
             MagnetText.text = "On";
         }
         else
@@ -259,7 +261,14 @@ public class PlayerController : MonoBehaviour
         PlayerCollider.size = new Vector3(1, 0.5066212f, 1.00319f);
         isSliding = true;
         slideTimer = slideDuration;
-        animator.SetTrigger("Slide");
+        if (IsSkateBoardOn)
+        {
+            animator.SetTrigger("SkateSlide");
+        }
+        else
+        {
+            animator.SetTrigger("Slide");
+        }
     }
 
     public void EndSlide() // Called from animation event
@@ -295,10 +304,11 @@ public class PlayerController : MonoBehaviour
 
     private void Hurt()
     {
-        if (isHurt)
+        if (isHurt || isStumble)
             return;
 
         particles.HitEffect.Play();
+        cam.Shake();
 
         if (BoostEnabled)
         {
@@ -362,6 +372,8 @@ public class PlayerController : MonoBehaviour
             if (BoostTimer <= 0)
             {
                 BoostEnabled = false;
+                
+                particles.SpeedLines.gameObject.SetActive(false);
 
                 moveForwardSpeed = 25f;
 
@@ -372,7 +384,6 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-
     void StopPlayerAtStart()
     {
         moveForwardSpeed = 0f;
@@ -385,6 +396,7 @@ public class PlayerController : MonoBehaviour
     void StartGameNow()
     {
         Audiomanager.instance.audi_bg.mute = false;
+        Audiomanager.instance.audi_bg.time = 0;
         animator.SetBool("Transit", true);
         moveForwardSpeed = 25f;
         GameManager.Instance.gameEnded = false;
@@ -396,6 +408,8 @@ public class PlayerController : MonoBehaviour
     public void RestHurt() // Called in animation event
     {
         isHurt = false;
+        canMovement = true;
+        
         if (IsSkateBoardOn)
         {
             PlayerCollider.center = new Vector3(0f, 0.8697391f, 0.1132071f);
@@ -423,7 +437,7 @@ public class PlayerController : MonoBehaviour
                 x => Audiomanager.instance.SkateBoard_Source.volume = x, 0.5f, 1f);
         }
 
-        isHurt = false;
+        isStumble = false;
         canMovement = true;
         moveForwardSpeed = 25;
         moveSpeed = 7f;
@@ -440,6 +454,7 @@ public class PlayerController : MonoBehaviour
                 x => Audiomanager.instance.Player_Source.volume = x, 0.5f, 1f);
         }
 
+        particles.SpeedLines.gameObject.SetActive(false);
         PlayerCollider.center = new Vector3(0f, 0.9869743f, 0.1132071f);
         PlayerCollider.size = new Vector3(1, 1.979002f, 1.00319f);
         GroundCheckRayCastLenght = 0.25f;

@@ -1,11 +1,23 @@
+using System;
 using UnityEngine;
-
+using DG.Tweening;
 public class CameraFollowOffset : MonoBehaviour
 {
     public Transform target;
     public float smoothSpeed = 5f;
     float offsetX = 0f;
     public Vector2 offsetXZ = Vector2.zero; // Offset for X and Z
+    
+    [SerializeField] private float duration = 0.5f;
+    [SerializeField] private float strength = 0.5f;
+    [SerializeField] private int vibrato = 10;
+    [SerializeField] private float randomness = 90f;
+
+    public void Shake()
+    {
+        transform.DOShakePosition(duration, strength, vibrato, randomness)
+            .SetEase(Ease.OutQuad);
+    }
     void LateUpdate()
     {
         if (target != null)
