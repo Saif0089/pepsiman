@@ -59,7 +59,7 @@ public class Audiomanager : MonoBehaviour
     {
         if (Stumble_Clip != null)
         {
-            audi_Effect.PlayOneShot(Stumble_Clip, 0.6f);
+            audi_Effect.PlayOneShot(Stumble_Clip, 0.8f);
         }
     }
 
@@ -83,7 +83,7 @@ public class Audiomanager : MonoBehaviour
     {
         if (Slide_Clip != null)
         {
-            audi_Effect.PlayOneShot(Slide_Clip,0.6f);
+            audi_Effect.PlayOneShot(Slide_Clip,0.8f);
         }
     }
 

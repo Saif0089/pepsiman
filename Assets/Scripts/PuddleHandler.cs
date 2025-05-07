@@ -17,6 +17,7 @@ public class PuddleHandler : MonoBehaviour
         PlayerController.instance.particles.Stumble.Play();
         PlayerController.instance.isStumble = true;
         PlayerController.instance.canMovement = false;
+        PlayerController.instance.animator.SetBool("Slide",false);
         PlayerController.instance.animator.SetTrigger("Stumble");
         PlayerController.instance.moveForwardSpeed = 10f;
         Audiomanager.instance.Play_StumbleClip();

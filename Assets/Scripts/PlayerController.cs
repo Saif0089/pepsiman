@@ -141,15 +141,12 @@ public class PlayerController : MonoBehaviour
             if (SkateTimer <= 0f)
                 StopSkate();
         }
-        
-        ClampXPosition();
     }
 
     void FixedUpdate()
     {
         currSpeed = moveForwardSpeed;
     }
-
     void HandleLaneMovement()
     {
         if (!canMovement) return;
@@ -201,7 +198,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // Handle jump
-        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
         {
             isJumping = true;
 
@@ -219,7 +216,12 @@ public class PlayerController : MonoBehaviour
 
             rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            
+            animator.SetBool("Slide", false);
             animator.SetBool("Jump", true);
+            
+            PlayerCollider.center = new Vector3(0f, 0.9869743f, 0.1132071f);
+            PlayerCollider.size = new Vector3(1, 1.979002f, 1.00319f);
         }
 
         // Handle slide
@@ -230,14 +232,6 @@ public class PlayerController : MonoBehaviour
 
         wasGroundedLastFrame = isGrounded;
     }
-
-    void ClampXPosition()
-    {
-        Vector3 pos = transform.position;
-        pos.x = Mathf.Clamp(pos.x, minX, maxX);
-        transform.position = pos;
-    }
-
     public void ToggleMagnet()
     {
         IsMagnetOn = !IsMagnetOn;
@@ -267,7 +261,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            animator.SetTrigger("Slide");
+            animator.SetBool("Slide",true);
         }
     }
 
@@ -276,6 +270,7 @@ public class PlayerController : MonoBehaviour
         isSliding = false;
         PlayerCollider.center = new Vector3(0f, 0.9869743f, 0.1132071f);
         PlayerCollider.size = new Vector3(1, 1.979002f, 1.00319f);
+        animator.SetBool("Slide",false);
         animator.SetTrigger("Run");
     }
 
@@ -324,6 +319,9 @@ public class PlayerController : MonoBehaviour
         }
 
         isHurt = true;
+        
+        animator.SetBool("Slide",false);
+        
         animator.SetTrigger("Hurt");
 
         ObstacleSpawner.Instance.StopSpawning(false);
@@ -417,6 +415,11 @@ public class PlayerController : MonoBehaviour
             Audiomanager.instance.SkateBoard_Source.mute = false;
             DOTween.To(() => Audiomanager.instance.SkateBoard_Source.volume,
                 x => Audiomanager.instance.SkateBoard_Source.volume = x, 0.5f, 1f);
+        }
+        else
+        {
+            PlayerCollider.center = new Vector3(0f, 0.9869743f, 0.1132071f);
+            PlayerCollider.size = new Vector3(1, 1.979002f, 1.00319f);
         }
 
         if (BoostEnabled)
