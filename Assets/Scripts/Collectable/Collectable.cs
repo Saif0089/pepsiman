@@ -13,17 +13,21 @@ public class Collectable : MonoBehaviour
     LayerMask targetLayer;
 
     Vector3 initialPosition;
+
     private void Awake()
     {
         targetLayer = LayerMask.GetMask("Col");
         initialPosition = transform.localPosition;
     }
-
     private void OnEnable()
     {
         SetDefaultPos();
     }
-
+    void Start()
+    {
+        initialPosition = transform.position;
+        Breathing();
+    }
     private void Update()
     {
         if (isMoving && canMove)
@@ -36,7 +40,12 @@ public class Collectable : MonoBehaviour
             }
         }
     }
-
+    void Breathing()
+    {
+        transform.DOMoveY(initialPosition.y + 0.25f, 1f)
+            .SetEase(Ease.InOutSine)
+            .SetLoops(-1, LoopType.Yoyo);
+    }
     void SetDefaultPos()
     {
         transform.localPosition = initialPosition;
