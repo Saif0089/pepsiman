@@ -12502,7 +12502,6 @@ MonoBehaviour:
   - {fileID: 1887501085}
   TimerText: {fileID: 1866970890}
   PauseMenu: {fileID: 1698911616}
-  gameDuration: 80
   TimeScale: 1
   timer: 0
   gameEnded: 0
@@ -12511,7 +12510,7 @@ MonoBehaviour:
   finishLinePrefab: {fileID: 3703501085493076689, guid: a18a9fed642eb964787b2ae2ec1603ad,
     type: 3}
   WinScreen: {fileID: 598008491}
-  timeToSpawnFinish: 20
+  timeToSpawnFinish: 60
   FinishLineSpawned: 0
   progressBar: {fileID: 1028067504}
   progressText: {fileID: 558696497}

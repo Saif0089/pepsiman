@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject PauseMenu;
 
-    [Header("Game Settings")] public float gameDuration = 30f; // Total time in seconds
+    // [Header("Game Settings")] public float gameDuration = 30f; // Total time in seconds
 
     [Space] [Range(0f, 1f)] public int TimeScale;
 
@@ -70,6 +70,7 @@ public class GameManager : MonoBehaviour
 
         PlayerController.instance.StartCountdown();
     }
+
     private void Start()
     {
         totalDistance = patchLength * totalPatches;
@@ -79,19 +80,10 @@ public class GameManager : MonoBehaviour
 
     public void UpdateInGameTimer()
     {
-        if (timer >= gameDuration)
-        {
-            Debug.Log("time over");
-            GameOver(false);
-        }
-        else
-        {
-            timer += Time.deltaTime;
-        }
+        timer += Time.deltaTime;
 
         TimerText.text = FormatTime((int)timer);
     }
-
     private void FixedUpdate()
     {
         if (gameEnded)
@@ -99,7 +91,7 @@ public class GameManager : MonoBehaviour
 
         UpdateInGameTimer();
 
-        if (!FinishLineSpawned && timer >= (gameDuration - timeToSpawnFinish) && CanEnd && !gameEnded)
+        if (!FinishLineSpawned && timer >= timeToSpawnFinish && CanEnd && !gameEnded)
         {
             FinishLineSpawned = true;
             SpawnFinishLine();
