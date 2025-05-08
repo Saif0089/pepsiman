@@ -4,14 +4,18 @@ using TMPro;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.SceneManagement;
-using System.Collections;
-using UnityEngine.UIElements;
-using Button = UnityEngine.UI.Button;
-using Image = UnityEngine.UI.Image;
-
+using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+
+    public float TimerL;
+    
+    public Button ResumeBtn;
+    public Button MainMenuBtn;
+    public Button QuitBtn;
+
+    public GameObject PauseUI;
 
     [Header("UI")] public TMP_Text[] ScoreText;
     public TMP_Text TimerText;
@@ -73,19 +77,50 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        ResumeBtn.onClick.AddListener(Resume);
+        MainMenuBtn.onClick.AddListener(MainMenu);
+        QuitBtn.onClick.AddListener(QuitApp);
+        
         totalDistance = patchLength * totalPatches;
         leaderboardButton.gameObject.SetActive(true);
         LeaderBoardMenu.instance.userNameInputField.gameObject.SetActive(true);
+        
+        
     }
 
-    private void Update()
+    public void Update()
     {
+        TimerL += Time.deltaTime;
+
+        if (TimerL >= 5f)
+        {
+            GetComponent<LeaderBoardMenu>().GetLeaderboardTop();
+            Debug.Log("Refreshed");
+            TimerL = 0;
+            
+        }
+        
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            QuitApp();
+            Pause();
         }
     }
 
+    void Pause()
+    {
+        PauseUI.SetActive(true);
+        GetComponent<LeaderBoardMenu>().GetLeaderboardTop();
+        Time.timeScale = 0;
+    }
+    void MainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+    void Resume()
+    {
+        PauseUI.SetActive(false);
+        Time.timeScale = 1;
+    }
     public void QuitApp()
     {
         Application.Quit();
@@ -190,10 +225,23 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public static long ConvertSecondsToMilliseconds(double seconds)
+    {
+        return (long)(seconds * 1000.0);
+    }
+    
+    public static void SubdivideMilliseconds(long totalMilliseconds, out int minutes, out int seconds, out int milliseconds)
+    {
+        minutes = (int)(totalMilliseconds / 60000); // 1 minute = 60,000 ms
+        seconds = (int)((totalMilliseconds % 60000) / 1000); // Remaining seconds
+        milliseconds = (int)(totalMilliseconds % 1000); // Remaining ms
+    }
+
+
     public void WinGame()
     {
         totalTime = timer;
-        LeaderBoardMenu.instance.SubmitScore((long)totalTime);
+        LeaderBoardMenu.instance.SubmitScore(totalTime);
         Finished_TimeText.text = FormatTime(timer);
         WinScreen.SetActive(true);
         Audiomanager.instance.audi_bg.mute = true;

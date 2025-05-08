@@ -81,9 +81,9 @@ public class LeaderBoardMenu : MonoBehaviour
             instance = null;
         }
     }
-    public async void SubmitScore(long score)
+    public async void SubmitScore(float score)
     {
-        var response = await LeaderboardsService.Instance.AddPlayerScoreAsync(id, score);
+        var response = await LeaderboardsService.Instance.AddPlayerScoreAsync(id, GameManager.ConvertSecondsToMilliseconds(score));
         Debug.Log($"player name {response.PlayerName} player score{response.Score}");
     }
     
@@ -119,7 +119,14 @@ public class LeaderBoardMenu : MonoBehaviour
 
     public void GetInput()
     {
+        if (userNameInputField.text == string.Empty)
+        {
+            userName="Local: " + UnityEngine.Random.Range(0,100);
+        }
+        else
+        {
         userName = userNameInputField.text;
+        }
     }
     public GameObject SpawnLeaderBoarditem()
     {

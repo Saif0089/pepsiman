@@ -76,6 +76,36 @@ public class PlayerController : MonoBehaviour
         rb.useGravity = true;
         StopPlayerAtStart();
     }
+    private void Update()
+    {
+        if (isHurt) return;
+
+        HandleLaneMovement();
+        HandleJumpAndSlide();
+        StopBooster();
+
+        if (IsSkateBoardOn)
+        {
+            SkateTimer -= Time.deltaTime;
+            if (SkateTimer <= 0f)
+                StopSkate();
+        }
+
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            if(BoostEnabled)
+                return;
+            
+            BoostEnabled = true;
+            particles.SpeedLines.gameObject.SetActive(true);
+            particles.SpeedLines.Play();
+            if (!IsSkateBoardOn)
+            {
+                Audiomanager.instance.Player_Source.mute = false;
+                DOTween.To(() => Audiomanager.instance.Player_Source.volume, x => Audiomanager.instance.Player_Source.volume = x, 0.5f, 1f);
+            }
+        }
+    }
 
     public void StartCountdown()
     {
@@ -128,23 +158,7 @@ public class PlayerController : MonoBehaviour
         StopCountdown();
     }
 
-    private void Update()
-    {
-      
-        
-        if (isHurt) return;
-
-        HandleLaneMovement();
-        HandleJumpAndSlide();
-        StopBooster();
-
-        if (IsSkateBoardOn)
-        {
-            SkateTimer -= Time.deltaTime;
-            if (SkateTimer <= 0f)
-                StopSkate();
-        }
-    }
+   
 
     void FixedUpdate()
     {   
