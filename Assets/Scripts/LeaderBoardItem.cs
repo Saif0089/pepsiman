@@ -19,11 +19,13 @@ public class LeaderBoardItem : MonoBehaviour
         int sec = 0;
         int millisec = 0;
         long time = (long)player.Score;
-        
+    
         GameManager.SubdivideMilliseconds(time, out min, out sec, out millisec);
-        
 
-        timetxt.text = string.Format("{0:00}:{1:00}:{2:00}", min, sec, millisec);
+        int centiseconds = millisec / 10; // Only two digits
+
+        timetxt.text = string.Format("{0:00}:{1:00}:{2:00}", min, sec, centiseconds);
         Debug.Log("get score " + time);
     }
+
 }

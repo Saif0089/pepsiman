@@ -60,7 +60,6 @@ public class GameManager : MonoBehaviour
         Instance = this;
         Time.timeScale = 0;
     }
-
     public void StartGame()
     {
         Audiomanager.instance.audi_bg.Pause();
@@ -95,7 +94,6 @@ public class GameManager : MonoBehaviour
         if (TimerL >= 5f)
         {
             GetComponent<LeaderBoardMenu>().GetLeaderboardTop();
-            Debug.Log("Refreshed");
             TimerL = 0;
             
         }
@@ -208,7 +206,6 @@ public class GameManager : MonoBehaviour
     {
         gameEnded = true;
     }
-
     private void GameOver(bool won)
     {
         gameEnded = true;
@@ -246,6 +243,7 @@ public class GameManager : MonoBehaviour
         WinScreen.SetActive(true);
         Audiomanager.instance.audi_bg.mute = true;
         Audiomanager.instance.Play_Win();
+        GetComponent<LeaderBoardMenu>().GetLeaderboardTop();
         Time.timeScale = 0f;
     }
 

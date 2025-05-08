@@ -73,7 +73,6 @@ public class LeaderBoardMenu : MonoBehaviour
         Debug.Log("New Player name: " + AuthenticationService.Instance.PlayerName);
     }
 
-
     private void OnDestroy()
     {
         if (instance == this)
