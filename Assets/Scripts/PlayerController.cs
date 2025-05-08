@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     [Header("Movement Settings")] public float moveSpeed = 10f;
     public float moveForwardSpeed = 10f;
     public float BoostSpeed = 10f;
+    public float SkateboardSpeed = 10f;
     public float jumpForce = 8f;
     public float rotationSpeed = 5f;
     public float maxRotation = 15f;
@@ -129,6 +130,8 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+      
+        
         if (isHurt) return;
 
         HandleLaneMovement();
@@ -144,7 +147,7 @@ public class PlayerController : MonoBehaviour
     }
 
     void FixedUpdate()
-    {
+    {   
         currSpeed = moveForwardSpeed;
     }
     void HandleLaneMovement()

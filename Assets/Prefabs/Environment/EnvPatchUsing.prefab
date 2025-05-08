@@ -8785,8 +8785,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &4423889219380447612
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -22041,8 +22039,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &1728598340237140648
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -26100,8 +26096,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &2472632744904139298
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -27208,8 +27202,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &1673739900557134449
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -28988,8 +28980,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &4519051470982493301
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -29737,8 +29727,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &4206158970373535054
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -31512,8 +31500,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &8734356802429705767
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -39925,8 +39911,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &832290967032585483
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -45574,8 +45558,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &2463066267501812035
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -47547,8 +47529,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &2973775371006039571
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -49417,8 +49397,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &6967489366255792309
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -52571,8 +52549,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &1224589457404877276
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -54411,8 +54387,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &5508974364301601359
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -57567,8 +57541,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &1834886560357867226
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -58101,8 +58073,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &6717814103608633641
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -60925,8 +60895,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &8452921868102739988
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -61414,8 +61382,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &9046753692171604029
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -64698,8 +64664,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &606023534421427254
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -72826,8 +72790,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &3174214041831808453
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -77011,8 +76973,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &324798682306072824
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -84116,8 +84076,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &2423026068851731194
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -84627,8 +84585,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &6614629721297285302
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -87224,8 +87180,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &5767988606731524223
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -88470,8 +88424,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &4025940661459008775
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -89671,8 +89623,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &4559020068719741427
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -93965,8 +93915,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &9093865059941397781
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -95081,8 +95029,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &3476375183585523974
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -99433,8 +99379,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &6987433312332679112
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -99668,8 +99612,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &6497585072227684536
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -128636,8 +128578,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &1848286503720647278
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -131390,8 +131330,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &3232675961489188588
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -143825,8 +143763,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &311837137381410607
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -162663,7 +162599,6 @@ Transform:
   - {fileID: 2955110254742005918}
   - {fileID: 7487994391946034759}
   - {fileID: 7494178862866620102}
-  - {fileID: 159870574376132284}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5923384504641786594
@@ -172944,8 +172879,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &917570206764414009
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -177668,8 +177601,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &337803997694829169
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -177974,8 +177905,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &8628451469293093395
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -179695,8 +179624,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &552559646450280970
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -191532,8 +191459,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &577793737550371353
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -192672,8 +192597,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &1107866485191561650
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -197988,8 +197911,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &2916212792294787224
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -200771,8 +200692,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &1478265746732139092
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -202650,8 +202569,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &2679241147053590198
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -207648,8 +207565,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &3523678308582995707
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -209634,8 +209549,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &4132898918596350974
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -210548,8 +210461,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &8776157075127687771
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -211462,8 +211373,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &2685870194535602753
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -216108,8 +216017,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &6037927242383180707
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -221076,8 +220983,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &7503749684509846557
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -225383,8 +225288,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &5465919612390863441
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -228344,8 +228247,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &2622770377304843635
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -240955,8 +240856,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &7678369943470393469
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -242404,8 +242303,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &709827502861021719
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -244822,8 +244719,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &2296792442028201243
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -248084,8 +247979,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &6844065085915833752
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -254209,8 +254102,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &1328370218740583377
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -257893,8 +257784,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &1750057051011628147
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -258200,111 +258089,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7685251513858077766}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &6226894167514541304
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 159870574376132284}
-  - component: {fileID: 4552794889236856293}
-  - component: {fileID: 4714344574406368774}
-  - component: {fileID: 7176897212663639678}
-  m_Layer: 0
-  m_Name: Cube
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &159870574376132284
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6226894167514541304}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.4086, y: -0.7, z: 95}
-  m_LocalScale: {x: 190.40263, y: 1, z: 190}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5362404743622801659}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &4552794889236856293
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6226894167514541304}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &4714344574406368774
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6226894167514541304}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 257
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 73c176f402d2c2f4d929aa5da7585d17, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7176897212663639678
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6226894167514541304}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6227484999829427613
 GameObject:
   m_ObjectHideFlags: 0
@@ -260137,8 +259921,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &5936908598755996803
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -261368,8 +261150,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &4425340546231243033
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -270997,8 +270777,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &9166075696257775757
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -275523,8 +275301,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &5185053996816707645
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -281102,8 +280878,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &3137909018628048591
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -283361,8 +283135,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &1116345170378012744
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -289688,8 +289460,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &438786242170855703
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -290467,8 +290237,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &8466959960586281973
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -305016,8 +304784,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &8798021030861175832
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -305483,8 +305249,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &4950184193417920937
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -319931,8 +319695,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &6554795773376822441
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -321532,8 +321294,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &2884592128604819893
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -323246,8 +323006,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &623575914191393157
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -328480,8 +328238,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &6364637990817074646
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -334773,8 +334529,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &7753397915860565938
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -337121,8 +336875,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &3194130386409761823
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -350781,8 +350533,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &7585683000997896382
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -367330,8 +367080,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &3023906305508965480
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -381077,8 +380825,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &5264420845540668072
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -384685,8 +384431,6 @@ MonoBehaviour:
   myid: 0
   canMove: 0
   canAnimate: 1
-  Offset: 0
-  Speed: 0
 --- !u!54 &4878933821837292161
 Rigidbody:
   m_ObjectHideFlags: 0

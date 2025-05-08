@@ -28,6 +28,7 @@ public class Obstacle : MonoBehaviour
         if (OffOnHit)
         {
             ParentCar.SetActive(false);
+            CancelInvoke();
             Invoke(nameof(OnCarAgain),5f);
         }
     }

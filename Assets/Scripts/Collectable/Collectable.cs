@@ -13,6 +13,7 @@ public class Collectable : MonoBehaviour
     LayerMask targetLayer;
 
     Vector3 initialPosition;
+    Vector3 initialPosition_2;
 
     private void Awake()
     {
@@ -22,10 +23,8 @@ public class Collectable : MonoBehaviour
     private void OnEnable()
     {
         SetDefaultPos();
-    }
-    void Start()
-    {
-        initialPosition = transform.position;
+        
+        initialPosition_2 = transform.position;
         Breathing();
     }
     private void Update()
@@ -42,7 +41,7 @@ public class Collectable : MonoBehaviour
     }
     void Breathing()
     {
-        transform.DOMoveY(initialPosition.y + 0.25f, 1f)
+        transform.DOMoveY(initialPosition_2.y + 0.25f, 1f)
             .SetEase(Ease.InOutSine)
             .SetLoops(-1, LoopType.Yoyo);
     }
