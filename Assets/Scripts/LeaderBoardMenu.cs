@@ -1,8 +1,11 @@
+using System;
+using System.Collections;
 using UnityEngine;
 using Unity.Services.Authentication;
 using Unity.Services.Leaderboards;
 using Unity.Services.Core;
 using TMPro;
+
 public class LeaderBoardMenu : MonoBehaviour
 {
     public static LeaderBoardMenu instance;
@@ -10,11 +13,11 @@ public class LeaderBoardMenu : MonoBehaviour
     public GameObject container;
     public TMP_InputField userNameInputField;
     public GameObject leaderBoardItemPrefab;
- 
-
+    public string userName;
+    Coroutine refreshCoroutine;
     private void Awake()
     {
-        if (instance==null)
+        if (instance == null)
         {
             instance = this;
         }
@@ -27,13 +30,13 @@ public class LeaderBoardMenu : MonoBehaviour
 
         if (!PlayerPrefs.HasKey(nameof(playerId)))
         {
-            playerId=System.Guid.NewGuid().ToString();
-            playerId=playerId.Replace('-',' ').Trim();
-            if(playerId.Length>5)
+            playerId = System.Guid.NewGuid().ToString();
+            playerId = playerId.Replace('-', ' ').Trim();
+            if (playerId.Length > 5)
             {
-                for(int i=6;i<playerId.Length;i++)
+                for (int i = 6; i < playerId.Length; i++)
                 {
-                    playerId=playerId.Remove(i);
+                    playerId = playerId.Remove(i);
                 }
             }
 
@@ -48,63 +51,79 @@ public class LeaderBoardMenu : MonoBehaviour
         options.SetProfile(playerId);
         await UnityServices.InitializeAsync(options);
         await AuthenticationService.Instance.SignInAnonymouslyAsync();
+
+        StartCoroutine(RefreshLeaderboardLoop());
+        
         GetLeaderboardTop();
     }
+    
+    IEnumerator RefreshLeaderboardLoop()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(5f);
+            GetLeaderboardTop();
+        }
+    }
+
     public async void SetUserName()
     {
         await AuthenticationService.Instance.UpdatePlayerNameAsync(userName);
         Debug.Log("New Player ID: " + AuthenticationService.Instance.PlayerId);
         Debug.Log("New Player name: " + AuthenticationService.Instance.PlayerName);
     }
-   
+
 
     private void OnDestroy()
     {
-     
-        if (instance==this)
+        if (instance == this)
         {
-            instance=null;
+            instance = null;
         }
-    } 
-    //public async void InitServices()
-    //{
-
-    //    await UnityServices.InitializeAsync();
-    //    var options = new InitializationOptions();
-    //    await AuthenticationService.Instance.SignInAnonymouslyAsync(); 
-
-    //}
-
-
-
+    }
     public async void SubmitScore(long score)
     {
         var response = await LeaderboardsService.Instance.AddPlayerScoreAsync(id, score);
         Debug.Log($"player name {response.PlayerName} player score{response.Score}");
     }
-
+    
+    public bool isFetching = false;
     public async void GetLeaderboardTop()
     {
-        var scoresResponse = await LeaderboardsService.Instance.GetScoresAsync(id);
-      //  LeaderBoardItem[] items = container.GetComponentsInChildren<LeaderBoardItem>(true);
-        Debug.Log("result count "+scoresResponse.Results.Count);
-        for(int i=0;i<scoresResponse.Results.Count;i++)
+        if (isFetching) return;
+        isFetching = true;
+
+        foreach (Transform child in container.transform)
         {
-           GameObject obj= SpawnLeaderBoarditem();
-           obj.GetComponent<LeaderBoardItem>().Initialize(scoresResponse.Results[i], i);
+            Destroy(child.gameObject);
         }
+
+        try
+        {
+            var scoresResponse = await LeaderboardsService.Instance.GetScoresAsync(id);
+            Debug.Log("result count " + scoresResponse.Results.Count);
+
+            for (int i = 0; i < scoresResponse.Results.Count; i++)
+            {
+                GameObject obj = SpawnLeaderBoarditem();
+                obj.GetComponent<LeaderBoardItem>().Initialize(scoresResponse.Results[i], i);
+            }
+        }
+        catch (Exception e)
+        {
+            Debug.LogError("Leaderboard fetch failed: " + e.Message);
+        }
+
+        isFetching = false;
     }
-     public  string userName;
+
     public void GetInput()
     {
-      userName = userNameInputField.text;
+        userName = userNameInputField.text;
     }
     public GameObject SpawnLeaderBoarditem()
     {
-
         GameObject obj = Instantiate(leaderBoardItemPrefab, container.transform);
         return obj;
-
     }
-  }
-
+}

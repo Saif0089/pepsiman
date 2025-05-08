@@ -436,6 +436,8 @@ public class PlayerController : MonoBehaviour
 
     public void ResetStumble()
     {
+        moveForwardSpeed = 25f;
+        
         if (IsSkateBoardOn)
         {
             Audiomanager.instance.SkateBoard_Source.mute = false;

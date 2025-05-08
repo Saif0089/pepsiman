@@ -78,11 +78,23 @@ public class GameManager : MonoBehaviour
         LeaderBoardMenu.instance.userNameInputField.gameObject.SetActive(true);
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            QuitApp();
+        }
+    }
+
+    public void QuitApp()
+    {
+        Application.Quit();
+    }
     public void UpdateInGameTimer()
     {
         timer += Time.deltaTime;
 
-        TimerText.text = FormatTime((int)timer);
+        TimerText.text = FormatTime(timer);
     }
     private void FixedUpdate()
     {
@@ -109,12 +121,15 @@ public class GameManager : MonoBehaviour
         progressText.text = progressPercent + "%";
     }
 
-    public static string FormatTime(int totalSeconds)
+    public static string FormatTime(float time)
     {
-        int minutes = totalSeconds / 60;
-        int seconds = totalSeconds % 60;
-        return $"{minutes:D2}:{seconds:D2}";
+        int minutes = Mathf.FloorToInt(time / 60f);
+        int seconds = Mathf.FloorToInt(time % 60f);
+        int milliseconds = Mathf.FloorToInt((time * 1000) % 1000 / 10); // Get 2-digit ms
+
+        return $"{minutes:00}:{seconds:00}:{milliseconds:00}";
     }
+
 
     public void Collected(int amount, int id)
     {
@@ -179,7 +194,7 @@ public class GameManager : MonoBehaviour
     {
         totalTime = timer;
         LeaderBoardMenu.instance.SubmitScore((long)totalTime);
-        Finished_TimeText.text = FormatTime((int)timer);
+        Finished_TimeText.text = FormatTime(timer);
         WinScreen.SetActive(true);
         Audiomanager.instance.audi_bg.mute = true;
         Audiomanager.instance.Play_Win();

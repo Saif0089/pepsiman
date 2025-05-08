@@ -10,6 +10,7 @@ public class SkatePick : MonoBehaviour
         {
             if (!PlayerController.instance.IsSkateBoardOn)
             {
+                PlayerController.instance.moveForwardSpeed = PlayerController.instance.SkateboardSpeed;
                 PlayerController.instance.IsSkateBoardOn = true;
                 PlayerController.instance.particles.SkatePick.Play();
                 Audiomanager.instance.PlaySkatePickClip();
