@@ -15,6 +15,7 @@ public class LeaderBoardMenu : MonoBehaviour
     public GameObject leaderBoardItemPrefab;
     public string userName;
     Coroutine refreshCoroutine;
+
     private void Awake()
     {
         if (instance == null)
@@ -28,24 +29,14 @@ public class LeaderBoardMenu : MonoBehaviour
 
         string playerId = string.Empty;
 
-        if (!PlayerPrefs.HasKey(nameof(playerId)))
+        playerId = System.Guid.NewGuid().ToString();
+        playerId = playerId.Replace('-', ' ').Trim();
+        if (playerId.Length > 5)
         {
-            playerId = System.Guid.NewGuid().ToString();
-            playerId = playerId.Replace('-', ' ').Trim();
-            if (playerId.Length > 5)
+            for (int i = 6; i < playerId.Length; i++)
             {
-                for (int i = 6; i < playerId.Length; i++)
-                {
-                    playerId = playerId.Remove(i);
-                }
+                playerId = playerId.Remove(i);
             }
-
-            PlayerPrefs.SetString(nameof(playerId), playerId);
-        }
-        else
-        {
-            playerId = PlayerPrefs.GetString(nameof(playerId));
-            userNameInputField.gameObject.SetActive(false);
         }
 
         options.SetProfile(playerId);
@@ -53,10 +44,10 @@ public class LeaderBoardMenu : MonoBehaviour
         await AuthenticationService.Instance.SignInAnonymouslyAsync();
 
         StartCoroutine(RefreshLeaderboardLoop());
-        
+
         GetLeaderboardTop();
     }
-    
+
     IEnumerator RefreshLeaderboardLoop()
     {
         while (true)
@@ -80,13 +71,16 @@ public class LeaderBoardMenu : MonoBehaviour
             instance = null;
         }
     }
+
     public async void SubmitScore(float score)
     {
-        var response = await LeaderboardsService.Instance.AddPlayerScoreAsync(id, GameManager.ConvertSecondsToMilliseconds(score));
+        var response =
+            await LeaderboardsService.Instance.AddPlayerScoreAsync(id, GameManager.ConvertSecondsToMilliseconds(score));
         Debug.Log($"player name {response.PlayerName} player score{response.Score}");
     }
-    
+
     public bool isFetching = false;
+
     public async void GetLeaderboardTop()
     {
         if (isFetching) return;
@@ -120,13 +114,14 @@ public class LeaderBoardMenu : MonoBehaviour
     {
         if (userNameInputField.text == string.Empty)
         {
-            userName="Local: " + UnityEngine.Random.Range(0,100);
+            userName = "Local: " + UnityEngine.Random.Range(0, 100);
         }
         else
         {
-        userName = userNameInputField.text;
+            userName = userNameInputField.text;
         }
     }
+
     public GameObject SpawnLeaderBoarditem()
     {
         GameObject obj = Instantiate(leaderBoardItemPrefab, container.transform);
