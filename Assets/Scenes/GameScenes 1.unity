@@ -7168,7 +7168,7 @@ MonoBehaviour:
   finishLinePrefab: {fileID: 3703501085493076689, guid: a18a9fed642eb964787b2ae2ec1603ad,
     type: 3}
   WinScreen: {fileID: 598008491}
-  timeToSpawnFinish: 40
+  timeToSpawnFinish: 60
   FinishLineSpawned: 0
   progressBar: {fileID: 1028067504}
   progressText: {fileID: 558696497}
@@ -11679,7 +11679,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.01
-  far clip plane: 500
+  far clip plane: 250
   field of view: 60.000004
   orthographic: 0
   orthographic size: 5
@@ -18291,16 +18291,6 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 1823688469}
-    - target: {fileID: 5136541114276018136, guid: 967e3a2cc650591468a31412522df9ea,
-        type: 3}
-      propertyPath: maxX
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5136541114276018136, guid: 967e3a2cc650591468a31412522df9ea,
-        type: 3}
-      propertyPath: minX
-      value: -6
-      objectReference: {fileID: 0}
     - target: {fileID: 5136541114276018136, guid: 967e3a2cc650591468a31412522df9ea,
         type: 3}
       propertyPath: MagnetText
