@@ -25,9 +25,6 @@ public class PlayerController : MonoBehaviour
     [Header("Slide Settings")] public float slideDuration = 0.5f;
     private float slideTimer = 0f;
 
-    [Header("Boundaries")] public float minX = -5f;
-    public float maxX = 5f;
-
     [Header("Animation Settings")] public Animator animator;
 
     [Header("Boost Management")] public bool BoostEnabled = false;
