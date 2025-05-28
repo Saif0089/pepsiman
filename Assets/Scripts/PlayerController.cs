@@ -459,7 +459,7 @@ public class PlayerController : MonoBehaviour
         isStumble = false;
         canMovement = true;
         moveForwardSpeed = 25;
-        moveSpeed = 7f;
+        moveSpeed = 12f;
         PlayerCollider.center = new Vector3(0f, 0.9869743f, 0.1132071f);
         PlayerCollider.size = new Vector3(1, 1.979002f, 1.00319f);
     }

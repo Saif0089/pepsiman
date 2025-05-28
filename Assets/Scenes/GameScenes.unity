@@ -18152,6 +18152,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5136541114276018136, guid: 967e3a2cc650591468a31412522df9ea,
         type: 3}
+      propertyPath: moveSpeed
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5136541114276018136, guid: 967e3a2cc650591468a31412522df9ea,
+        type: 3}
       propertyPath: MagnetText
       value: 
       objectReference: {fileID: 533984807}
