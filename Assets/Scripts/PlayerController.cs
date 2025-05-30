@@ -102,6 +102,11 @@ public class PlayerController : MonoBehaviour
                 DOTween.To(() => Audiomanager.instance.Player_Source.volume, x => Audiomanager.instance.Player_Source.volume = x, 0.5f, 1f);
             }
         }
+
+        if (transform.position.y < -0.5f)
+        {
+            transform.position = new Vector3(0f, 0.1f, 0f);
+        }
     }
 
     public void StartCountdown()
